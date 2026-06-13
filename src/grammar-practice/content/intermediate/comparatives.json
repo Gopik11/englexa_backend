@@ -1,0 +1,114 @@
+[
+  {
+    "id": "int_comparatives_01",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "fill_blank",
+    "question": "This book is ___ (interesting) than that one.",
+    "options": null,
+    "correct_answer": "more interesting",
+    "explanation": "Use \"more + adjective\" for long adjectives in comparatives."
+  },
+  {
+    "id": "int_comparatives_02",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "mcq",
+    "question": "Choose: \"She is ___ than her brother.\"",
+    "options": [
+      "tall",
+      "taller",
+      "more tall"
+    ],
+    "correct_answer": "taller",
+    "explanation": "Add -er to short adjectives for comparatives. Example: faster, bigger."
+  },
+  {
+    "id": "int_comparatives_03",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "correction",
+    "question": "Fix: \"Today is more cold than yesterday.\"",
+    "options": null,
+    "correct_answer": "Today is colder than yesterday.",
+    "explanation": "One-syllable adjectives usually take -er, not \"more\"."
+  },
+  {
+    "id": "int_comparatives_04",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "rewrite",
+    "question": "Rewrite: \"This phone is not as good as the new one.\"",
+    "options": null,
+    "correct_answer": "The new phone is better than this one.",
+    "explanation": "Comparatives can express the same idea as \"not as...as\"."
+  },
+  {
+    "id": "int_comparatives_05",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "fill_blank",
+    "question": "He runs ___ (fast) than anyone on the team.",
+    "options": null,
+    "correct_answer": "faster",
+    "explanation": "Add -er to \"fast\" for the comparative form."
+  },
+  {
+    "id": "int_comparatives_06",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "mcq",
+    "question": "Which is correct?",
+    "options": [
+      "more easier",
+      "easier",
+      "easyer"
+    ],
+    "correct_answer": "easier",
+    "explanation": "Adjectives ending in -y change to -ier: easy → easier."
+  },
+  {
+    "id": "int_comparatives_07",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "correction",
+    "question": "Fix: \"This exercise is more harder than the last one.\"",
+    "options": null,
+    "correct_answer": "This exercise is harder than the last one.",
+    "explanation": "Do not use \"more\" and -er together."
+  },
+  {
+    "id": "int_comparatives_08",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "short_answer",
+    "question": "Comparative of \"good\": \"This result is ___ than before.\"",
+    "options": null,
+    "correct_answer": "better",
+    "explanation": "\"Good\" has an irregular comparative: better."
+  },
+  {
+    "id": "int_comparatives_09",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "fill_blank",
+    "question": "The second option is ___ (expensive) of the two.",
+    "options": null,
+    "correct_answer": "more expensive",
+    "explanation": "Use \"more + adjective\" for comparatives with long adjectives."
+  },
+  {
+    "id": "int_comparatives_10",
+    "level": "intermediate",
+    "topic": "comparatives",
+    "type": "mcq",
+    "question": "Choose: \"My room is ___ than yours.\"",
+    "options": [
+      "more clean",
+      "cleaner",
+      "cleanner"
+    ],
+    "correct_answer": "cleaner",
+    "explanation": "Short adjectives form comparatives with -er."
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "adv_reported_speech_01",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "mcq",
+    "question": "Choose: Direct: \"I am tired,\" she said. → Reported:",
+    "options": [
+      "She said she is tired.",
+      "She said she was tired.",
+      "She said I was tired."
+    ],
+    "correct_answer": "She said she was tired.",
+    "explanation": "Present simple usually shifts to past simple in reported speech."
+  },
+  {
+    "id": "adv_reported_speech_02",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "fill_blank",
+    "question": "He told me he ___ (live) in Berlin.",
+    "options": null,
+    "correct_answer": "lived",
+    "explanation": "Shift present to past when the reporting verb is past."
+  },
+  {
+    "id": "adv_reported_speech_03",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "correction",
+    "question": "Fix: \"She said that she will call me.\"",
+    "options": null,
+    "correct_answer": "She said that she would call me.",
+    "explanation": "\"Will\" becomes \"would\" in reported speech."
+  },
+  {
+    "id": "adv_reported_speech_04",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "rewrite",
+    "question": "Report: \"Where do you work?\" he asked.",
+    "options": null,
+    "correct_answer": "He asked where I worked.",
+    "explanation": "Remove question mark; use statement word order; shift tense."
+  },
+  {
+    "id": "adv_reported_speech_05",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "mcq",
+    "question": "Choose: \"I can help you,\" he said. →",
+    "options": [
+      "He said he can help me.",
+      "He said he could help me.",
+      "He said he could help you."
+    ],
+    "correct_answer": "He said he could help me.",
+    "explanation": "\"Can\" becomes \"could\"; pronouns may change."
+  },
+  {
+    "id": "adv_reported_speech_06",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "fill_blank",
+    "question": "She asked if I ___ (be) free on Friday.",
+    "options": null,
+    "correct_answer": "was",
+    "explanation": "Reported yes/no questions use if/whether and past tense."
+  },
+  {
+    "id": "adv_reported_speech_07",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "correction",
+    "question": "Fix: \"He told me don't worry.\"",
+    "options": null,
+    "correct_answer": "He told me not to worry.",
+    "explanation": "Report imperatives with told/asked + object + (not) to + verb."
+  },
+  {
+    "id": "adv_reported_speech_08",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "short_answer",
+    "question": "Report: \"I have finished,\" she said.",
+    "options": null,
+    "correct_answer": "She said she had finished.",
+    "explanation": "Present perfect shifts to past perfect in reported speech."
+  },
+  {
+    "id": "adv_reported_speech_09",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "rewrite",
+    "question": "Report: \"We went to the beach yesterday,\" they said.",
+    "options": null,
+    "correct_answer": "They said they had gone to the beach the day before.",
+    "explanation": "Past simple can shift to past perfect; time words may change."
+  },
+  {
+    "id": "adv_reported_speech_10",
+    "level": "advanced",
+    "topic": "reported_speech",
+    "type": "mcq",
+    "question": "Choose: \"Leave now,\" the teacher said. →",
+    "options": [
+      "The teacher told us to leave then.",
+      "The teacher told us leave now.",
+      "The teacher said us to leave."
+    ],
+    "correct_answer": "The teacher told us to leave then.",
+    "explanation": "Report commands with told + object + to-infinitive."
+  }
+]

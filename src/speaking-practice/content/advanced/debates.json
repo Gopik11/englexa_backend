@@ -1,0 +1,32 @@
+[
+  {
+    "id": "adv_debates_01",
+    "level": "advanced",
+    "topic": "debates",
+    "title": "Remote work",
+    "prompt": "Argue whether remote work is better than office work.",
+    "reference_text": "Although remote work offers flexibility, I believe offices help teams collaborate more effectively.",
+    "key_vocabulary": ["remote", "flexibility", "collaborate"],
+    "time_limit_seconds": 55
+  },
+  {
+    "id": "adv_debates_02",
+    "level": "advanced",
+    "topic": "debates",
+    "title": "Social media",
+    "prompt": "Take a position on whether social media helps public debate.",
+    "reference_text": "Social media can inform citizens quickly, yet it also spreads unverified claims.",
+    "key_vocabulary": ["inform", "unverified", "claims"],
+    "time_limit_seconds": 55
+  },
+  {
+    "id": "adv_debates_03",
+    "level": "advanced",
+    "topic": "debates",
+    "title": "Climate policy",
+    "prompt": "Present one argument for stronger climate policy in your country.",
+    "reference_text": "Stronger climate policy protects public health and reduces long-term economic risk.",
+    "key_vocabulary": ["policy", "protects", "economic"],
+    "time_limit_seconds": 55
+  }
+]

@@ -1,0 +1,199 @@
+[
+  {
+    "id": "beg_simple_stories_01",
+    "level": "beginner",
+    "topic": "simple_stories",
+    "title": "The Lost Key",
+    "passage": "Jake came home from work and reached into his pocket for his key. It was not there. He looked in his bag, on the kitchen table, and under the sofa. Still no key. Jake felt worried. Then he heard a soft sound near the door. His cat, Miso, was playing with something shiny. Jake laughed. The key was on the floor next to Miso's paw.",
+    "questions": [
+      {
+        "id": "beg_simple_stories_01_q1",
+        "type": "mcq",
+        "question": "What is Jake looking for?",
+        "options": ["His phone", "His key", "His wallet", "His glasses"],
+        "correct_answer": "His key",
+        "explanation": "Jake reaches into his pocket for his key and cannot find it. The whole story is about him searching for it."
+      },
+      {
+        "id": "beg_simple_stories_01_q2",
+        "type": "short_answer",
+        "question": "Where does Jake find the key?",
+        "options": null,
+        "correct_answer": "on the floor",
+        "explanation": "Jake sees his cat Miso playing with something shiny. The key is on the floor next to Miso's paw."
+      },
+      {
+        "id": "beg_simple_stories_01_q3",
+        "type": "mcq",
+        "question": "How does Jake feel at first?",
+        "options": ["Happy", "Angry", "Worried", "Sleepy"],
+        "correct_answer": "Worried",
+        "explanation": "After searching in many places, Jake still cannot find his key. The story says he felt worried before he found it."
+      }
+    ]
+  },
+  {
+    "id": "beg_simple_stories_02",
+    "level": "beginner",
+    "topic": "simple_stories",
+    "title": "A Rainy Day Walk",
+    "passage": "It was a gray morning, and rain tapped on the windows. Emma did not want to stay inside. She put on her yellow raincoat and boots and opened the door. The air smelled fresh and cool. Puddles covered the sidewalk. Emma jumped over the biggest puddle and smiled. A small bird sat under a tree, shaking water from its wings. Emma walked slowly home, happy she had gone outside.",
+    "questions": [
+      {
+        "id": "beg_simple_stories_02_q1",
+        "type": "mcq",
+        "question": "What is the weather like?",
+        "options": ["Sunny and hot", "Windy and dry", "Rainy and gray", "Snowy and cold"],
+        "correct_answer": "Rainy and gray",
+        "explanation": "The story describes a gray morning with rain on the windows. Emma wears a raincoat and boots because it is wet outside."
+      },
+      {
+        "id": "beg_simple_stories_02_q2",
+        "type": "short_answer",
+        "question": "What color is Emma's raincoat?",
+        "options": null,
+        "correct_answer": "yellow",
+        "explanation": "Before going out, Emma puts on her yellow raincoat. That detail helps us picture what she is wearing."
+      },
+      {
+        "id": "beg_simple_stories_02_q3",
+        "type": "mcq",
+        "question": "What does Emma do on the sidewalk?",
+        "options": ["She runs a race", "She jumps over a puddle", "She buys flowers", "She calls a friend"],
+        "correct_answer": "She jumps over a puddle",
+        "explanation": "Puddles cover the sidewalk, and Emma jumps over the biggest one. She smiles while she does it."
+      },
+      {
+        "id": "beg_simple_stories_02_q4",
+        "type": "short_answer",
+        "question": "How does Emma feel when she walks home?",
+        "options": null,
+        "correct_answer": "happy",
+        "explanation": "Emma walks slowly home and feels happy she went outside. The rainy walk turned out to be a good choice."
+      }
+    ]
+  },
+  {
+    "id": "beg_simple_stories_03",
+    "level": "beginner",
+    "topic": "simple_stories",
+    "title": "Maya's First Day at School",
+    "passage": "Maya stood at the school gate with her new backpack. Her hands felt a little shaky. A teacher smiled and said, \"Welcome! What's your name?\" Maya answered quietly. The teacher walked her to a bright classroom. Children were drawing at small tables. One girl waved and said, \"You can sit next to me.\" Maya sat down and opened her notebook. By lunchtime, she had shared her sandwich and learned three new names. When the bell rang at the end of the day, Maya waved goodbye and thought, \"School is not so scary after all.\"",
+    "questions": [
+      {
+        "id": "beg_simple_stories_03_q1",
+        "type": "mcq",
+        "question": "How does Maya feel at the beginning?",
+        "options": ["Excited and loud", "Calm and sleepy", "A little nervous", "Angry and tired"],
+        "correct_answer": "A little nervous",
+        "explanation": "Maya's hands feel shaky at the school gate. That shows she is nervous on her first day."
+      },
+      {
+        "id": "beg_simple_stories_03_q2",
+        "type": "short_answer",
+        "question": "What are the children doing in the classroom?",
+        "options": null,
+        "correct_answer": "drawing",
+        "explanation": "When Maya enters the classroom, children are drawing at small tables. It is a friendly, quiet activity."
+      },
+      {
+        "id": "beg_simple_stories_03_q3",
+        "type": "mcq",
+        "question": "What does one girl invite Maya to do?",
+        "options": ["Play soccer outside", "Sit next to her", "Read a book alone", "Go home early"],
+        "correct_answer": "Sit next to her",
+        "explanation": "A girl waves and tells Maya she can sit next to her. This kind gesture helps Maya feel more comfortable."
+      },
+      {
+        "id": "beg_simple_stories_03_q4",
+        "type": "short_answer",
+        "question": "What does Maya share at lunchtime?",
+        "options": null,
+        "correct_answer": "her sandwich",
+        "explanation": "By lunchtime, Maya shares her sandwich with others. Sharing food is one way she makes friends."
+      },
+      {
+        "id": "beg_simple_stories_03_q5",
+        "type": "mcq",
+        "question": "What does Maya think at the end of the day?",
+        "options": ["School is boring", "School is not so scary", "She will not return", "She forgot her backpack"],
+        "correct_answer": "School is not so scary",
+        "explanation": "When the day ends, Maya thinks school is not so scary after all. Her first day went better than she expected."
+      }
+    ]
+  },
+  {
+    "id": "beg_simple_stories_04",
+    "level": "beginner",
+    "topic": "simple_stories",
+    "title": "The Hungry Cat",
+    "passage": "Every evening, a small orange cat sat outside Mr. Patel's shop. It meowed softly but did not come inside. Mr. Patel left out a bowl of water and a little fish. The cat ate quickly and then washed its face with one paw. One night, the cat brought a leaf and dropped it by the door. Mr. Patel laughed. \"Thank you for the gift,\" he said. After that, the cat slept on a warm chair inside the shop.",
+    "questions": [
+      {
+        "id": "beg_simple_stories_04_q1",
+        "type": "mcq",
+        "question": "Where does the cat sit each evening?",
+        "options": ["In a park", "Outside Mr. Patel's shop", "On a bus", "In a school yard"],
+        "correct_answer": "Outside Mr. Patel's shop",
+        "explanation": "The story says the cat sat outside Mr. Patel's shop every evening. That is where their friendship begins."
+      },
+      {
+        "id": "beg_simple_stories_04_q2",
+        "type": "short_answer",
+        "question": "What does Mr. Patel leave for the cat?",
+        "options": null,
+        "correct_answer": "water and fish",
+        "explanation": "Mr. Patel leaves a bowl of water and a little fish for the cat. The cat eats the fish and drinks the water."
+      },
+      {
+        "id": "beg_simple_stories_04_q3",
+        "type": "mcq",
+        "question": "What does the cat bring one night?",
+        "options": ["A mouse", "A leaf", "A shoe", "A coin"],
+        "correct_answer": "A leaf",
+        "explanation": "One night the cat brings a leaf and drops it by the door. Mr. Patel treats it like a gift and thanks the cat."
+      }
+    ]
+  },
+  {
+    "id": "beg_simple_stories_05",
+    "level": "beginner",
+    "topic": "simple_stories",
+    "title": "Tom's Birthday Surprise",
+    "passage": "Tom thought his birthday would be quiet. His sister told him to come to the kitchen at six o'clock. When he opened the door, the lights were off. Then everyone shouted, \"Surprise!\" Friends and cousins stood around a chocolate cake with ten candles. Tom's eyes grew wide. He blew out the candles while everyone clapped. Later, he opened small gifts and played music in the living room. Tom hugged his sister and whispered, \"This is the best birthday ever.\"",
+    "questions": [
+      {
+        "id": "beg_simple_stories_05_q1",
+        "type": "mcq",
+        "question": "What did Tom expect his birthday to be like?",
+        "options": ["Very loud", "Quiet", "At the beach", "At school"],
+        "correct_answer": "Quiet",
+        "explanation": "The story begins by saying Tom thought his birthday would be quiet. He did not know about the surprise party."
+      },
+      {
+        "id": "beg_simple_stories_05_q2",
+        "type": "short_answer",
+        "question": "What kind of cake is on the table?",
+        "options": null,
+        "correct_answer": "chocolate",
+        "explanation": "Friends and cousins stand around a chocolate cake with ten candles. Tom blows out those candles during the party."
+      },
+      {
+        "id": "beg_simple_stories_05_q3",
+        "type": "mcq",
+        "question": "How many candles are on the cake?",
+        "options": ["Five", "Eight", "Ten", "Twelve"],
+        "correct_answer": "Ten",
+        "explanation": "The cake has ten candles on it. Tom blows them out while everyone claps for him."
+      },
+      {
+        "id": "beg_simple_stories_05_q4",
+        "type": "short_answer",
+        "question": "What does Tom say to his sister at the end?",
+        "options": null,
+        "correct_answer": "This is the best birthday ever",
+        "explanation": "Tom hugs his sister and whispers that this is the best birthday ever. The surprise party made him very happy."
+      }
+    ]
+  }
+]

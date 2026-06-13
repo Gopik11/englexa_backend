@@ -1,0 +1,32 @@
+[
+  {
+    "id": "int_travel_stories_01",
+    "level": "intermediate",
+    "topic": "travel_stories",
+    "title": "A memorable trip",
+    "prompt": "Talk about a place you visited and what you liked there.",
+    "reference_text": "Last summer I visited Lisbon and I loved the food and the friendly people.",
+    "key_vocabulary": ["visited", "memorable", "friendly"],
+    "time_limit_seconds": 45
+  },
+  {
+    "id": "int_travel_stories_02",
+    "level": "intermediate",
+    "topic": "travel_stories",
+    "title": "Travel problem",
+    "prompt": "Describe a small problem you had while travelling and how you solved it.",
+    "reference_text": "My train was delayed, so I called my hotel and changed my check-in time.",
+    "key_vocabulary": ["delayed", "hotel", "changed"],
+    "time_limit_seconds": 50
+  },
+  {
+    "id": "int_travel_stories_03",
+    "level": "intermediate",
+    "topic": "travel_stories",
+    "title": "Next destination",
+    "prompt": "Explain where you would like to travel next and why.",
+    "reference_text": "I would like to visit Japan because I am interested in the culture and the food.",
+    "key_vocabulary": ["destination", "culture", "interested"],
+    "time_limit_seconds": 45
+  }
+]

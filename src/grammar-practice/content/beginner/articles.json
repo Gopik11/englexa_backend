@@ -1,0 +1,114 @@
+[
+  {
+    "id": "beg_articles_01",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "fill_blank",
+    "question": "I have ___ cat at home.",
+    "options": null,
+    "correct_answer": "a",
+    "explanation": "Use \"a\" before consonant sounds. \"Cat\" starts with a consonant sound. Example: I have a dog too."
+  },
+  {
+    "id": "beg_articles_02",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "mcq",
+    "question": "Choose the correct article: ___ apple",
+    "options": [
+      "a",
+      "an",
+      "the"
+    ],
+    "correct_answer": "an",
+    "explanation": "Use \"an\" before vowel sounds. Example: She ate an orange after lunch."
+  },
+  {
+    "id": "beg_articles_03",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "correction",
+    "question": "Fix the sentence: \"He is a engineer.\"",
+    "options": null,
+    "correct_answer": "He is an engineer.",
+    "explanation": "Use \"an\" before vowel sounds. \"Engineer\" starts with a vowel sound."
+  },
+  {
+    "id": "beg_articles_04",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "fill_blank",
+    "question": "She bought ___ umbrella because it was raining.",
+    "options": null,
+    "correct_answer": "an",
+    "explanation": "Use \"an\" before vowel sounds. Example: He needs an umbrella today."
+  },
+  {
+    "id": "beg_articles_05",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "mcq",
+    "question": "Which sentence is correct?",
+    "options": [
+      "I saw a dog in the park.",
+      "I saw an dog in the park.",
+      "I saw dog in the park."
+    ],
+    "correct_answer": "I saw a dog in the park.",
+    "explanation": "Countable singular nouns need an article. Use \"a\" before consonant sounds."
+  },
+  {
+    "id": "beg_articles_06",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "rewrite",
+    "question": "Add the correct article: \"I want book.\"",
+    "options": null,
+    "correct_answer": "I want a book.",
+    "explanation": "Use \"a\" before consonant sounds when the noun is singular and countable."
+  },
+  {
+    "id": "beg_articles_07",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "fill_blank",
+    "question": "It is ___ honest answer.",
+    "options": null,
+    "correct_answer": "an",
+    "explanation": "\"Honest\" starts with a vowel sound, so we use \"an\". Example: That was an honest reply."
+  },
+  {
+    "id": "beg_articles_08",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "correction",
+    "question": "Fix: \"We ate an banana.\"",
+    "options": null,
+    "correct_answer": "We ate a banana.",
+    "explanation": "Use \"a\" before consonant sounds and \"an\" before vowel sounds."
+  },
+  {
+    "id": "beg_articles_09",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "short_answer",
+    "question": "Fill in one word: \"She is ___ artist.\"",
+    "options": null,
+    "correct_answer": "an",
+    "explanation": "Use \"an\" before vowel sounds. Example: He is an actor."
+  },
+  {
+    "id": "beg_articles_10",
+    "level": "beginner",
+    "topic": "articles",
+    "type": "mcq",
+    "question": "Choose the correct article: ___ university student",
+    "options": [
+      "a",
+      "an",
+      "the"
+    ],
+    "correct_answer": "a",
+    "explanation": "\"University\" starts with a \"y\" consonant sound, so we use \"a\"."
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "int_adverbs_01",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "fill_blank",
+    "question": "She speaks English ___. (fluent)",
+    "options": null,
+    "correct_answer": "fluently",
+    "explanation": "Add -ly to form adverbs from adjectives. Example: quick → quickly."
+  },
+  {
+    "id": "int_adverbs_02",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "mcq",
+    "question": "Choose the correct word order:",
+    "options": [
+      "She always is late.",
+      "She is always late.",
+      "Always she is late."
+    ],
+    "correct_answer": "She is always late.",
+    "explanation": "Place frequency adverbs before the main verb but after \"be\"."
+  },
+  {
+    "id": "int_adverbs_03",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "correction",
+    "question": "Fix: \"He drives careful on highways.\"",
+    "options": null,
+    "correct_answer": "He drives carefully on highways.",
+    "explanation": "Use an adverb to describe how someone drives."
+  },
+  {
+    "id": "int_adverbs_04",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "rewrite",
+    "question": "Rewrite with an adverb: \"She is a quick runner.\"",
+    "options": null,
+    "correct_answer": "She runs quickly.",
+    "explanation": "Adverbs describe verbs. Example: He speaks clearly."
+  },
+  {
+    "id": "int_adverbs_05",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "fill_blank",
+    "question": "I ___ (recent) started learning French.",
+    "options": null,
+    "correct_answer": "recently",
+    "explanation": "Use \"recently\" before the main verb for time. Example: I recently moved here."
+  },
+  {
+    "id": "int_adverbs_06",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "mcq",
+    "question": "Which is correct?",
+    "options": [
+      "He works hard.",
+      "He works hardly.",
+      "He hard works."
+    ],
+    "correct_answer": "He works hard.",
+    "explanation": "\"Hard\" can be an adverb meaning \"with effort\". \"Hardly\" means \"almost not\"."
+  },
+  {
+    "id": "int_adverbs_07",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "correction",
+    "question": "Fix: \"She sings beautiful.\"",
+    "options": null,
+    "correct_answer": "She sings beautifully.",
+    "explanation": "Use -ly adverbs to describe how someone sings."
+  },
+  {
+    "id": "int_adverbs_08",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "short_answer",
+    "question": "Adverb form of \"slow\": \"Please walk ___.\"\"",
+    "options": null,
+    "correct_answer": "slowly",
+    "explanation": "Add -ly to many adjectives to form adverbs."
+  },
+  {
+    "id": "int_adverbs_09",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "fill_blank",
+    "question": "They ___ (complete) forgot about the meeting.",
+    "options": null,
+    "correct_answer": "completely",
+    "explanation": "Adverbs like \"completely\" modify verbs. Example: I totally agree."
+  },
+  {
+    "id": "int_adverbs_10",
+    "level": "intermediate",
+    "topic": "adverbs",
+    "type": "mcq",
+    "question": "Choose: \"He is ___ good at math.\"",
+    "options": [
+      "very",
+      "veryly",
+      "much very"
+    ],
+    "correct_answer": "very",
+    "explanation": "Use \"very\" to modify adjectives, not adverbs with -ly."
+  }
+]

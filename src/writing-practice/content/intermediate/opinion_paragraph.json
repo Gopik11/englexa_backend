@@ -1,0 +1,29 @@
+[
+  {
+    "id": "int_opinion_paragraph_01",
+    "level": "intermediate",
+    "topic": "opinion_paragraph",
+    "title": "City or countryside",
+    "prompt": "Write a paragraph giving your opinion on whether it is better to live in a city or the countryside.",
+    "word_count_min": 70,
+    "word_count_max": 140
+  },
+  {
+    "id": "int_opinion_paragraph_02",
+    "level": "intermediate",
+    "topic": "opinion_paragraph",
+    "title": "Online learning",
+    "prompt": "Share your opinion on whether online learning is as effective as classroom learning.",
+    "word_count_min": 70,
+    "word_count_max": 150
+  },
+  {
+    "id": "int_opinion_paragraph_03",
+    "level": "intermediate",
+    "topic": "opinion_paragraph",
+    "title": "Public transport",
+    "prompt": "Explain whether your city needs better public transport and why.",
+    "word_count_min": 65,
+    "word_count_max": 130
+  }
+]

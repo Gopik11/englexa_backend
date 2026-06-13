@@ -1,0 +1,29 @@
+[
+  {
+    "id": "adv_argumentative_essay_01",
+    "level": "advanced",
+    "topic": "argumentative_essay",
+    "title": "Remote work policy",
+    "prompt": "Write a short argumentative paragraph: should companies require employees to return to the office?",
+    "word_count_min": 120,
+    "word_count_max": 220
+  },
+  {
+    "id": "adv_argumentative_essay_02",
+    "level": "advanced",
+    "topic": "argumentative_essay",
+    "title": "Social media regulation",
+    "prompt": "Argue whether governments should regulate social media platforms more strictly.",
+    "word_count_min": 120,
+    "word_count_max": 230
+  },
+  {
+    "id": "adv_argumentative_essay_03",
+    "level": "advanced",
+    "topic": "argumentative_essay",
+    "title": "University fees",
+    "prompt": "Present an argument for or against free university education.",
+    "word_count_min": 110,
+    "word_count_max": 210
+  }
+]

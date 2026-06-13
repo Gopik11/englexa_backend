@@ -1,0 +1,114 @@
+[
+  {
+    "id": "beg_subject_verb_01",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "correction",
+    "question": "Fix: \"Go to school every day.\"",
+    "options": null,
+    "correct_answer": "I go to school every day.",
+    "explanation": "Your sentence needs a subject to be complete. Example: I go to school every day."
+  },
+  {
+    "id": "beg_subject_verb_02",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "mcq",
+    "question": "Which sentence has correct subject-verb agreement?",
+    "options": [
+      "She like music.",
+      "She likes music.",
+      "She liking music."
+    ],
+    "correct_answer": "She likes music.",
+    "explanation": "Add -s to the verb with he/she/it in the simple present."
+  },
+  {
+    "id": "beg_subject_verb_03",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "fill_blank",
+    "question": "My friends ___ (be) from Brazil.",
+    "options": null,
+    "correct_answer": "are",
+    "explanation": "Use \"are\" with plural subjects. Example: They are students."
+  },
+  {
+    "id": "beg_subject_verb_04",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "correction",
+    "question": "Fix: \"The dogs runs fast.\"",
+    "options": null,
+    "correct_answer": "The dogs run fast.",
+    "explanation": "Use the base verb with plural subjects. Do not add -s."
+  },
+  {
+    "id": "beg_subject_verb_05",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "rewrite",
+    "question": "Rewrite with a subject: \"Is happy today.\"",
+    "options": null,
+    "correct_answer": "She is happy today.",
+    "explanation": "Every complete sentence needs a subject. Example: He is happy today."
+  },
+  {
+    "id": "beg_subject_verb_06",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "mcq",
+    "question": "Choose the correct verb: \"He ___ a teacher.\"",
+    "options": [
+      "are",
+      "is",
+      "am"
+    ],
+    "correct_answer": "is",
+    "explanation": "Use \"is\" with he/she/it. Example: She is a doctor."
+  },
+  {
+    "id": "beg_subject_verb_07",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "fill_blank",
+    "question": "The children ___ (play) in the yard.",
+    "options": null,
+    "correct_answer": "play",
+    "explanation": "Use the base verb with plural subjects like \"children\"."
+  },
+  {
+    "id": "beg_subject_verb_08",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "correction",
+    "question": "Fix: \"Maria and Tom goes to the same school.\"",
+    "options": null,
+    "correct_answer": "Maria and Tom go to the same school.",
+    "explanation": "Compound subjects take a plural verb. Use \"go\", not \"goes\"."
+  },
+  {
+    "id": "beg_subject_verb_09",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "short_answer",
+    "question": "Complete: \"It ___ (be) cold outside.\"",
+    "options": null,
+    "correct_answer": "is",
+    "explanation": "Use \"is\" with it/he/she. Example: It is sunny today."
+  },
+  {
+    "id": "beg_subject_verb_10",
+    "level": "beginner",
+    "topic": "subject_verb",
+    "type": "mcq",
+    "question": "Which sentence is complete?",
+    "options": [
+      "Walks in the park.",
+      "She walks in the park.",
+      "Walking in the park."
+    ],
+    "correct_answer": "She walks in the park.",
+    "explanation": "A complete sentence needs a subject and a verb."
+  }
+]

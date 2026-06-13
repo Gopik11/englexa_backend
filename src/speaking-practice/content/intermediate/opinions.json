@@ -1,0 +1,32 @@
+[
+  {
+    "id": "int_opinions_01",
+    "level": "intermediate",
+    "topic": "opinions",
+    "title": "City life",
+    "prompt": "Share your opinion about living in a big city.",
+    "reference_text": "In my opinion, living in a big city is exciting because there are many opportunities.",
+    "key_vocabulary": ["opinion", "exciting", "opportunities"],
+    "time_limit_seconds": 45
+  },
+  {
+    "id": "int_opinions_02",
+    "level": "intermediate",
+    "topic": "opinions",
+    "title": "Online learning",
+    "prompt": "Give your view on studying online versus in a classroom.",
+    "reference_text": "I think online learning is convenient, but classrooms help me stay focused.",
+    "key_vocabulary": ["convenient", "focused", "classroom"],
+    "time_limit_seconds": 50
+  },
+  {
+    "id": "int_opinions_03",
+    "level": "intermediate",
+    "topic": "opinions",
+    "title": "Healthy habits",
+    "prompt": "Explain one healthy habit you try to keep and why it matters.",
+    "reference_text": "I try to walk every day because it gives me more energy and reduces stress.",
+    "key_vocabulary": ["healthy", "energy", "stress"],
+    "time_limit_seconds": 45
+  }
+]

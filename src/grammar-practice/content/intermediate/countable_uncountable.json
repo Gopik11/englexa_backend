@@ -1,0 +1,114 @@
+[
+  {
+    "id": "int_countable_uncountable_01",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "mcq",
+    "question": "Choose: \"How ___ apples do you need?\"",
+    "options": [
+      "much",
+      "many",
+      "lot"
+    ],
+    "correct_answer": "many",
+    "explanation": "Use \"many\" with countable plural nouns. Example: How many books do you have?"
+  },
+  {
+    "id": "int_countable_uncountable_02",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "fill_blank",
+    "question": "There isn't ___ sugar left.",
+    "options": null,
+    "correct_answer": "much",
+    "explanation": "Use \"much\" with uncountable nouns in negative sentences."
+  },
+  {
+    "id": "int_countable_uncountable_03",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "correction",
+    "question": "Fix: \"Can I have a informations?\"",
+    "options": null,
+    "correct_answer": "Can I have some information?",
+    "explanation": "\"Information\" is uncountable. Use \"some\", not \"a/an\"."
+  },
+  {
+    "id": "int_countable_uncountable_04",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "mcq",
+    "question": "Which is correct?",
+    "options": [
+      "a piece of advice",
+      "an advice",
+      "advices"
+    ],
+    "correct_answer": "a piece of advice",
+    "explanation": "Use \"a piece of\" with uncountable nouns to count them."
+  },
+  {
+    "id": "int_countable_uncountable_05",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "rewrite",
+    "question": "Rewrite: \"I need two bread for dinner.\"",
+    "options": null,
+    "correct_answer": "I need two loaves of bread for dinner.",
+    "explanation": "\"Bread\" is uncountable. Use a unit like \"loaves of bread\"."
+  },
+  {
+    "id": "int_countable_uncountable_06",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "fill_blank",
+    "question": "She has ___ friends in this city.",
+    "options": null,
+    "correct_answer": "many",
+    "explanation": "Use \"many\" with countable plural nouns like \"friends\"."
+  },
+  {
+    "id": "int_countable_uncountable_07",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "correction",
+    "question": "Fix: \"How much people came to the event?\"",
+    "options": null,
+    "correct_answer": "How many people came to the event?",
+    "explanation": "Use \"many\" with countable nouns like \"people\"."
+  },
+  {
+    "id": "int_countable_uncountable_08",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "mcq",
+    "question": "Choose: \"I don't have ___ time today.\"",
+    "options": [
+      "many",
+      "much",
+      "a"
+    ],
+    "correct_answer": "much",
+    "explanation": "Use \"much\" with uncountable nouns like \"time\"."
+  },
+  {
+    "id": "int_countable_uncountable_09",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "short_answer",
+    "question": "Complete: \"Would you like ___ water?\"",
+    "options": null,
+    "correct_answer": "some",
+    "explanation": "Use \"some\" in offers with uncountable and plural countable nouns."
+  },
+  {
+    "id": "int_countable_uncountable_10",
+    "level": "intermediate",
+    "topic": "countable_uncountable",
+    "type": "fill_blank",
+    "question": "There are ___ chairs in the room.",
+    "options": null,
+    "correct_answer": "a few",
+    "explanation": "Use \"a few\" with countable plural nouns. Example: a few students."
+  }
+]

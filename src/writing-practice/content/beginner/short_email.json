@@ -1,0 +1,29 @@
+[
+  {
+    "id": "beg_short_email_01",
+    "level": "beginner",
+    "topic": "short_email",
+    "title": "Study invitation",
+    "prompt": "Write a short email inviting a classmate to study together after school.",
+    "word_count_min": 40,
+    "word_count_max": 100
+  },
+  {
+    "id": "beg_short_email_02",
+    "level": "beginner",
+    "topic": "short_email",
+    "title": "Thank-you note",
+    "prompt": "Write a short email thanking a friend for helping you with homework.",
+    "word_count_min": 35,
+    "word_count_max": 90
+  },
+  {
+    "id": "beg_short_email_03",
+    "level": "beginner",
+    "topic": "short_email",
+    "title": "Weekend plans",
+    "prompt": "Write a short email asking a friend about their weekend plans.",
+    "word_count_min": 35,
+    "word_count_max": 85
+  }
+]

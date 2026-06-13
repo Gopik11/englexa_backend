@@ -1,0 +1,128 @@
+[
+  {
+    "id": "adv_academic_words_01",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "mcq",
+    "question": "In an essay, what does \"analyze\" mean?",
+    "options": [
+      "To examine something in detail",
+      "To copy text without reading",
+      "To ignore evidence"
+    ],
+    "correct_answer": "To examine something in detail",
+    "explanation": "Analyze is a core academic verb for breaking ideas into parts and explaining them. British spelling is analyse.",
+    "example_sentence": "The article analyzes trends in public health."
+  },
+  {
+    "id": "adv_academic_words_02",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "fill_in",
+    "question": "The study provides strong ___ for the new theory.",
+    "options": null,
+    "correct_answer": "evidence",
+    "explanation": "Evidence supports claims in academic writing. Reliable sources strengthen your argument.",
+    "example_sentence": "There is little evidence to support that claim."
+  },
+  {
+    "id": "adv_academic_words_03",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "match",
+    "question": "Match \"hypothesis\" to its meaning.",
+    "options": [
+      "An idea tested by research",
+      "A final proven fact",
+      "A list of references"
+    ],
+    "correct_answer": "An idea tested by research",
+    "explanation": "A hypothesis is a proposed explanation before testing. Experiments confirm or reject it.",
+    "example_sentence": "Our hypothesis was that sleep improves memory."
+  },
+  {
+    "id": "adv_academic_words_04",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "mcq",
+    "question": "Which word means \"to show clearly\" in formal writing?",
+    "options": ["demonstrate", "guess", "whisper", "borrow"],
+    "correct_answer": "demonstrate",
+    "explanation": "Demonstrate links evidence to conclusions. It is stronger than show in research contexts.",
+    "example_sentence": "The data demonstrate a clear link between diet and energy."
+  },
+  {
+    "id": "adv_academic_words_05",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "fill_in",
+    "question": "The author ___ that climate policy needs urgent reform.",
+    "options": null,
+    "correct_answer": "argues",
+    "explanation": "Argue in academic prose means to present a reasoned position, not to shout. It introduces the writer's claim.",
+    "example_sentence": "She argues that access to education reduces inequality."
+  },
+  {
+    "id": "adv_academic_words_06",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "match",
+    "question": "Match \"methodology\" to its meaning.",
+    "options": [
+      "The system of methods used in a study",
+      "The title of a book",
+      "A type of classroom furniture"
+    ],
+    "correct_answer": "The system of methods used in a study",
+    "explanation": "Methodology explains how research was conducted — surveys, interviews, or experiments. Readers judge reliability from it.",
+    "example_sentence": "The methodology section describes the sample size."
+  },
+  {
+    "id": "adv_academic_words_07",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "mcq",
+    "question": "Which word refers to the main idea you defend in an essay?",
+    "options": ["thesis", "footnote", "appendix", "glossary"],
+    "correct_answer": "thesis",
+    "explanation": "A thesis statement presents your central argument. The whole essay supports or develops it.",
+    "example_sentence": "Her thesis is that remote work increases productivity."
+  },
+  {
+    "id": "adv_academic_words_08",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "fill_in",
+    "question": "The results are ___ with previous studies in this field.",
+    "options": null,
+    "correct_answer": "consistent",
+    "explanation": "Consistent means aligning with other findings. Inconsistency may signal a need for further research.",
+    "example_sentence": "These figures are consistent with last year's report."
+  },
+  {
+    "id": "adv_academic_words_09",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "match",
+    "question": "Match \"peer review\" to its meaning.",
+    "options": [
+      "Evaluation of research by other experts",
+      "A student study group",
+      "A public opinion poll"
+    ],
+    "correct_answer": "Evaluation of research by other experts",
+    "explanation": "Peer review checks quality before publication. It is a hallmark of credible academic journals.",
+    "example_sentence": "The paper passed peer review and was published."
+  },
+  {
+    "id": "adv_academic_words_10",
+    "level": "advanced",
+    "topic": "academic_words",
+    "type": "mcq",
+    "question": "Which word means to mention a source in academic writing?",
+    "options": ["cite", "hide", "erase", "sell"],
+    "correct_answer": "cite",
+    "explanation": "Cite gives credit to authors and lets readers verify information. Proper citation avoids plagiarism.",
+    "example_sentence": "Remember to cite the journal article in your bibliography."
+  }
+]

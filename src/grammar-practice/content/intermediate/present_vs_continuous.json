@@ -1,0 +1,114 @@
+[
+  {
+    "id": "int_present_vs_continuous_01",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "mcq",
+    "question": "Choose: \"I usually ___ tea, but today I ___ coffee.\"",
+    "options": [
+      "drink / am drinking",
+      "am drinking / drink",
+      "drinks / am drinking"
+    ],
+    "correct_answer": "drink / am drinking",
+    "explanation": "Use simple present for habits and present continuous for actions happening now."
+  },
+  {
+    "id": "int_present_vs_continuous_02",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "fill_blank",
+    "question": "Listen! The baby ___ (cry).",
+    "options": null,
+    "correct_answer": "is crying",
+    "explanation": "Use present continuous for something happening at this moment. Example: Look! It is raining."
+  },
+  {
+    "id": "int_present_vs_continuous_03",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "correction",
+    "question": "Fix: \"She is knowing the answer.\"",
+    "options": null,
+    "correct_answer": "She knows the answer.",
+    "explanation": "Stative verbs like \"know\" are not usually used in continuous forms."
+  },
+  {
+    "id": "int_present_vs_continuous_04",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "mcq",
+    "question": "Which sentence is correct?",
+    "options": [
+      "He works at a bank.",
+      "He is working at a bank every day.",
+      "He work at a bank."
+    ],
+    "correct_answer": "He works at a bank.",
+    "explanation": "Use simple present for permanent jobs and routines."
+  },
+  {
+    "id": "int_present_vs_continuous_05",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "rewrite",
+    "question": "Rewrite: \"They play soccer now.\" (action in progress)",
+    "options": null,
+    "correct_answer": "They are playing soccer now.",
+    "explanation": "Use present continuous with \"now\" for actions in progress."
+  },
+  {
+    "id": "int_present_vs_continuous_06",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "fill_blank",
+    "question": "She ___ (not work) today because she is sick.",
+    "options": null,
+    "correct_answer": "is not working",
+    "explanation": "Use present continuous for a temporary situation today."
+  },
+  {
+    "id": "int_present_vs_continuous_07",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "correction",
+    "question": "Fix: \"I am living here since 2019.\"",
+    "options": null,
+    "correct_answer": "I have lived here since 2019.",
+    "explanation": "Use present perfect with \"since\" for duration from past to now, not present continuous."
+  },
+  {
+    "id": "int_present_vs_continuous_08",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "mcq",
+    "question": "Choose: \"What ___ you ___ at the moment?\"",
+    "options": [
+      "do / do",
+      "are / doing",
+      "did / do"
+    ],
+    "correct_answer": "are / doing",
+    "explanation": "Use present continuous with \"at the moment\"."
+  },
+  {
+    "id": "int_present_vs_continuous_09",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "short_answer",
+    "question": "Complete: \"The sun ___ (rise) in the east.\" (general truth)",
+    "options": null,
+    "correct_answer": "rises",
+    "explanation": "Use simple present for general truths and facts."
+  },
+  {
+    "id": "int_present_vs_continuous_10",
+    "level": "intermediate",
+    "topic": "present_vs_continuous",
+    "type": "rewrite",
+    "question": "Rewrite: \"He is always complain about the weather.\"",
+    "options": null,
+    "correct_answer": "He is always complaining about the weather.",
+    "explanation": "Use always + present continuous to show annoyance about repeated behavior."
+  }
+]

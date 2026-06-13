@@ -1,0 +1,29 @@
+[
+  {
+    "id": "beg_personal_paragraph_01",
+    "level": "beginner",
+    "topic": "personal_paragraph",
+    "title": "About me",
+    "prompt": "Write 3–5 sentences about yourself. Include your name, where you live, and one hobby.",
+    "word_count_min": 30,
+    "word_count_max": 80
+  },
+  {
+    "id": "beg_personal_paragraph_02",
+    "level": "beginner",
+    "topic": "personal_paragraph",
+    "title": "My family",
+    "prompt": "Write a short paragraph about your family. Say how many people are in it.",
+    "word_count_min": 30,
+    "word_count_max": 75
+  },
+  {
+    "id": "beg_personal_paragraph_03",
+    "level": "beginner",
+    "topic": "personal_paragraph",
+    "title": "My favourite food",
+    "prompt": "Describe your favourite food and when you usually eat it.",
+    "word_count_min": 25,
+    "word_count_max": 70
+  }
+]

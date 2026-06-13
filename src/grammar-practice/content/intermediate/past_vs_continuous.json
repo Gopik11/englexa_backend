@@ -1,0 +1,114 @@
+[
+  {
+    "id": "int_past_vs_continuous_01",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "mcq",
+    "question": "Choose: \"While I ___, the phone ___.\"",
+    "options": [
+      "was cooking / rang",
+      "cooked / was ringing",
+      "was cooking / was ringing"
+    ],
+    "correct_answer": "was cooking / rang",
+    "explanation": "Past continuous for ongoing action; past simple for the interruption."
+  },
+  {
+    "id": "int_past_vs_continuous_02",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "fill_blank",
+    "question": "They ___ (watch) TV when the power went out.",
+    "options": null,
+    "correct_answer": "were watching",
+    "explanation": "Use past continuous for an action in progress when something else happened."
+  },
+  {
+    "id": "int_past_vs_continuous_03",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "correction",
+    "question": "Fix: \"I was walk home when it started raining.\"",
+    "options": null,
+    "correct_answer": "I was walking home when it started raining.",
+    "explanation": "Use was/were + verb-ing for past continuous."
+  },
+  {
+    "id": "int_past_vs_continuous_04",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "mcq",
+    "question": "Which sentence is correct?",
+    "options": [
+      "She was studying at 8 PM yesterday.",
+      "She studied at 8 PM yesterday for two hours.",
+      "She was study at 8 PM yesterday."
+    ],
+    "correct_answer": "She was studying at 8 PM yesterday.",
+    "explanation": "Use past continuous for an action in progress at a specific past time."
+  },
+  {
+    "id": "int_past_vs_continuous_05",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "rewrite",
+    "question": "Rewrite: \"He broke his leg while he skied.\"",
+    "options": null,
+    "correct_answer": "He broke his leg while he was skiing.",
+    "explanation": "Use past continuous for the longer background action."
+  },
+  {
+    "id": "int_past_vs_continuous_06",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "fill_blank",
+    "question": "What ___ you ___ (do) at this time last year?",
+    "options": null,
+    "correct_answer": "were, doing",
+    "explanation": "Use past continuous for an action at a specific past time."
+  },
+  {
+    "id": "int_past_vs_continuous_07",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "correction",
+    "question": "Fix: \"When I arrived, they were already leave.\"",
+    "options": null,
+    "correct_answer": "When I arrived, they had already left.",
+    "explanation": "Use past perfect for an action completed before another past action."
+  },
+  {
+    "id": "int_past_vs_continuous_08",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "mcq",
+    "question": "Choose: \"I ___ to Rome in 2019.\"",
+    "options": [
+      "was going",
+      "went",
+      "have gone"
+    ],
+    "correct_answer": "went",
+    "explanation": "Use past simple with a finished past time like \"in 2019\"."
+  },
+  {
+    "id": "int_past_vs_continuous_09",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "short_answer",
+    "question": "Complete: \"It ___ (rain) all day yesterday.\"",
+    "options": null,
+    "correct_answer": "was raining",
+    "explanation": "Past continuous can describe weather over a period in the past."
+  },
+  {
+    "id": "int_past_vs_continuous_10",
+    "level": "intermediate",
+    "topic": "past_vs_continuous",
+    "type": "rewrite",
+    "question": "Rewrite: \"As she walked, she was listening to music.\" → swap emphasis to continuous background",
+    "options": null,
+    "correct_answer": "She was walking as she listened to music.",
+    "explanation": "Both actions can use past continuous/simple depending on which is background."
+  }
+]

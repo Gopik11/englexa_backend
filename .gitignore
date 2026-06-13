@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+coverage
+*.log
+
+# Accidental in-place TypeScript emit (must go to dist/)
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts
+prisma/**/*.js
+prisma/**/*.js.map

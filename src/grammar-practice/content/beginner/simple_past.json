@@ -1,0 +1,114 @@
+[
+  {
+    "id": "beg_simple_past_01",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "fill_blank",
+    "question": "Yesterday, I ___ (walk) to the store.",
+    "options": null,
+    "correct_answer": "walked",
+    "explanation": "Regular verbs form the past tense by adding -ed. Example: She played tennis."
+  },
+  {
+    "id": "beg_simple_past_02",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "mcq",
+    "question": "Choose the correct form: \"Last week, they ___ football.\"",
+    "options": [
+      "play",
+      "played",
+      "playing"
+    ],
+    "correct_answer": "played",
+    "explanation": "Use the past tense when the sentence refers to a finished time."
+  },
+  {
+    "id": "beg_simple_past_03",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "correction",
+    "question": "Fix: \"He visit his grandma last Sunday.\"",
+    "options": null,
+    "correct_answer": "He visited his grandma last Sunday.",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_simple_past_04",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "fill_blank",
+    "question": "We ___ (watch) a movie last night.",
+    "options": null,
+    "correct_answer": "watched",
+    "explanation": "Use the past tense with finished time words like \"last night\"."
+  },
+  {
+    "id": "beg_simple_past_05",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "rewrite",
+    "question": "Rewrite in past tense: \"She cleans the room an hour ago.\"",
+    "options": null,
+    "correct_answer": "She cleaned the room an hour ago.",
+    "explanation": "Use the past tense with \"ago\". Regular verbs add -ed."
+  },
+  {
+    "id": "beg_simple_past_06",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "mcq",
+    "question": "Which sentence is correct?",
+    "options": [
+      "I studied for the test yesterday.",
+      "I study for the test yesterday.",
+      "I studying for the test yesterday."
+    ],
+    "correct_answer": "I studied for the test yesterday.",
+    "explanation": "Use the past tense when the sentence refers to a finished time."
+  },
+  {
+    "id": "beg_simple_past_07",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "fill_blank",
+    "question": "They ___ (talk) about the trip last week.",
+    "options": null,
+    "correct_answer": "talked",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_simple_past_08",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "correction",
+    "question": "Fix: \"We don't went to the party.\"",
+    "options": null,
+    "correct_answer": "We didn't go to the party.",
+    "explanation": "Use didn't + base verb in the past negative, not the past form twice."
+  },
+  {
+    "id": "beg_simple_past_09",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "short_answer",
+    "question": "Past tense of \"help\": \"They ___ me yesterday.\"",
+    "options": null,
+    "correct_answer": "helped",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_simple_past_10",
+    "level": "beginner",
+    "topic": "simple_past",
+    "type": "mcq",
+    "question": "Choose: \"She ___ her keys at home this morning.\"",
+    "options": [
+      "leave",
+      "left",
+      "leaving"
+    ],
+    "correct_answer": "left",
+    "explanation": "Some verbs are irregular. \"Leave\" becomes \"left\" in the past tense."
+  }
+]

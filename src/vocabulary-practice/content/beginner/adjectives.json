@@ -1,0 +1,124 @@
+[
+  {
+    "id": "beg_adjectives_01",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "mcq",
+    "question": "Which word describes a person who feels good and smiles a lot?",
+    "options": ["happy", "angry", "tired", "hungry"],
+    "correct_answer": "happy",
+    "explanation": "Happy describes a positive feeling. We place it before nouns (a happy child) or after linking verbs (I am happy).",
+    "example_sentence": "She feels happy when she sees her friends."
+  },
+  {
+    "id": "beg_adjectives_02",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "fill_in",
+    "question": "This bag is very ___. I cannot lift it.",
+    "options": null,
+    "correct_answer": "heavy",
+    "explanation": "Heavy means something weighs a lot. It is the opposite of light when we talk about objects.",
+    "example_sentence": "The box is too heavy for one person."
+  },
+  {
+    "id": "beg_adjectives_03",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "match",
+    "question": "Match the adjective \"cold\" to its meaning.",
+    "options": [
+      "Not warm; low temperature",
+      "Very hot",
+      "Very loud"
+    ],
+    "correct_answer": "Not warm; low temperature",
+    "explanation": "Cold describes weather, drinks, or objects with a low temperature. It is common in everyday descriptions.",
+    "example_sentence": "The water in the river is cold today."
+  },
+  {
+    "id": "beg_adjectives_04",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "mcq",
+    "question": "Which word means the opposite of \"old\" for a young child?",
+    "options": ["young", "short", "slow", "weak"],
+    "correct_answer": "young",
+    "explanation": "Young describes someone with few years of age. We also use it for animals and ideas that are new.",
+    "example_sentence": "The young boy learns words quickly."
+  },
+  {
+    "id": "beg_adjectives_05",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "fill_in",
+    "question": "Be ___ when you cross the busy street.",
+    "options": null,
+    "correct_answer": "careful",
+    "explanation": "Careful means paying attention to avoid danger or mistakes. It often appears in advice and warnings.",
+    "example_sentence": "Please be careful on the wet floor."
+  },
+  {
+    "id": "beg_adjectives_06",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "match",
+    "question": "Match the adjective \"easy\" to its meaning.",
+    "options": [
+      "Not difficult to do",
+      "Impossible to finish",
+      "Very expensive"
+    ],
+    "correct_answer": "Not difficult to do",
+    "explanation": "Easy describes tasks you can do without much effort. Teachers often say a lesson is easy when the steps are clear.",
+    "example_sentence": "This exercise is easy for me now."
+  },
+  {
+    "id": "beg_adjectives_07",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "mcq",
+    "question": "Which word describes food that tastes good?",
+    "options": ["delicious", "dangerous", "empty", "broken"],
+    "correct_answer": "delicious",
+    "explanation": "Delicious is a positive word for taste. Use it after linking verbs like \"is\" or \"looks.\"",
+    "example_sentence": "The soup smells delicious."
+  },
+  {
+    "id": "beg_adjectives_08",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "fill_in",
+    "question": "My room is small, but it is very ___.",
+    "options": null,
+    "correct_answer": "clean",
+    "explanation": "Clean means free from dirt. It is a common adjective for rooms, clothes, and streets.",
+    "example_sentence": "She keeps her desk clean every day."
+  },
+  {
+    "id": "beg_adjectives_09",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "match",
+    "question": "Match the adjective \"busy\" to its meaning.",
+    "options": [
+      "Having a lot to do; not free",
+      "Feeling sleepy",
+      "Feeling sick"
+    ],
+    "correct_answer": "Having a lot to do; not free",
+    "explanation": "Busy describes people with many tasks or places with many people. It explains why someone cannot talk long.",
+    "example_sentence": "The shop is busy on Saturday morning."
+  },
+  {
+    "id": "beg_adjectives_10",
+    "level": "beginner",
+    "topic": "adjectives",
+    "type": "mcq",
+    "question": "Which word describes something that costs a lot of money?",
+    "options": ["expensive", "cheap", "free", "empty"],
+    "correct_answer": "expensive",
+    "explanation": "Expensive means high price. Compare it with cheap when you shop or talk about costs.",
+    "example_sentence": "That watch is too expensive for me."
+  }
+]

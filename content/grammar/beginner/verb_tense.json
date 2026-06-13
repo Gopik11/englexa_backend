@@ -1,0 +1,126 @@
+[
+  {
+    "id": "beg_vt_01",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "fill_blank",
+    "question": "Yesterday, I ___ (play) tennis.",
+    "options": null,
+    "correct_answer": "played",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_vt_02",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "mcq",
+    "question": "Choose the correct form: \"Last night, she ___ TV.\"",
+    "options": ["watch", "watched", "watching"],
+    "correct_answer": "watched",
+    "explanation": "Use the past tense when the sentence refers to a finished time."
+  },
+  {
+    "id": "beg_vt_03",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "correction",
+    "question": "Fix: \"We walk to the park yesterday.\"",
+    "options": null,
+    "correct_answer": "We walked to the park yesterday.",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_vt_04",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "fill_blank",
+    "question": "He ___ (work) late last Friday.",
+    "options": null,
+    "correct_answer": "worked",
+    "explanation": "Use the past tense when the sentence refers to a finished time."
+  },
+  {
+    "id": "beg_vt_05",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "rewrite",
+    "question": "Rewrite in past tense: \"They clean the room an hour ago.\"",
+    "options": null,
+    "correct_answer": "They cleaned the room an hour ago.",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_vt_06",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "mcq",
+    "question": "Which sentence is correct?",
+    "options": [
+      "I studied for the test yesterday.",
+      "I study for the test yesterday.",
+      "I studying for the test yesterday."
+    ],
+    "correct_answer": "I studied for the test yesterday.",
+    "explanation": "Use the past tense when the sentence refers to a finished time."
+  },
+  {
+    "id": "beg_vt_07",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "fill_blank",
+    "question": "She ___ (visit) her friend last week.",
+    "options": null,
+    "correct_answer": "visited",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_vt_08",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "correction",
+    "question": "Fix: \"He play soccer last Sunday.\"",
+    "options": null,
+    "correct_answer": "He played soccer last Sunday.",
+    "explanation": "Use the past tense when the sentence refers to a finished time."
+  },
+  {
+    "id": "beg_vt_09",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "short_answer",
+    "question": "Write the past tense of \"help\": \"They ___ me yesterday.\"",
+    "options": null,
+    "correct_answer": "helped",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_vt_10",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "fill_blank",
+    "question": "We ___ (talk) about the movie last night.",
+    "options": null,
+    "correct_answer": "talked",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_vt_11",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "mcq",
+    "question": "Choose the correct past tense of \"listen\":",
+    "options": ["listened", "listen", "listening"],
+    "correct_answer": "listened",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  },
+  {
+    "id": "beg_vt_12",
+    "level": "beginner",
+    "topic": "verb_tense",
+    "type": "correction",
+    "question": "Fix: \"I finish my homework two days ago.\"",
+    "options": null,
+    "correct_answer": "I finished my homework two days ago.",
+    "explanation": "Regular verbs form the past tense by adding -ed."
+  }
+]

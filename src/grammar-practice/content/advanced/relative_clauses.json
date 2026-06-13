@@ -1,0 +1,110 @@
+[
+  {
+    "id": "adv_relative_clauses_01",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "fill_blank",
+    "question": "The woman ___ lives next door is a doctor.",
+    "options": null,
+    "correct_answer": "who",
+    "explanation": "Use \"who\" for people in defining relative clauses."
+  },
+  {
+    "id": "adv_relative_clauses_02",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "mcq",
+    "question": "Choose: \"This is the book ___ I recommended.\"",
+    "options": [
+      "who",
+      "which",
+      "where"
+    ],
+    "correct_answer": "which",
+    "explanation": "Use \"which\" or \"that\" for things."
+  },
+  {
+    "id": "adv_relative_clauses_03",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "correction",
+    "question": "Fix: \"The man which called you is my uncle.\"",
+    "options": null,
+    "correct_answer": "The man who called you is my uncle.",
+    "explanation": "Use \"who\" for people, not \"which\"."
+  },
+  {
+    "id": "adv_relative_clauses_04",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "rewrite",
+    "question": "Combine: \"I met a student. She speaks five languages.\"",
+    "options": null,
+    "correct_answer": "I met a student who speaks five languages.",
+    "explanation": "Relative clauses add information about a noun."
+  },
+  {
+    "id": "adv_relative_clauses_05",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "fill_blank",
+    "question": "That's the restaurant ___ we had dinner.",
+    "options": null,
+    "correct_answer": "where",
+    "explanation": "Use \"where\" for places."
+  },
+  {
+    "id": "adv_relative_clauses_06",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "mcq",
+    "question": "Which is correct?",
+    "options": [
+      "The person to whom I spoke was helpful.",
+      "The person who I spoke to was helpful.",
+      "Both are acceptable in modern English."
+    ],
+    "correct_answer": "Both are acceptable in modern English.",
+    "explanation": "Formal English uses \"whom\"; everyday English often ends with a preposition."
+  },
+  {
+    "id": "adv_relative_clauses_07",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "correction",
+    "question": "Fix: \"The reason because he left is unclear.\"",
+    "options": null,
+    "correct_answer": "The reason why he left is unclear.",
+    "explanation": "Use \"why\" (or \"that\") after \"reason\", not \"because\"."
+  },
+  {
+    "id": "adv_relative_clauses_08",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "short_answer",
+    "question": "Complete: \"The film ___ we watched was excellent.\"",
+    "options": null,
+    "correct_answer": "that",
+    "explanation": "Use \"that\" or \"which\" for things. \"That\" is common in defining clauses."
+  },
+  {
+    "id": "adv_relative_clauses_09",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "rewrite",
+    "question": "Combine with a non-defining clause: \"My brother, he lives in Canada, is visiting.\"",
+    "options": null,
+    "correct_answer": "My brother, who lives in Canada, is visiting.",
+    "explanation": "Non-defining clauses use commas and \"who\" for extra information."
+  },
+  {
+    "id": "adv_relative_clauses_10",
+    "level": "advanced",
+    "topic": "relative_clauses",
+    "type": "fill_blank",
+    "question": "The day ___ we met was sunny.",
+    "options": null,
+    "correct_answer": "when",
+    "explanation": "Use \"when\" for time expressions in relative clauses."
+  }
+]

@@ -1,0 +1,124 @@
+[
+  {
+    "id": "beg_everyday_phrases_01",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "mcq",
+    "question": "What do you say when someone gives you a gift?",
+    "options": ["Thank you", "Excuse me", "Good night", "See you"],
+    "correct_answer": "Thank you",
+    "explanation": "Thank you shows gratitude in a warm, polite way. It is one of the first phrases learners need in daily conversation.",
+    "example_sentence": "Thank you for the lovely card."
+  },
+  {
+    "id": "beg_everyday_phrases_02",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "fill_in",
+    "question": "___! Nice to meet you.",
+    "options": null,
+    "correct_answer": "Hello",
+    "explanation": "Hello is a friendly greeting when you meet someone. You can use it in formal and informal situations.",
+    "example_sentence": "Hello, I am Maria from Spain."
+  },
+  {
+    "id": "beg_everyday_phrases_03",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "match",
+    "question": "Match the phrase \"How are you?\" to its purpose.",
+    "options": [
+      "To ask about someone's well-being",
+      "To ask for the time",
+      "To ask for directions"
+    ],
+    "correct_answer": "To ask about someone's well-being",
+    "explanation": "How are you? is a common social question after hello. A simple answer is \"I'm fine, thanks.\"",
+    "example_sentence": "Hi Tom, how are you today?"
+  },
+  {
+    "id": "beg_everyday_phrases_04",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "mcq",
+    "question": "Which phrase do you use when you want to pass someone in a crowded space?",
+    "options": ["Excuse me", "Congratulations", "Good luck", "Well done"],
+    "correct_answer": "Excuse me",
+    "explanation": "Excuse me is polite when you need attention or need to move past someone. It softens the request.",
+    "example_sentence": "Excuse me, is this seat free?"
+  },
+  {
+    "id": "beg_everyday_phrases_05",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "fill_in",
+    "question": "I am sorry, I do not ___.",
+    "options": null,
+    "correct_answer": "understand",
+    "explanation": "I don't understand tells the listener you need help or a slower explanation. It is honest and useful in class.",
+    "example_sentence": "Sorry, I don't understand this word."
+  },
+  {
+    "id": "beg_everyday_phrases_06",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "match",
+    "question": "Match the phrase \"See you later\" to its meaning.",
+    "options": [
+      "A friendly way to say goodbye for a short time",
+      "A way to order food",
+      "A way to introduce yourself"
+    ],
+    "correct_answer": "A friendly way to say goodbye for a short time",
+    "explanation": "See you later suggests you will meet again soon. It is casual and warm between friends.",
+    "example_sentence": "I have to go now. See you later!"
+  },
+  {
+    "id": "beg_everyday_phrases_07",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "mcq",
+    "question": "What do you say when you meet someone for the first time?",
+    "options": ["Nice to meet you", "Good night", "Happy birthday", "Take care"],
+    "correct_answer": "Nice to meet you",
+    "explanation": "Nice to meet you follows introductions. The reply is often \"Nice to meet you too.\"",
+    "example_sentence": "Nice to meet you. Welcome to our class."
+  },
+  {
+    "id": "beg_everyday_phrases_08",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "fill_in",
+    "question": "Could you ___ that, please?",
+    "options": null,
+    "correct_answer": "repeat",
+    "explanation": "Could you repeat that? asks someone to say something again. It is polite and very common in language learning.",
+    "example_sentence": "Could you repeat the question, please?"
+  },
+  {
+    "id": "beg_everyday_phrases_09",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "match",
+    "question": "Match the phrase \"You're welcome\" to its use.",
+    "options": [
+      "A polite reply after \"thank you\"",
+      "A greeting in the morning",
+      "A way to apologise"
+    ],
+    "correct_answer": "A polite reply after \"thank you\"",
+    "explanation": "You're welcome completes the thanks exchange. Other options include \"No problem\" or \"My pleasure.\"",
+    "example_sentence": "Thanks for your help. — You're welcome."
+  },
+  {
+    "id": "beg_everyday_phrases_10",
+    "level": "beginner",
+    "topic": "everyday_phrases",
+    "type": "mcq",
+    "question": "Which phrase means you are leaving and wish someone a good evening?",
+    "options": ["Good night", "Good morning", "Good afternoon", "Good job"],
+    "correct_answer": "Good night",
+    "explanation": "Good night is said when someone is going to bed or ending the day. It is warmer than a plain goodbye.",
+    "example_sentence": "Good night. Sleep well."
+  }
+]

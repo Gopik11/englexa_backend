@@ -1,0 +1,114 @@
+[
+  {
+    "id": "beg_simple_present_01",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "fill_blank",
+    "question": "She ___ (walk) to school every day.",
+    "options": null,
+    "correct_answer": "walks",
+    "explanation": "Add -s to the verb with he/she/it in the simple present. Example: He walks to work."
+  },
+  {
+    "id": "beg_simple_present_02",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "mcq",
+    "question": "Choose the correct form: \"They ___ coffee in the morning.\"",
+    "options": [
+      "drink",
+      "drinks",
+      "drinking"
+    ],
+    "correct_answer": "drink",
+    "explanation": "Use the base verb with they/we/I/you in the simple present."
+  },
+  {
+    "id": "beg_simple_present_03",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "correction",
+    "question": "Fix: \"He go to the gym on Mondays.\"",
+    "options": null,
+    "correct_answer": "He goes to the gym on Mondays.",
+    "explanation": "Add -s with he/she/it in the simple present."
+  },
+  {
+    "id": "beg_simple_present_04",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "fill_blank",
+    "question": "I ___ (study) English three times a week.",
+    "options": null,
+    "correct_answer": "study",
+    "explanation": "Use the base verb with I/you/we/they. Example: We study together."
+  },
+  {
+    "id": "beg_simple_present_05",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "rewrite",
+    "question": "Rewrite correctly: \"My brother watch TV every evening.\"",
+    "options": null,
+    "correct_answer": "My brother watches TV every evening.",
+    "explanation": "Add -es after verbs ending in ch/sh/s/x with he/she/it."
+  },
+  {
+    "id": "beg_simple_present_06",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "mcq",
+    "question": "Which sentence is correct?",
+    "options": [
+      "She doesn't like spicy food.",
+      "She don't like spicy food.",
+      "She not like spicy food."
+    ],
+    "correct_answer": "She doesn't like spicy food.",
+    "explanation": "Use doesn't + base verb with he/she/it in negative simple present."
+  },
+  {
+    "id": "beg_simple_present_07",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "fill_blank",
+    "question": "The shop ___ (open) at 9 AM.",
+    "options": null,
+    "correct_answer": "opens",
+    "explanation": "Add -s with he/she/it for facts and routines. Example: The train leaves at noon."
+  },
+  {
+    "id": "beg_simple_present_08",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "correction",
+    "question": "Fix: \"Do she live here?\"",
+    "options": null,
+    "correct_answer": "Does she live here?",
+    "explanation": "Use does (not do) with he/she/it in questions."
+  },
+  {
+    "id": "beg_simple_present_09",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "short_answer",
+    "question": "Complete: \"We ___ (play) soccer on Saturdays.\"",
+    "options": null,
+    "correct_answer": "play",
+    "explanation": "Use the base verb with we in the simple present."
+  },
+  {
+    "id": "beg_simple_present_10",
+    "level": "beginner",
+    "topic": "simple_present",
+    "type": "mcq",
+    "question": "Choose: \"It ___ a lot in winter.\"",
+    "options": [
+      "rain",
+      "rains",
+      "raining"
+    ],
+    "correct_answer": "rains",
+    "explanation": "Add -s with it/he/she for general truths and routines."
+  }
+]

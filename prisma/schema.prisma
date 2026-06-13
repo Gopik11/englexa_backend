@@ -1,0 +1,424 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  LEARNER
+  ADMIN
+}
+
+enum AgeGroup {
+  KID
+  TEEN
+  ADULT
+}
+
+enum Level {
+  A1
+  A2
+  B1
+  B2
+}
+
+enum ExerciseType {
+  MULTIPLE_CHOICE
+  FILL_IN_THE_BLANK
+  REORDER_SENTENCE
+  PICTURE_WORD_MATCH
+}
+
+enum ProgressStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum AiUsageType {
+  TUTOR
+  EVALUATION
+  PRONUNCIATION
+}
+
+enum MissionType {
+  WRITING
+  VOCAB
+  GRAMMAR
+  SPEAKING_STUB
+}
+
+enum PlanType {
+  FREE
+  PREMIUM
+}
+
+model User {
+  id            String    @id @default(uuid()) @db.Uuid
+  email         String    @unique
+  passwordHash  String    @map("password_hash")
+  role          UserRole  @default(LEARNER)
+  ageGroup      AgeGroup? @map("age_group")
+  level         Level     @default(A1)
+  country       String?
+  planType      PlanType  @default(FREE) @map("plan_type")
+  planExpiresAt DateTime? @map("plan_expires_at")
+  xp            Int       @default(0)
+  streak        Int       @default(0)
+  lastActiveAt  DateTime? @map("last_active_at")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  progress           Progress[]
+  aiUsage            AIUsage[]
+  missionCompletions MissionCompletion[]
+  grammarConceptProgress GrammarConceptProgress[]
+  skillConceptMastery    SkillConceptMastery[]
+  adaptiveDifficulty     AdaptiveDifficulty[]
+  errorPatterns          ErrorPattern[]
+  miniLessonCompletions  MiniLessonCompletion[]
+  conversationSessions   ConversationSession[]
+  srsReviews             SrsReview[]
+  dailyChallenges        DailyChallenge[]
+  userBadges             UserBadge[]
+  userAchievements       UserAchievement[]
+  analyticsSnapshots     AnalyticsSnapshot[]
+  practiceStats          UserPracticeStats?
+  dailyActivity          UserDailyActivity[]
+
+  @@map("users")
+}
+
+model Lesson {
+  id          String   @id @default(uuid()) @db.Uuid
+  level       Level
+  title       String
+  description String
+  contentJson Json     @map("content_json")
+  isPublished Boolean  @default(false) @map("is_published")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  exercises Exercise[]
+  progress  Progress[]
+
+  @@index([isPublished, level])
+  @@map("lessons")
+}
+
+model Exercise {
+  id          String       @id @default(uuid()) @db.Uuid
+  lessonId    String       @map("lesson_id") @db.Uuid
+  type        ExerciseType
+  prompt      String
+  optionsJson Json         @map("options_json")
+  answerJson  Json         @map("answer_json")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@index([lessonId])
+  @@map("exercises")
+}
+
+model Progress {
+  id            String         @id @default(uuid()) @db.Uuid
+  userId        String         @map("user_id") @db.Uuid
+  lessonId      String         @map("lesson_id") @db.Uuid
+  status        ProgressStatus @default(NOT_STARTED)
+  score         Int            @default(0)
+  lastAttemptAt DateTime?      @map("last_attempt_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@index([userId])
+  @@map("progress")
+}
+
+model AIUsage {
+  id          String      @id @default(uuid()) @db.Uuid
+  userId      String      @map("user_id") @db.Uuid
+  type        AiUsageType
+  count       Int         @default(0)
+  periodStart DateTime    @map("period_start")
+  periodEnd   DateTime    @map("period_end")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, type, periodStart])
+  @@map("ai_usage")
+}
+
+model DailyMission {
+  id             String      @id @default(uuid()) @db.Uuid
+  type           MissionType
+  prompt         String
+  level          Level
+  expectedAnswer String?     @map("expected_answer")
+  createdAt      DateTime    @default(now()) @map("created_at")
+
+  completions MissionCompletion[]
+
+  @@index([level])
+  @@map("daily_missions")
+}
+
+model MissionCompletion {
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @map("user_id") @db.Uuid
+  missionId   String   @map("mission_id") @db.Uuid
+  missionDate DateTime @map("mission_date") @db.Date
+  userAnswer  String   @map("user_answer")
+  score       Int
+  feedback    String
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user    User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mission DailyMission @relation(fields: [missionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, missionDate])
+  @@index([userId])
+  @@map("mission_completions")
+}
+
+model GrammarConceptProgress {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @map("user_id") @db.Uuid
+  concept      String
+  correctCount Int      @default(0) @map("correct_count")
+  mistakeCount Int      @default(0) @map("mistake_count")
+  masteryScore Int      @default(0) @map("mastery_score")
+  xpEarned     Int      @default(0) @map("xp_earned")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, concept])
+  @@index([userId])
+  @@index([userId, masteryScore])
+  @@map("grammar_concept_progress")
+}
+
+model SkillConceptMastery {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @map("user_id") @db.Uuid
+  module       String
+  concept      String
+  correctCount Int      @default(0) @map("correct_count")
+  mistakeCount Int      @default(0) @map("mistake_count")
+  masteryScore Int      @default(0) @map("mastery_score")
+  timeSpentMs  Int      @default(0) @map("time_spent_ms")
+  difficulty   Int      @default(1)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, module, concept])
+  @@index([userId, module])
+  @@index([userId, concept])
+  @@index([userId, masteryScore])
+  @@map("skill_concept_mastery")
+}
+
+model UserPracticeStats {
+  userId              String   @id @map("user_id") @db.Uuid
+  grammarCorrect      Int      @default(0) @map("grammar_correct")
+  vocabularyCorrect   Int      @default(0) @map("vocabulary_correct")
+  readingCompleted    Int      @default(0) @map("reading_completed")
+  speakingSubmissions Int      @default(0) @map("speaking_submissions")
+  writingSubmissions  Int      @default(0) @map("writing_submissions")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_practice_stats")
+}
+
+model AdaptiveDifficulty {
+  id              String   @id @default(uuid()) @db.Uuid
+  userId          String   @map("user_id") @db.Uuid
+  module          String
+  concept         String
+  attempts        Int      @default(0)
+  correct         Int      @default(0)
+  incorrect       Int      @default(0)
+  streak          Int      @default(0)
+  difficultyLevel Int      @default(1) @map("difficulty_level")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, module, concept])
+  @@index([userId, module])
+  @@map("adaptive_difficulty")
+}
+
+model ErrorPattern {
+  id         String   @id @default(uuid()) @db.Uuid
+  userId     String   @map("user_id") @db.Uuid
+  module     String
+  concept    String
+  errorType  String   @map("error_type")
+  count      Int      @default(0)
+  lastSeenAt DateTime @map("last_seen")
+  examples   String[] @default([])
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, module, concept, errorType])
+  @@index([userId, module])
+  @@index([userId, count])
+  @@map("error_patterns")
+}
+
+model MiniLessonCompletion {
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @map("user_id") @db.Uuid
+  lessonId    String   @map("lesson_id")
+  concept     String
+  module      String
+  completedAt DateTime @default(now()) @map("completed_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@index([userId, module])
+  @@map("mini_lesson_completions")
+}
+
+model ConversationSession {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  status    String   @default("active")
+  messages  Json     @default("[]")
+  analysis  Json     @default("{}")
+  summary   String   @default("")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+  @@index([userId, createdAt])
+  @@map("conversation_sessions")
+}
+
+model SrsReview {
+  id             String   @id @default(uuid()) @db.Uuid
+  userId         String   @map("user_id") @db.Uuid
+  module         String
+  concept        String
+  lastReviewedAt DateTime @map("last_reviewed")
+  nextReviewAt   DateTime @map("next_review")
+  interval       Int      @default(1)
+  easeFactor     Float    @default(2.0) @map("ease_factor")
+  reviewHistory  Json     @default("[]") @map("review_history")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, module, concept])
+  @@index([userId, nextReviewAt])
+  @@index([userId, module, nextReviewAt])
+  @@map("srs_reviews")
+}
+
+model DailyChallenge {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  date      DateTime @db.Date
+  challenge Json
+  completed Boolean  @default(false)
+  score     Int?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@index([userId, date])
+  @@map("daily_challenges")
+}
+
+model UserBadge {
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @map("user_id") @db.Uuid
+  badgeId     String   @map("badge_id")
+  name        String
+  description String
+  earnedAt    DateTime @default(now()) @map("earned_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeId])
+  @@index([userId])
+  @@map("user_badges")
+}
+
+model UserAchievement {
+  id            String    @id @default(uuid()) @db.Uuid
+  userId        String    @map("user_id") @db.Uuid
+  achievementId String    @map("achievement_id")
+  name          String
+  description   String
+  progress      Int       @default(0)
+  goal          Int
+  earnedAt      DateTime? @map("earned_at")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementId])
+  @@index([userId])
+  @@map("user_achievements")
+}
+
+model AnalyticsSnapshot {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @map("user_id") @db.Uuid
+  period       String
+  snapshotDate DateTime @map("snapshot_date") @db.Date
+  data         Json
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, period, snapshotDate])
+  @@index([userId, period, snapshotDate])
+  @@map("analytics_snapshots")
+}
+
+model UserDailyActivity {
+  id            String   @id @default(uuid()) @db.Uuid
+  userId        String   @map("user_id") @db.Uuid
+  activityDate  DateTime @map("activity_date") @db.Date
+  minutesSpent  Int      @default(0) @map("minutes_spent")
+  activityCount Int      @default(0) @map("activity_count")
+  modulesUsed   String[] @default([]) @map("modules_used")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, activityDate])
+  @@index([userId, activityDate])
+  @@map("user_daily_activity")
+}

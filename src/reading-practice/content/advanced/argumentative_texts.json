@@ -1,0 +1,254 @@
+[
+  {
+    "id": "adv_argumentative_texts_01",
+    "level": "advanced",
+    "topic": "argumentative_texts",
+    "title": "Should Social Media Have Age Limits?",
+    "passage": "Proponents of stricter age limits argue that social platforms are designed to maximize engagement, not adolescent well-being. Research links heavy early use to sleep disruption, anxiety, and reduced face-to-face interaction. Requiring verified age checks, they claim, would give parents and regulators a tool that current honor systems lack. Opponents counter that verification threatens privacy and excludes young people from legitimate communities, from study groups to activist networks. They also note that bans often push activity onto less regulated sites. A balanced policy might combine delayed access for non-essential features, stronger default privacy settings, and digital literacy education rather than a simplistic ban.",
+    "questions": [
+      {
+        "id": "adv_argumentative_texts_01_q1",
+        "type": "mcq",
+        "question": "What is one argument made by proponents of stricter age limits?",
+        "options": [
+          "Platforms are designed mainly for adolescent well-being",
+          "Heavy early use is linked to sleep disruption and anxiety",
+          "Age checks would eliminate all online risk",
+          "Young people do not use social media for study groups"
+        ],
+        "correct_answer": "Heavy early use is linked to sleep disruption and anxiety",
+        "explanation": "Proponents cite research connecting heavy early use to sleep problems, anxiety, and less in-person contact. They use these harms to justify stronger limits."
+      },
+      {
+        "id": "adv_argumentative_texts_01_q2",
+        "type": "short_answer",
+        "question": "What concern do opponents raise about age verification?",
+        "options": null,
+        "correct_answer": "privacy",
+        "explanation": "Opponents argue that verification threatens privacy and can exclude young people from useful communities. They worry bans may cause more harm than good."
+      },
+      {
+        "id": "adv_argumentative_texts_01_q3",
+        "type": "mcq",
+        "question": "What balanced policy does the author suggest instead of a simplistic ban?",
+        "options": [
+          "Unlimited access for all ages",
+          "Delayed access, stronger privacy defaults, and digital literacy education",
+          "Government ownership of all platforms",
+          "Removing all activist content"
+        ],
+        "correct_answer": "Delayed access, stronger privacy defaults, and digital literacy education",
+        "explanation": "The author proposes a middle path: delay some features, improve default privacy, and teach digital literacy. This goes beyond an all-or-nothing ban."
+      }
+    ]
+  },
+  {
+    "id": "adv_argumentative_texts_02",
+    "level": "advanced",
+    "topic": "argumentative_texts",
+    "title": "The Case for a Four-Day Work Week",
+    "passage": "Advocates of the four-day work week claim that reducing hours without cutting pay can raise productivity by forcing teams to eliminate low-value meetings and distractions. Pilot programs in several countries report lower burnout and stable or improved output. Skeptics warn that customer-facing industries cannot simply close an extra day without service gaps. They also fear that employers will quietly increase daily workloads, turning a humane reform into compressed stress. The strongest evidence so far comes from knowledge sectors with flexible deadlines, not from hospitals or retail floors. Policy, therefore, should allow experimentation while protecting workers from hidden intensification.",
+    "questions": [
+      {
+        "id": "adv_argumentative_texts_02_q1",
+        "type": "mcq",
+        "question": "Why do advocates believe a four-day week can raise productivity?",
+        "options": [
+          "Because employees work longer daily shifts",
+          "Because teams eliminate low-value meetings and distractions",
+          "Because customers demand fewer services",
+          "Because pay is automatically reduced"
+        ],
+        "correct_answer": "Because teams eliminate low-value meetings and distractions",
+        "explanation": "Advocates argue that shorter weeks push teams to cut wasteful meetings and distractions. That focus, they say, can maintain or improve output."
+      },
+      {
+        "id": "adv_argumentative_texts_02_q2",
+        "type": "short_answer",
+        "question": "What positive outcome have pilot programs reported besides stable output?",
+        "options": null,
+        "correct_answer": "lower burnout",
+        "explanation": "Pilot programs report lower burnout along with stable or improved productivity. Reduced exhaustion is a key benefit cited in the passage."
+      },
+      {
+        "id": "adv_argumentative_texts_02_q3",
+        "type": "mcq",
+        "question": "What is one skeptic's concern?",
+        "options": [
+          "Employees will refuse to work at all",
+          "Customer-facing industries may face service gaps",
+          "Meetings will become longer forever",
+          "Governments will ban retail work"
+        ],
+        "correct_answer": "Customer-facing industries may face service gaps",
+        "explanation": "Skeptics note that hospitals, retail, and similar sectors cannot close an extra day without affecting service. Not every industry fits the pilot model."
+      },
+      {
+        "id": "adv_argumentative_texts_02_q4",
+        "type": "short_answer",
+        "question": "What should policy protect workers from, according to the author?",
+        "options": null,
+        "correct_answer": "hidden intensification",
+        "explanation": "The author warns that employers might increase daily workloads quietly. Policy should allow experiments while guarding against this hidden intensification."
+      }
+    ]
+  },
+  {
+    "id": "adv_argumentative_texts_03",
+    "level": "advanced",
+    "topic": "argumentative_texts",
+    "title": "Universal Basic Income: Promise and Peril",
+    "passage": "Universal Basic Income (UBI) proposes regular cash payments to all citizens, regardless of employment status. Supporters say it simplifies welfare bureaucracy, cushions automation shocks, and recognizes unpaid care work. Critics argue that unconditional payments may reduce labor supply or fuel inflation if funded poorly. Economic experiments from Finland to Kenya show mixed results: improved mental health and modest entrepreneurship in some cases, but no universal surge in joblessness. The decisive question is funding—whether UBI replaces existing programs or stacks atop them. Without transparent financing and gradual rollout, UBI risks becoming a slogan that polarizes debate instead of reducing poverty.",
+    "questions": [
+      {
+        "id": "adv_argumentative_texts_03_q1",
+        "type": "mcq",
+        "question": "What does UBI propose?",
+        "options": [
+          "Payments only to unemployed citizens",
+          "Regular cash payments to all citizens regardless of employment",
+          "Free housing for high earners",
+          "Tax breaks for large corporations"
+        ],
+        "correct_answer": "Regular cash payments to all citizens regardless of employment",
+        "explanation": "The passage defines UBI as regular cash payments to all citizens, employed or not. That universality distinguishes it from targeted welfare."
+      },
+      {
+        "id": "adv_argumentative_texts_03_q2",
+        "type": "short_answer",
+        "question": "Name one benefit supporters attribute to UBI.",
+        "options": null,
+        "correct_answer": "simplifies welfare bureaucracy",
+        "explanation": "Supporters say UBI simplifies bureaucracy, cushions automation, and values unpaid care. Any of these benefits would answer the question correctly."
+      },
+      {
+        "id": "adv_argumentative_texts_03_q3",
+        "type": "mcq",
+        "question": "What do critics fear may happen if UBI is funded poorly?",
+        "options": [
+          "Immediate elimination of all taxes",
+          "Reduced labor supply or inflation",
+          "Universal job creation",
+          "Lower mental health across society"
+        ],
+        "correct_answer": "Reduced labor supply or inflation",
+        "explanation": "Critics worry that poorly funded UBI could shrink labor supply or raise inflation. They question whether unconditional payments are sustainable."
+      },
+      {
+        "id": "adv_argumentative_texts_03_q4",
+        "type": "short_answer",
+        "question": "What positive outcome appeared in some economic experiments?",
+        "options": null,
+        "correct_answer": "improved mental health",
+        "explanation": "Experiments in Finland and Kenya showed mixed results, including improved mental health and modest entrepreneurship in some cases."
+      },
+      {
+        "id": "adv_argumentative_texts_03_q5",
+        "type": "mcq",
+        "question": "What does the author call the decisive question about UBI?",
+        "options": [
+          "Whether it uses digital currency",
+          "How it is funded",
+          "Which countries invented it",
+          "Whether celebrities support it"
+        ],
+        "correct_answer": "How it is funded",
+        "explanation": "The author states that funding is the decisive question—especially whether UBI replaces or adds to existing programs. Financing shapes whether the idea works in practice."
+      }
+    ]
+  },
+  {
+    "id": "adv_argumentative_texts_04",
+    "level": "advanced",
+    "topic": "argumentative_texts",
+    "title": "Banning Single-Use Plastics",
+    "passage": "Environmental groups urge governments to ban single-use plastics such as straws, bags, and food wrappers. They point to ocean pollution and microplastics detected in blood samples. Industry lobbyists respond that alternatives often have higher carbon footprints unless reuse systems exist. They also argue that abrupt bans burden small restaurants already recovering from economic shocks. Evidence from jurisdictions with phased restrictions suggests that combination policies work best: bans on items with ready substitutes, fees that encourage reuse, and investment in compostable infrastructure where scientifically sound. The argument is not whether plastic waste matters—it clearly does—but how quickly society can change without unfairly shifting costs onto the least prepared businesses.",
+    "questions": [
+      {
+        "id": "adv_argumentative_texts_04_q1",
+        "type": "mcq",
+        "question": "What evidence do environmental groups cite?",
+        "options": [
+          "Lower food prices",
+          "Ocean pollution and microplastics in blood",
+          "Increased plastic jobs",
+          "Improved air travel safety"
+        ],
+        "correct_answer": "Ocean pollution and microplastics in blood",
+        "explanation": "Environmental groups highlight ocean pollution and microplastics found in blood samples. These harms support calls for banning single-use plastics."
+      },
+      {
+        "id": "adv_argumentative_texts_04_q2",
+        "type": "short_answer",
+        "question": "What concern do industry lobbyists raise about alternatives?",
+        "options": null,
+        "correct_answer": "higher carbon footprints",
+        "explanation": "Lobbyists argue that substitutes may have higher carbon footprints unless reuse systems exist. They want policy to account for full environmental impact."
+      },
+      {
+        "id": "adv_argumentative_texts_04_q3",
+        "type": "mcq",
+        "question": "What approach does evidence from phased restrictions support?",
+        "options": [
+          "Doing nothing until perfect technology exists",
+          "Combination policies with bans, fees, and infrastructure investment",
+          "Banning all plastic immediately worldwide",
+          "Replacing all packaging with glass only"
+        ],
+        "correct_answer": "Combination policies with bans, fees, and infrastructure investment",
+        "explanation": "The author reports that phased restrictions work best when bans, reuse fees, and sound infrastructure are combined. A single blunt ban is less effective alone."
+      }
+    ]
+  },
+  {
+    "id": "adv_argumentative_texts_05",
+    "level": "advanced",
+    "topic": "argumentative_texts",
+    "title": "AI in Education: Tool or Threat?",
+    "passage": "Some educators welcome AI tutors that adapt explanations to each student's pace, potentially reducing achievement gaps in overcrowded classrooms. Others fear that unchecked use will undermine academic integrity and replace the human judgment that good teaching requires. A useful distinction is assistive versus substitutive deployment: AI can draft practice questions or summarize readings, but final evaluation should remain transparent and human-led. Schools that ban tools outright may push students toward hidden use, while schools that embrace them without guidelines invite plagiarism scandals. The pragmatic path trains teachers to set clear boundaries, redesign assignments toward process skills, and audit tools for bias before classroom adoption.",
+    "questions": [
+      {
+        "id": "adv_argumentative_texts_05_q1",
+        "type": "mcq",
+        "question": "What potential benefit do some educators see in AI tutors?",
+        "options": [
+          "Eliminating all homework",
+          "Reducing achievement gaps through adaptive explanations",
+          "Replacing teachers entirely",
+          "Removing the need for classrooms"
+        ],
+        "correct_answer": "Reducing achievement gaps through adaptive explanations",
+        "explanation": "Supporters believe AI tutors can adapt to each student's pace and help crowded classrooms. They see a chance to narrow achievement gaps."
+      },
+      {
+        "id": "adv_argumentative_texts_05_q2",
+        "type": "short_answer",
+        "question": "What distinction does the author draw about AI deployment?",
+        "options": null,
+        "correct_answer": "assistive versus substitutive",
+        "explanation": "The author distinguishes assistive uses, like practice questions, from substitutive ones that replace human judgment. That line helps guide responsible adoption."
+      },
+      {
+        "id": "adv_argumentative_texts_05_q3",
+        "type": "mcq",
+        "question": "What risk comes from banning AI tools outright?",
+        "options": [
+          "Students will stop using technology forever",
+          "Students may use tools in hidden ways",
+          "Teachers will lose their licenses",
+          "Schools will receive more funding"
+        ],
+        "correct_answer": "Students may use tools in hidden ways",
+        "explanation": "The author warns that total bans can drive students to use AI secretly. Hidden use is harder to guide than transparent, bounded use."
+      },
+      {
+        "id": "adv_argumentative_texts_05_q4",
+        "type": "short_answer",
+        "question": "Name one element of the pragmatic path the author recommends.",
+        "options": null,
+        "correct_answer": "redesign assignments toward process skills",
+        "explanation": "The pragmatic path includes clear boundaries, assignment redesign, and bias audits. Any of these steps would count as part of the recommended approach."
+      }
+    ]
+  }
+]

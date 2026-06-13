@@ -1,0 +1,114 @@
+[
+  {
+    "id": "adv_conditionals_01",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "mcq",
+    "question": "Choose (zero conditional): \"If you heat ice, it ___.\"",
+    "options": [
+      "will melt",
+      "melts",
+      "melted"
+    ],
+    "correct_answer": "melts",
+    "explanation": "Use present simple in both clauses for general truths."
+  },
+  {
+    "id": "adv_conditionals_02",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "fill_blank",
+    "question": "If it rains tomorrow, we ___ (cancel) the picnic.",
+    "options": null,
+    "correct_answer": "will cancel",
+    "explanation": "First conditional: if + present, will + base verb for real future possibilities."
+  },
+  {
+    "id": "adv_conditionals_03",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "correction",
+    "question": "Fix: \"If I would have time, I would travel more.\"",
+    "options": null,
+    "correct_answer": "If I had time, I would travel more.",
+    "explanation": "Second conditional uses if + past simple, would + base verb."
+  },
+  {
+    "id": "adv_conditionals_04",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "rewrite",
+    "question": "Rewrite (third conditional): \"I didn't study, so I failed.\"",
+    "options": null,
+    "correct_answer": "If I had studied, I would have passed.",
+    "explanation": "Third conditional: if + past perfect, would have + past participle."
+  },
+  {
+    "id": "adv_conditionals_05",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "mcq",
+    "question": "Choose: \"If she ___ earlier, she wouldn't miss the train.\"",
+    "options": [
+      "leaves",
+      "left",
+      "had left"
+    ],
+    "correct_answer": "left",
+    "explanation": "Second conditional uses past simple in the if-clause."
+  },
+  {
+    "id": "adv_conditionals_06",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "fill_blank",
+    "question": "Unless you ___ (hurry), you'll be late.",
+    "options": null,
+    "correct_answer": "hurry",
+    "explanation": "\"Unless\" means \"if not\". Use present simple in first conditional."
+  },
+  {
+    "id": "adv_conditionals_07",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "correction",
+    "question": "Fix: \"If I will see him, I tell him.\"",
+    "options": null,
+    "correct_answer": "If I see him, I will tell him.",
+    "explanation": "Do not use \"will\" in the if-clause of first conditional."
+  },
+  {
+    "id": "adv_conditionals_08",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "short_answer",
+    "question": "Complete (second conditional): \"If I ___ (be) you, I'd accept the offer.\"",
+    "options": null,
+    "correct_answer": "were",
+    "explanation": "Use \"were\" for all persons in formal second conditional with \"to be\"."
+  },
+  {
+    "id": "adv_conditionals_09",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "mcq",
+    "question": "Which expresses an unreal past situation?",
+    "options": [
+      "If I had known, I would have helped.",
+      "If I know, I will help.",
+      "If I knew, I would help."
+    ],
+    "correct_answer": "If I had known, I would have helped.",
+    "explanation": "Third conditional refers to unreal past situations."
+  },
+  {
+    "id": "adv_conditionals_10",
+    "level": "advanced",
+    "topic": "conditionals",
+    "type": "rewrite",
+    "question": "Rewrite with \"provided that\": \"You can go out if you finish your homework.\"",
+    "options": null,
+    "correct_answer": "You can go out provided that you finish your homework.",
+    "explanation": "\"Provided that\" works like \"if\" for conditions."
+  }
+]

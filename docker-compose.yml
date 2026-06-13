@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: englexa-postgres
+    restart: unless-stopped
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: englexa
+    volumes:
+      - englexa_pg_data:/var/lib/postgresql/data
+
+volumes:
+  englexa_pg_data:

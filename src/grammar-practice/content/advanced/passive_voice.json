@@ -1,0 +1,114 @@
+[
+  {
+    "id": "adv_passive_voice_01",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "mcq",
+    "question": "Choose the passive form: \"They build houses here.\"",
+    "options": [
+      "Houses are built here.",
+      "Houses is built here.",
+      "Houses were build here."
+    ],
+    "correct_answer": "Houses are built here.",
+    "explanation": "Passive: subject + be + past participle. Example: English is spoken here."
+  },
+  {
+    "id": "adv_passive_voice_02",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "fill_blank",
+    "question": "The report ___ (finish) yesterday.",
+    "options": null,
+    "correct_answer": "was finished",
+    "explanation": "Past passive: was/were + past participle."
+  },
+  {
+    "id": "adv_passive_voice_03",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "correction",
+    "question": "Fix: \"The window was break by the ball.\"",
+    "options": null,
+    "correct_answer": "The window was broken by the ball.",
+    "explanation": "Use the past participle, not the past tense, in passive voice."
+  },
+  {
+    "id": "adv_passive_voice_04",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "rewrite",
+    "question": "Rewrite in passive: \"Someone stole my bike.\"",
+    "options": null,
+    "correct_answer": "My bike was stolen.",
+    "explanation": "The object becomes the subject in passive voice."
+  },
+  {
+    "id": "adv_passive_voice_05",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "mcq",
+    "question": "Choose: \"English ___ all over the world.\"",
+    "options": [
+      "speaks",
+      "is spoken",
+      "is speaking"
+    ],
+    "correct_answer": "is spoken",
+    "explanation": "Use passive when the action is more important than who does it."
+  },
+  {
+    "id": "adv_passive_voice_06",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "fill_blank",
+    "question": "The meeting ___ (cancel) due to the storm.",
+    "options": null,
+    "correct_answer": "was cancelled",
+    "explanation": "Past passive with was + past participle."
+  },
+  {
+    "id": "adv_passive_voice_07",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "correction",
+    "question": "Fix: \"The cake was ate by the children.\"",
+    "options": null,
+    "correct_answer": "The cake was eaten by the children.",
+    "explanation": "Use the past participle \"eaten\", not \"ate\"."
+  },
+  {
+    "id": "adv_passive_voice_08",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "short_answer",
+    "question": "Passive of \"They will announce the results tomorrow.\"",
+    "options": null,
+    "correct_answer": "The results will be announced tomorrow.",
+    "explanation": "Future passive: will be + past participle."
+  },
+  {
+    "id": "adv_passive_voice_09",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "rewrite",
+    "question": "Rewrite in active voice: \"The letter was written by Maria.\"",
+    "options": null,
+    "correct_answer": "Maria wrote the letter.",
+    "explanation": "Active voice: subject performs the action."
+  },
+  {
+    "id": "adv_passive_voice_10",
+    "level": "advanced",
+    "topic": "passive_voice",
+    "type": "mcq",
+    "question": "Choose: \"This problem needs ___ carefully.\"",
+    "options": [
+      "to handle",
+      "handling",
+      "being handle"
+    ],
+    "correct_answer": "handling",
+    "explanation": "Some passive-like structures use need + -ing. Example: The car needs washing."
+  }
+]

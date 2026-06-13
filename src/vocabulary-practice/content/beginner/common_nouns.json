@@ -1,0 +1,124 @@
+[
+  {
+    "id": "beg_common_nouns_01",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "mcq",
+    "question": "What do you call a place where you sleep at night?",
+    "options": ["bedroom", "kitchen", "garden", "office"],
+    "correct_answer": "bedroom",
+    "explanation": "A bedroom is the room in a home used for sleeping. We often say \"go to the bedroom\" when it is time to rest.",
+    "example_sentence": "I read a book in my bedroom before I sleep."
+  },
+  {
+    "id": "beg_common_nouns_02",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "fill_in",
+    "question": "I drink a glass of ___ every morning.",
+    "options": null,
+    "correct_answer": "water",
+    "explanation": "Water is a basic noun we use for the liquid we drink. It is uncountable, so we do not add \"s\" in this sentence.",
+    "example_sentence": "Please bring me a bottle of water."
+  },
+  {
+    "id": "beg_common_nouns_03",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "match",
+    "question": "Match the word \"teacher\" to its meaning.",
+    "options": [
+      "A person who helps students learn",
+      "A person who cooks in a restaurant",
+      "A person who drives a bus"
+    ],
+    "correct_answer": "A person who helps students learn",
+    "explanation": "A teacher works at a school and teaches subjects like English or math. You can ask your teacher when you need help.",
+    "example_sentence": "My English teacher explains new words clearly."
+  },
+  {
+    "id": "beg_common_nouns_04",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "mcq",
+    "question": "Which word means a person you know well and like?",
+    "options": ["friend", "stranger", "neighbor", "customer"],
+    "correct_answer": "friend",
+    "explanation": "A friend is someone you enjoy spending time with and trust. We often use \"my friend\" before a name.",
+    "example_sentence": "I met my friend at the café yesterday."
+  },
+  {
+    "id": "beg_common_nouns_05",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "fill_in",
+    "question": "She bought fresh ___ at the market.",
+    "options": null,
+    "correct_answer": "fruit",
+    "explanation": "Fruit refers to foods like apples, bananas, and oranges. Here it is a general group, so we use the singular form.",
+    "example_sentence": "We eat fruit after lunch every day."
+  },
+  {
+    "id": "beg_common_nouns_06",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "match",
+    "question": "Match the word \"hospital\" to its meaning.",
+    "options": [
+      "A place where sick people get medical care",
+      "A place where you buy clothes",
+      "A place where films are shown"
+    ],
+    "correct_answer": "A place where sick people get medical care",
+    "explanation": "A hospital is where doctors and nurses treat patients. You go there when you need serious medical help.",
+    "example_sentence": "He went to the hospital after the accident."
+  },
+  {
+    "id": "beg_common_nouns_07",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "mcq",
+    "question": "What is the word for the room where you cook food?",
+    "options": ["kitchen", "bathroom", "hallway", "balcony"],
+    "correct_answer": "kitchen",
+    "explanation": "The kitchen is the part of a home with a stove, fridge, and sink. We prepare meals there.",
+    "example_sentence": "My mother is cooking soup in the kitchen."
+  },
+  {
+    "id": "beg_common_nouns_08",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "fill_in",
+    "question": "The children play in the ___ behind the school.",
+    "options": null,
+    "correct_answer": "park",
+    "explanation": "A park is an open public area with grass and trees where people relax or play. It is a very common place noun in daily life.",
+    "example_sentence": "We walk to the park on sunny afternoons."
+  },
+  {
+    "id": "beg_common_nouns_09",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "match",
+    "question": "Match the word \"money\" to its meaning.",
+    "options": [
+      "What we use to pay for things",
+      "What we use to tell the time",
+      "What we use to open a door"
+    ],
+    "correct_answer": "What we use to pay for things",
+    "explanation": "Money includes coins and notes we exchange for goods and services. It is uncountable in most everyday sentences.",
+    "example_sentence": "I do not have enough money for a new phone."
+  },
+  {
+    "id": "beg_common_nouns_10",
+    "level": "beginner",
+    "topic": "common_nouns",
+    "type": "mcq",
+    "question": "Which word means the paper you read to learn news?",
+    "options": ["newspaper", "notebook", "dictionary", "calendar"],
+    "correct_answer": "newspaper",
+    "explanation": "A newspaper gives daily news about the world, sports, and local events. Many people read it in the morning.",
+    "example_sentence": "My father reads the newspaper with his coffee."
+  }
+]

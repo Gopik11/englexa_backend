@@ -1,0 +1,199 @@
+[
+  {
+    "id": "int_opinion_paragraphs_01",
+    "level": "intermediate",
+    "topic": "opinion_paragraphs",
+    "title": "Why Walking Is the Best Commute",
+    "passage": "In my view, walking is the most underrated way to get to work. It costs nothing, needs no parking space, and gives you time to clear your head before the day begins. A twenty-minute walk can replace a stressful bus ride and a crowded elevator. Of course, walking is not practical for everyone, especially in bad weather or across long distances. Still, for people who live within a mile of their workplace, walking is often faster than driving once you count traffic and parking.",
+    "questions": [
+      {
+        "id": "int_opinion_paragraphs_01_q1",
+        "type": "mcq",
+        "question": "What is the writer's main opinion?",
+        "options": ["Driving is always faster", "Walking is an underrated commute", "Buses are the best option", "Everyone should move closer to work"],
+        "correct_answer": "Walking is an underrated commute",
+        "explanation": "The writer opens by saying walking is the most underrated way to get to work. The whole paragraph supports that opinion with reasons."
+      },
+      {
+        "id": "int_opinion_paragraphs_01_q2",
+        "type": "short_answer",
+        "question": "Give one benefit of walking that the writer mentions.",
+        "options": null,
+        "correct_answer": "it costs nothing",
+        "explanation": "The writer lists several benefits, including that walking costs nothing, needs no parking, and helps clear your head. Any of these points would be correct."
+      },
+      {
+        "id": "int_opinion_paragraphs_01_q3",
+        "type": "mcq",
+        "question": "What limitation does the writer acknowledge?",
+        "options": ["Walking is illegal in cities", "Walking is not practical for everyone", "Walking always takes more than an hour", "Walking damages shoes quickly"],
+        "correct_answer": "Walking is not practical for everyone",
+        "explanation": "The writer admits walking is not practical for everyone, especially in bad weather or over long distances. This shows a balanced view."
+      }
+    ]
+  },
+  {
+    "id": "int_opinion_paragraphs_02",
+    "level": "intermediate",
+    "topic": "opinion_paragraphs",
+    "title": "Schools Should Start Later",
+    "passage": "I believe middle and high schools should start no earlier than eight thirty in the morning. Teenagers need more sleep than adults, yet many students wake up before six to catch an early bus. Research links later start times to better attendance, higher test scores, and fewer car accidents involving young drivers. Critics worry that later schedules will disrupt after-school jobs and sports. Those concerns are real, but they can be managed with flexible practice times and employer cooperation.",
+    "questions": [
+      {
+        "id": "int_opinion_paragraphs_02_q1",
+        "type": "mcq",
+        "question": "What start time does the writer recommend?",
+        "options": ["Seven o'clock", "Eight o'clock", "No earlier than eight thirty", "Nine thirty"],
+        "correct_answer": "No earlier than eight thirty",
+        "explanation": "The writer argues that middle and high schools should start no earlier than eight thirty. That is the specific time proposed in the paragraph."
+      },
+      {
+        "id": "int_opinion_paragraphs_02_q2",
+        "type": "short_answer",
+        "question": "Name one benefit of later start times mentioned in the text.",
+        "options": null,
+        "correct_answer": "better attendance",
+        "explanation": "Research linked to later start times shows better attendance, higher test scores, and fewer accidents. Any one of these outcomes is a valid answer."
+      },
+      {
+        "id": "int_opinion_paragraphs_02_q3",
+        "type": "mcq",
+        "question": "What concern do critics raise?",
+        "options": ["Schools will lose funding", "Schedules will disrupt jobs and sports", "Teachers will refuse to work", "Students will sleep in class"],
+        "correct_answer": "Schedules will disrupt jobs and sports",
+        "explanation": "Critics worry that later schedules will disrupt after-school jobs and sports. The writer acknowledges this concern before offering solutions."
+      },
+      {
+        "id": "int_opinion_paragraphs_02_q4",
+        "type": "short_answer",
+        "question": "How does the writer suggest managing critics' concerns?",
+        "options": null,
+        "correct_answer": "flexible practice times and employer cooperation",
+        "explanation": "The writer says concerns can be managed with flexible practice times and employer cooperation. These ideas aim to balance sleep needs with other activities."
+      }
+    ]
+  },
+  {
+    "id": "int_opinion_paragraphs_03",
+    "level": "intermediate",
+    "topic": "opinion_paragraphs",
+    "title": "Reading Books vs. Watching Videos",
+    "passage": "Videos are convenient, but books train your attention in a way screens rarely do. When you read, you set the pace, pause to think, and imagine scenes in your own style. Video platforms reward quick reactions and constant scrolling, which can make deep focus harder later. I am not saying we should abandon video entirely; documentaries and lectures can inspire curiosity. However, if you want stronger vocabulary and calmer thinking, thirty minutes with a book often beats an hour of random clips.",
+    "questions": [
+      {
+        "id": "int_opinion_paragraphs_03_q1",
+        "type": "mcq",
+        "question": "What advantage of reading does the writer emphasize?",
+        "options": ["It is always free", "It trains your attention", "It requires no effort", "It replaces all schoolwork"],
+        "correct_answer": "It trains your attention",
+        "explanation": "The writer says books train your attention in a way screens rarely do. That is the central advantage discussed in the paragraph."
+      },
+      {
+        "id": "int_opinion_paragraphs_03_q2",
+        "type": "short_answer",
+        "question": "What can readers do that the writer values?",
+        "options": null,
+        "correct_answer": "set the pace",
+        "explanation": "When you read, you set the pace, pause to think, and imagine scenes yourself. The writer values this control and reflection."
+      },
+      {
+        "id": "int_opinion_paragraphs_03_q3",
+        "type": "mcq",
+        "question": "What does the writer say about video platforms?",
+        "options": ["They are always harmful", "They reward quick reactions and scrolling", "They have no educational value", "They are better than books for vocabulary"],
+        "correct_answer": "They reward quick reactions and scrolling",
+        "explanation": "The writer notes that video platforms reward quick reactions and constant scrolling. This habit can make deep focus harder later."
+      },
+      {
+        "id": "int_opinion_paragraphs_03_q4",
+        "type": "short_answer",
+        "question": "What type of video content does the writer still praise?",
+        "options": null,
+        "correct_answer": "documentaries and lectures",
+        "explanation": "The writer is not against all video. Documentaries and lectures can inspire curiosity and still have value."
+      },
+      {
+        "id": "int_opinion_paragraphs_03_q5",
+        "type": "mcq",
+        "question": "According to the writer, what often beats an hour of random clips?",
+        "options": ["Ten minutes of music", "Thirty minutes with a book", "Two hours of gaming", "A full day without screens"],
+        "correct_answer": "Thirty minutes with a book",
+        "explanation": "The writer concludes that thirty minutes with a book often beats an hour of random clips if you want stronger vocabulary and calmer thinking."
+      }
+    ]
+  },
+  {
+    "id": "int_opinion_paragraphs_04",
+    "level": "intermediate",
+    "topic": "opinion_paragraphs",
+    "title": "Everyone Should Learn to Cook",
+    "passage": "Cooking is a basic life skill, not a hobby reserved for experts. When you cook at home, you control ingredients, save money, and waste less food. Even simple meals—rice, eggs, soup—build confidence in the kitchen. Some people say they are too busy to cook, but many quick recipes take less time than waiting for delivery. Schools and community centers should offer short, practical classes so cooking feels approachable, not intimidating.",
+    "questions": [
+      {
+        "id": "int_opinion_paragraphs_04_q1",
+        "type": "mcq",
+        "question": "How does the writer describe cooking?",
+        "options": ["A rare talent", "A basic life skill", "A dangerous activity", "A job only for chefs"],
+        "correct_answer": "A basic life skill",
+        "explanation": "The writer opens by calling cooking a basic life skill, not something only experts should do. That framing supports the main argument."
+      },
+      {
+        "id": "int_opinion_paragraphs_04_q2",
+        "type": "short_answer",
+        "question": "Give one reason the writer gives for cooking at home.",
+        "options": null,
+        "correct_answer": "save money",
+        "explanation": "Cooking at home lets you control ingredients, save money, and waste less food. Any of these reasons answers the question well."
+      },
+      {
+        "id": "int_opinion_paragraphs_04_q3",
+        "type": "mcq",
+        "question": "What does the writer suggest schools and community centers should offer?",
+        "options": ["Long chef certifications", "Short, practical cooking classes", "Free restaurant meals", "Online gaming lessons"],
+        "correct_answer": "Short, practical cooking classes",
+        "explanation": "The writer recommends short, practical classes so cooking feels approachable. The goal is to make the skill less intimidating."
+      }
+    ]
+  },
+  {
+    "id": "int_opinion_paragraphs_05",
+    "level": "intermediate",
+    "topic": "opinion_paragraphs",
+    "title": "Cities Need More Parks",
+    "passage": "Urban parks are not a luxury; they are essential public space. Trees cool streets, clean the air, and give families a free place to exercise and socialize. When cities sell parkland for development, they trade long-term health for short-term profit. I support building housing, but not at the expense of every green corner. A city with accessible parks is a city where children can play safely and adults can recover from stress without spending money.",
+    "questions": [
+      {
+        "id": "int_opinion_paragraphs_05_q1",
+        "type": "mcq",
+        "question": "What is the writer's view of urban parks?",
+        "options": ["They are unnecessary luxuries", "They are essential public space", "They should be replaced by shops", "They are only for tourists"],
+        "correct_answer": "They are essential public space",
+        "explanation": "The writer states clearly that urban parks are not a luxury but essential public space. This is the main claim of the paragraph."
+      },
+      {
+        "id": "int_opinion_paragraphs_05_q2",
+        "type": "short_answer",
+        "question": "Name one environmental benefit of trees mentioned in the text.",
+        "options": null,
+        "correct_answer": "clean the air",
+        "explanation": "The writer says trees cool streets and clean the air. Either benefit would be correct, as both are named in the passage."
+      },
+      {
+        "id": "int_opinion_paragraphs_05_q3",
+        "type": "mcq",
+        "question": "What does the writer criticize?",
+        "options": ["Planting too many trees", "Selling parkland for development", "Building playgrounds", "Offering free exercise classes"],
+        "correct_answer": "Selling parkland for development",
+        "explanation": "The writer criticizes cities that sell parkland for development. They believe this trades long-term health for short-term profit."
+      },
+      {
+        "id": "int_opinion_paragraphs_05_q4",
+        "type": "short_answer",
+        "question": "Who benefits from accessible parks, according to the writer?",
+        "options": null,
+        "correct_answer": "children and adults",
+        "explanation": "The writer says children can play safely and adults can recover from stress in parks. Accessible green space helps people of all ages."
+      }
+    ]
+  }
+]

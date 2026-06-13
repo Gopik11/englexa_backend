@@ -1,0 +1,29 @@
+[
+  {
+    "id": "adv_formal_summary_01",
+    "level": "advanced",
+    "topic": "formal_summary",
+    "title": "Public transport investment",
+    "prompt": "Write a formal summary paragraph explaining why cities invest in public transport.",
+    "word_count_min": 110,
+    "word_count_max": 200
+  },
+  {
+    "id": "adv_formal_summary_02",
+    "level": "advanced",
+    "topic": "formal_summary",
+    "title": "Climate report",
+    "prompt": "Summarise why scientists recommend reducing carbon emissions in one formal paragraph.",
+    "word_count_min": 100,
+    "word_count_max": 190
+  },
+  {
+    "id": "adv_formal_summary_03",
+    "level": "advanced",
+    "topic": "formal_summary",
+    "title": "Workplace training",
+    "prompt": "Write a formal paragraph summarising the benefits of workplace training programmes.",
+    "word_count_min": 105,
+    "word_count_max": 195
+  }
+]

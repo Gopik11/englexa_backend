@@ -1,0 +1,114 @@
+[
+  {
+    "id": "adv_perfect_tenses_01",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "mcq",
+    "question": "Choose: \"I ___ this movie three times.\"",
+    "options": [
+      "saw",
+      "have seen",
+      "had seen"
+    ],
+    "correct_answer": "have seen",
+    "explanation": "Present perfect links past experience to now without a finished time."
+  },
+  {
+    "id": "adv_perfect_tenses_02",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "fill_blank",
+    "question": "She ___ (work) here since 2018.",
+    "options": null,
+    "correct_answer": "has worked",
+    "explanation": "Present perfect + since for actions continuing to now."
+  },
+  {
+    "id": "adv_perfect_tenses_03",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "correction",
+    "question": "Fix: \"I have seen him yesterday.\"",
+    "options": null,
+    "correct_answer": "I saw him yesterday.",
+    "explanation": "Do not use present perfect with finished time words like \"yesterday\"."
+  },
+  {
+    "id": "adv_perfect_tenses_04",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "rewrite",
+    "question": "Rewrite: \"After I finished dinner, I watched TV.\" (use past perfect)",
+    "options": null,
+    "correct_answer": "After I had finished dinner, I watched TV.",
+    "explanation": "Past perfect shows the earlier of two past actions."
+  },
+  {
+    "id": "adv_perfect_tenses_05",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "mcq",
+    "question": "Choose: \"By the time we arrived, the film ___.\"",
+    "options": [
+      "started",
+      "has started",
+      "had started"
+    ],
+    "correct_answer": "had started",
+    "explanation": "Past perfect for an action before another past action."
+  },
+  {
+    "id": "adv_perfect_tenses_06",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "fill_blank",
+    "question": "They ___ (not finish) the project yet.",
+    "options": null,
+    "correct_answer": "haven't finished",
+    "explanation": "Present perfect with \"yet\" in negatives."
+  },
+  {
+    "id": "adv_perfect_tenses_07",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "correction",
+    "question": "Fix: \"I am living here since 2020.\"",
+    "options": null,
+    "correct_answer": "I have lived here since 2020.",
+    "explanation": "Use present perfect with \"since\" for duration to now."
+  },
+  {
+    "id": "adv_perfect_tenses_08",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "short_answer",
+    "question": "Complete: \"How long ___ you ___ (know) her?\"",
+    "options": null,
+    "correct_answer": "have, known",
+    "explanation": "Present perfect for duration with \"how long\"."
+  },
+  {
+    "id": "adv_perfect_tenses_09",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "rewrite",
+    "question": "Rewrite: \"I started learning English in 2019 and I still learn it.\"",
+    "options": null,
+    "correct_answer": "I have been learning English since 2019.",
+    "explanation": "Present perfect continuous emphasizes ongoing activity."
+  },
+  {
+    "id": "adv_perfect_tenses_10",
+    "level": "advanced",
+    "topic": "perfect_tenses",
+    "type": "mcq",
+    "question": "Choose: \"This is the first time I ___ sushi.\"",
+    "options": [
+      "try",
+      "tried",
+      "have tried"
+    ],
+    "correct_answer": "have tried",
+    "explanation": "Present perfect often follows \"This is the first time\"."
+  }
+]

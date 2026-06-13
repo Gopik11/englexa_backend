@@ -1,0 +1,32 @@
+[
+  {
+    "id": "beg_self_introduction_01",
+    "level": "beginner",
+    "topic": "self_introduction",
+    "title": "Say hello",
+    "prompt": "Introduce yourself. Say your name and where you are from.",
+    "reference_text": "Hello, my name is Alex and I am from Canada.",
+    "key_vocabulary": ["hello", "name", "from"],
+    "time_limit_seconds": 30
+  },
+  {
+    "id": "beg_self_introduction_02",
+    "level": "beginner",
+    "topic": "self_introduction",
+    "title": "Talk about your family",
+    "prompt": "Say how many people are in your family.",
+    "reference_text": "There are four people in my family.",
+    "key_vocabulary": ["family", "people", "four"],
+    "time_limit_seconds": 30
+  },
+  {
+    "id": "beg_self_introduction_03",
+    "level": "beginner",
+    "topic": "self_introduction",
+    "title": "Your favourite hobby",
+    "prompt": "Tell someone about a hobby you enjoy.",
+    "reference_text": "I enjoy reading books in the evening.",
+    "key_vocabulary": ["enjoy", "reading", "evening"],
+    "time_limit_seconds": 35
+  }
+]

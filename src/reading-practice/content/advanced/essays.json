@@ -1,0 +1,254 @@
+[
+  {
+    "id": "adv_essays_01",
+    "level": "advanced",
+    "topic": "essays",
+    "title": "The Value of Lifelong Learning",
+    "passage": "Education does not end when a diploma is placed in your hands. Lifelong learning is the habit of staying curious after formal schooling ends—through books, conversations, online courses, or quiet reflection on experience. In a rapidly changing economy, skills that felt secure a decade ago can become outdated within a few years. People who continue to learn adapt more easily, not because they chase every trend, but because they remain willing to revise their assumptions. Learning later in life also deepens empathy: when you study a new language or history, you encounter perspectives that challenge comfortable certainties. The goal is not endless credential collecting. It is the disciplined pleasure of understanding more tomorrow than you understood today.",
+    "questions": [
+      {
+        "id": "adv_essays_01_q1",
+        "type": "mcq",
+        "question": "What is the author's central claim about lifelong learning?",
+        "options": [
+          "It is mainly about earning more degrees",
+          "It is the habit of staying curious after formal schooling",
+          "It replaces the need for work experience",
+          "It matters only for young professionals"
+        ],
+        "correct_answer": "It is the habit of staying curious after formal schooling",
+        "explanation": "The author defines lifelong learning as staying curious through many paths after school ends. The essay argues that this habit helps people adapt and grow."
+      },
+      {
+        "id": "adv_essays_01_q2",
+        "type": "short_answer",
+        "question": "According to the passage, what can studying a new language or history deepen?",
+        "options": null,
+        "correct_answer": "empathy",
+        "explanation": "The author writes that learning later in life deepens empathy because new subjects introduce perspectives that challenge familiar views."
+      },
+      {
+        "id": "adv_essays_01_q3",
+        "type": "mcq",
+        "question": "What does the author say is NOT the goal of lifelong learning?",
+        "options": [
+          "Revising your assumptions",
+          "Understanding more over time",
+          "Endless credential collecting",
+          "Staying curious"
+        ],
+        "correct_answer": "Endless credential collecting",
+        "explanation": "Near the end, the author states clearly that the goal is not endless credential collecting. The real aim is deeper understanding, not collecting certificates."
+      }
+    ]
+  },
+  {
+    "id": "adv_essays_02",
+    "level": "advanced",
+    "topic": "essays",
+    "title": "How Cities Shape Our Habits",
+    "passage": "We like to imagine that willpower alone determines whether we walk, cook, or socialize, but the built environment quietly steers our choices. Wide sidewalks and shaded streets invite walking; sprawling highways make driving feel inevitable. When grocery stores sit far from homes and public transit is unreliable, \"personal responsibility\" becomes a thin explanation for unhealthy patterns. Urban planners have begun to treat health and connection as design problems, not moral failures. Mixed-use neighborhoods—where people live near shops, schools, and parks—reduce commute time and increase chance encounters that strengthen community ties. Changing a city is slow work, yet small adjustments, such as safer crosswalks or protected bike lanes, can shift daily behavior at scale.",
+    "questions": [
+      {
+        "id": "adv_essays_02_q1",
+        "type": "mcq",
+        "question": "What argument does the author make about personal choice?",
+        "options": [
+          "Willpower is the only factor that matters",
+          "The built environment influences our habits",
+          "People never change their routines",
+          "Cities should ban cars entirely"
+        ],
+        "correct_answer": "The built environment influences our habits",
+        "explanation": "The author argues that willpower alone does not explain behavior. Sidewalks, highways, and transit access shape whether walking or driving feels natural."
+      },
+      {
+        "id": "adv_essays_02_q2",
+        "type": "short_answer",
+        "question": "What term does the author use for neighborhoods where people live near shops, schools, and parks?",
+        "options": null,
+        "correct_answer": "mixed-use neighborhoods",
+        "explanation": "The passage describes mixed-use neighborhoods as places where daily needs are close together. This design reduces commutes and supports community contact."
+      },
+      {
+        "id": "adv_essays_02_q3",
+        "type": "mcq",
+        "question": "How do some planners now view health and connection?",
+        "options": [
+          "As private matters outside public policy",
+          "As design problems rather than moral failures",
+          "As issues that technology has solved",
+          "As goals that conflict with economic growth"
+        ],
+        "correct_answer": "As design problems rather than moral failures",
+        "explanation": "The author notes that planners increasingly treat health and social connection as design challenges. That shift moves blame away from individuals alone."
+      },
+      {
+        "id": "adv_essays_02_q4",
+        "type": "short_answer",
+        "question": "Name one small adjustment the author says can shift behavior at scale.",
+        "options": null,
+        "correct_answer": "safer crosswalks",
+        "explanation": "The author mentions safer crosswalks and protected bike lanes as examples of small changes that can influence how many people move through a city."
+      }
+    ]
+  },
+  {
+    "id": "adv_essays_03",
+    "level": "advanced",
+    "topic": "essays",
+    "title": "The Art of Listening in Conversation",
+    "passage": "Listening is often described as passive, yet skilled listeners actively shape dialogue. They postpone judgment, repeat key phrases to confirm understanding, and notice what remains unsaid. In professional settings, poor listening wastes time: meetings end with polite agreement but no shared plan. In personal relationships, it erodes trust when one person senses they are being heard only long enough to craft a reply. Good listeners do not merely wait for silence; they ask questions that open space rather than corner the speaker. This discipline is difficult in an age of constant notification, where attention fragments into thirty-second reactions. Still, conversation is one of the oldest technologies for thinking together, and it works only when listening is treated as a practice, not a pause.",
+    "questions": [
+      {
+        "id": "adv_essays_03_q1",
+        "type": "mcq",
+        "question": "How does the author characterize skilled listening?",
+        "options": [
+          "As entirely passive",
+          "As something that actively shapes dialogue",
+          "As unnecessary in professional life",
+          "As easier than speaking"
+        ],
+        "correct_answer": "As something that actively shapes dialogue",
+        "explanation": "The author rejects the idea that listening is passive. Skilled listeners confirm meaning, notice gaps, and guide conversation with thoughtful questions."
+      },
+      {
+        "id": "adv_essays_03_q2",
+        "type": "short_answer",
+        "question": "What happens in meetings when listening is poor?",
+        "options": null,
+        "correct_answer": "no shared plan",
+        "explanation": "The essay says poor listening leads to polite agreement without a shared plan. People may leave meetings unclear about next steps."
+      },
+      {
+        "id": "adv_essays_03_q3",
+        "type": "mcq",
+        "question": "What kind of questions do good listeners ask?",
+        "options": [
+          "Questions that corner the speaker",
+          "Questions that open space",
+          "Questions that end the topic quickly",
+          "Questions that prove they are smarter"
+        ],
+        "correct_answer": "Questions that open space",
+        "explanation": "Good listeners ask questions that open space rather than trap the speaker. This approach keeps dialogue thoughtful and collaborative."
+      },
+      {
+        "id": "adv_essays_03_q4",
+        "type": "short_answer",
+        "question": "What modern challenge makes listening harder, according to the author?",
+        "options": null,
+        "correct_answer": "constant notification",
+        "explanation": "The author links fragmented attention to constant notification and quick reactions. These distractions make sustained listening more difficult."
+      },
+      {
+        "id": "adv_essays_03_q5",
+        "type": "mcq",
+        "question": "How should listening be treated, in the author's view?",
+        "options": [
+          "As a pause between speeches",
+          "As a practice",
+          "As a sign of weakness",
+          "As a skill only experts need"
+        ],
+        "correct_answer": "As a practice",
+        "explanation": "The essay concludes that listening must be treated as a practice, not a brief pause. That mindset helps conversation function as shared thinking."
+      }
+    ]
+  },
+  {
+    "id": "adv_essays_04",
+    "level": "advanced",
+    "topic": "essays",
+    "title": "Why Boredom Can Be Creative",
+    "passage": "Boredom has a bad reputation in cultures that reward constant stimulation. Yet psychologists note that mild boredom can prompt the mind to wander productively, connecting ideas that focused effort might overlook. When every idle minute is filled with scrolling, the brain has fewer opportunities to incubate problems in the background. Creative work often depends on this slower phase: a walk without headphones, a repetitive chore, a window seat on a long train. Boredom is not an excuse for neglecting responsibilities, and chronic understimulation can signal deeper distress. Still, protecting small stretches of unstructured time may be one of the cheapest ways to invite originality back into daily life.",
+    "questions": [
+      {
+        "id": "adv_essays_04_q1",
+        "type": "mcq",
+        "question": "What positive role does the author attribute to mild boredom?",
+        "options": [
+          "It guarantees instant success",
+          "It can prompt productive mind-wandering",
+          "It removes the need for effort",
+          "It replaces formal education"
+        ],
+        "correct_answer": "It can prompt productive mind-wandering",
+        "explanation": "The author cites psychologists who link mild boredom to productive wandering. This mental drift can connect ideas that focused work might miss."
+      },
+      {
+        "id": "adv_essays_04_q2",
+        "type": "short_answer",
+        "question": "What happens when idle minutes are always filled with scrolling?",
+        "options": null,
+        "correct_answer": "fewer opportunities to incubate problems",
+        "explanation": "The essay argues that constant scrolling leaves less room for background problem-solving. Unstructured time helps ideas develop slowly."
+      },
+      {
+        "id": "adv_essays_04_q3",
+        "type": "mcq",
+        "question": "What limitation does the author acknowledge about boredom?",
+        "options": [
+          "It is always a sign of genius",
+          "Chronic understimulation can signal deeper distress",
+          "It only affects children",
+          "It cannot occur during creative work"
+        ],
+        "correct_answer": "Chronic understimulation can signal deeper distress",
+        "explanation": "The author balances the argument by noting that chronic understimulation may reflect deeper problems. Boredom is not praised without limits."
+      }
+    ]
+  },
+  {
+    "id": "adv_essays_05",
+    "level": "advanced",
+    "topic": "essays",
+    "title": "Memory, Technology, and the Self",
+    "passage": "Smartphones have become external memory banks: we photograph menus, screenshot tickets, and store passwords we once memorized. This convenience frees mental space, but it may also weaken the habit of encoding experience through attention. When every moment is documented, recall can feel less like remembering and more like retrieving a file. Some philosophers argue that memory is not mere storage; it is the story we tell about who we are. If that story is outsourced to devices, identity becomes vulnerable to lost accounts and deleted albums. The reasonable response is not digital asceticism. It is selective remembering—choosing which experiences to inhabit fully and which to archive lightly.",
+    "questions": [
+      {
+        "id": "adv_essays_05_q1",
+        "type": "mcq",
+        "question": "What metaphor does the author use for smartphones?",
+        "options": [
+          "External memory banks",
+          "Portable classrooms",
+          "Social mirrors",
+          "Emotional regulators"
+        ],
+        "correct_answer": "External memory banks",
+        "explanation": "The essay opens by calling smartphones external memory banks because we store information on them instead of in our minds."
+      },
+      {
+        "id": "adv_essays_05_q2",
+        "type": "short_answer",
+        "question": "According to some philosophers in the passage, what is memory beyond storage?",
+        "options": null,
+        "correct_answer": "the story we tell about who we are",
+        "explanation": "The author reports that philosophers see memory as the narrative of identity, not just stored data. That view raises questions about relying on devices."
+      },
+      {
+        "id": "adv_essays_05_q3",
+        "type": "mcq",
+        "question": "What solution does the author recommend?",
+        "options": [
+          "Complete rejection of technology",
+          "Selective remembering",
+          "Deleting all photos",
+          "Memorizing every password"
+        ],
+        "correct_answer": "Selective remembering",
+        "explanation": "The author rejects digital asceticism and instead recommends selective remembering. Some experiences deserve full attention; others can be archived lightly."
+      },
+      {
+        "id": "adv_essays_05_q4",
+        "type": "short_answer",
+        "question": "What risk arises if identity is outsourced to devices?",
+        "options": null,
+        "correct_answer": "lost accounts and deleted albums",
+        "explanation": "The passage warns that identity tied to devices becomes vulnerable when accounts are lost or albums are deleted. Memory then depends on fragile systems."
+      }
+    ]
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "adv_connectors_01",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "mcq",
+    "question": "Choose: \"___ it was raining, we went for a walk.\"",
+    "options": [
+      "Although",
+      "Because",
+      "So"
+    ],
+    "correct_answer": "Although",
+    "explanation": "\"Although\" shows contrast between two ideas."
+  },
+  {
+    "id": "adv_connectors_02",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "fill_blank",
+    "question": "She stayed home ___ she was feeling unwell.",
+    "options": null,
+    "correct_answer": "because",
+    "explanation": "\"Because\" introduces a reason. Example: I left early because I was tired."
+  },
+  {
+    "id": "adv_connectors_03",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "correction",
+    "question": "Fix: \"He studied hard, he passed the exam.\"",
+    "options": null,
+    "correct_answer": "He studied hard, so he passed the exam.",
+    "explanation": "Connect related clauses with a connector like \"so\" or use two sentences."
+  },
+  {
+    "id": "adv_connectors_04",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "rewrite",
+    "question": "Join with \"however\": \"The plan was good. It was too expensive.\"",
+    "options": null,
+    "correct_answer": "The plan was good; however, it was too expensive.",
+    "explanation": "\"However\" shows contrast between sentences."
+  },
+  {
+    "id": "adv_connectors_05",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "mcq",
+    "question": "Choose: \"I'll call you ___ I arrive.\"",
+    "options": [
+      "while",
+      "as soon as",
+      "although"
+    ],
+    "correct_answer": "as soon as",
+    "explanation": "\"As soon as\" means immediately when something happens."
+  },
+  {
+    "id": "adv_connectors_06",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "fill_blank",
+    "question": "___ you practice regularly, you will improve.",
+    "options": null,
+    "correct_answer": "If",
+    "explanation": "\"If\" introduces a condition. Example: If you rest, you'll feel better."
+  },
+  {
+    "id": "adv_connectors_07",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "correction",
+    "question": "Fix: \"Despite of the rain, the event continued.\"",
+    "options": null,
+    "correct_answer": "Despite the rain, the event continued.",
+    "explanation": "Use \"despite\" without \"of\", or use \"in spite of\"."
+  },
+  {
+    "id": "adv_connectors_08",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "short_answer",
+    "question": "Complete: \"She not only sings ___ she also writes songs.\"",
+    "options": null,
+    "correct_answer": "but",
+    "explanation": "Use \"not only... but also\" to add information."
+  },
+  {
+    "id": "adv_connectors_09",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "rewrite",
+    "question": "Join: \"The traffic was bad. We arrived on time.\" (use although)",
+    "options": null,
+    "correct_answer": "Although the traffic was bad, we arrived on time.",
+    "explanation": "\"Although\" introduces a contrasting clause."
+  },
+  {
+    "id": "adv_connectors_10",
+    "level": "advanced",
+    "topic": "connectors",
+    "type": "mcq",
+    "question": "Choose: \"We need to leave now; ___, we'll miss the train.\"",
+    "options": [
+      "otherwise",
+      "moreover",
+      "for example"
+    ],
+    "correct_answer": "otherwise",
+    "explanation": "\"Otherwise\" means \"if not\" and shows a result."
+  }
+]

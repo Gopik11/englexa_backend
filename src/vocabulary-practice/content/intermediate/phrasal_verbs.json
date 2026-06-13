@@ -1,0 +1,124 @@
+[
+  {
+    "id": "int_phrasal_verbs_01",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "mcq",
+    "question": "What does \"give up\" mean in this sentence? \"Don't give up — keep practising.\"",
+    "options": ["stop trying", "start again", "speak louder", "write faster"],
+    "correct_answer": "stop trying",
+    "explanation": "Give up means to quit or stop making effort. It often appears in encouragement when learning feels hard.",
+    "example_sentence": "She didn't give up, and her English improved."
+  },
+  {
+    "id": "int_phrasal_verbs_02",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "fill_in",
+    "question": "Please ___ your coat. It is cold outside.",
+    "options": null,
+    "correct_answer": "put on",
+    "explanation": "Put on means to place clothing on your body. The object can come after the particle (put on your coat) or between put and on (put your coat on).",
+    "example_sentence": "He put on his jacket before leaving."
+  },
+  {
+    "id": "int_phrasal_verbs_03",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "match",
+    "question": "Match the phrasal verb \"look after\" to its meaning.",
+    "options": [
+      "To take care of someone or something",
+      "To search for something lost",
+      "To admire someone from far away"
+    ],
+    "correct_answer": "To take care of someone or something",
+    "explanation": "Look after focuses on responsibility and care, not visual searching. Parents look after children; nurses look after patients.",
+    "example_sentence": "Can you look after my dog this weekend?"
+  },
+  {
+    "id": "int_phrasal_verbs_04",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "mcq",
+    "question": "Which phrasal verb means to cancel a meeting?",
+    "options": ["call off", "call out", "call in", "call up"],
+    "correct_answer": "call off",
+    "explanation": "Call off means to cancel something that was planned. It is common in work and school schedules.",
+    "example_sentence": "They called off the match because of rain."
+  },
+  {
+    "id": "int_phrasal_verbs_05",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "fill_in",
+    "question": "I need to ___ early tomorrow for the flight.",
+    "options": null,
+    "correct_answer": "wake up",
+    "explanation": "Wake up means to stop sleeping. We use it for alarms, routines, and travel plans.",
+    "example_sentence": "I wake up at five when I travel."
+  },
+  {
+    "id": "int_phrasal_verbs_06",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "match",
+    "question": "Match \"run out of\" to its meaning.",
+    "options": [
+      "To have no more of something left",
+      "To exercise outside",
+      "To leave a room quickly"
+    ],
+    "correct_answer": "To have no more of something left",
+    "explanation": "Run out of describes supplies finishing — milk, time, or patience. The structure is run out of + noun.",
+    "example_sentence": "We ran out of milk, so I went to the shop."
+  },
+  {
+    "id": "int_phrasal_verbs_07",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "mcq",
+    "question": "What does \"figure out\" mean?",
+    "options": ["understand or solve something", "draw a picture", "change your mind", "forget completely"],
+    "correct_answer": "understand or solve something",
+    "explanation": "Figure out means to find an answer after thinking. It suits problems, puzzles, and confusing instructions.",
+    "example_sentence": "I finally figured out how the app works."
+  },
+  {
+    "id": "int_phrasal_verbs_08",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "fill_in",
+    "question": "She ___ her old friend at the conference.",
+    "options": null,
+    "correct_answer": "ran into",
+    "explanation": "Run into means to meet someone unexpectedly. It is more natural than \"meet by accident\" in conversation.",
+    "example_sentence": "I ran into my teacher at the supermarket."
+  },
+  {
+    "id": "int_phrasal_verbs_09",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "match",
+    "question": "Match \"turn down\" to its meaning in a job context.",
+    "options": [
+      "To refuse an offer",
+      "To reduce the volume",
+      "To rotate a handle"
+    ],
+    "correct_answer": "To refuse an offer",
+    "explanation": "Turn down an offer means to say no politely. The same phrasal verb can mean lower volume in other contexts.",
+    "example_sentence": "He turned down the job because of the long commute."
+  },
+  {
+    "id": "int_phrasal_verbs_10",
+    "level": "intermediate",
+    "topic": "phrasal_verbs",
+    "type": "mcq",
+    "question": "Which phrasal verb means to continue doing something?",
+    "options": ["keep on", "give in", "break up", "set off"],
+    "correct_answer": "keep on",
+    "explanation": "Keep on (+ verb-ing) shows persistence. It encourages steady effort without stopping.",
+    "example_sentence": "Keep on practising — you are making progress."
+  }
+]

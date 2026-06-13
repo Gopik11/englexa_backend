@@ -1,0 +1,110 @@
+[
+  {
+    "id": "beg_basic_structure_01",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "correction",
+    "question": "Fix word order: \"Every day to work I go.\"",
+    "options": null,
+    "correct_answer": "I go to work every day.",
+    "explanation": "English usually follows subject + verb + object order. Example: She reads books."
+  },
+  {
+    "id": "beg_basic_structure_02",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "mcq",
+    "question": "Which is a complete sentence?",
+    "options": [
+      "Because it was raining.",
+      "It was raining.",
+      "Raining hard."
+    ],
+    "correct_answer": "It was raining.",
+    "explanation": "A complete sentence has a subject and a verb. Fragments are incomplete."
+  },
+  {
+    "id": "beg_basic_structure_03",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "rewrite",
+    "question": "Combine into one sentence: \"She is tired. She went to bed early.\"",
+    "options": null,
+    "correct_answer": "She was tired, so she went to bed early.",
+    "explanation": "Connect related ideas clearly. Example: I was hungry, so I ate lunch."
+  },
+  {
+    "id": "beg_basic_structure_04",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "fill_blank",
+    "question": "Complete: \"My sister ___ a doctor.\"",
+    "options": null,
+    "correct_answer": "is",
+    "explanation": "A basic sentence needs subject + verb + complement. Example: My brother is a teacher."
+  },
+  {
+    "id": "beg_basic_structure_05",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "correction",
+    "question": "Fix the fragment: \"Running in the park.\"",
+    "options": null,
+    "correct_answer": "She is running in the park.",
+    "explanation": "Add a subject and helping verb to make the sentence complete."
+  },
+  {
+    "id": "beg_basic_structure_06",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "mcq",
+    "question": "Which sentence is correct?",
+    "options": [
+      "I very like this song.",
+      "I like this song very much.",
+      "I like very this song."
+    ],
+    "correct_answer": "I like this song very much.",
+    "explanation": "Place adverbs like \"very much\" after the object in simple sentences."
+  },
+  {
+    "id": "beg_basic_structure_07",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "rewrite",
+    "question": "Rewrite as a question: \"You live in London.\"",
+    "options": null,
+    "correct_answer": "Do you live in London?",
+    "explanation": "Start yes/no questions with do/does + subject + base verb."
+  },
+  {
+    "id": "beg_basic_structure_08",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "fill_blank",
+    "question": "Complete: \"There ___ two books on the table.\"",
+    "options": null,
+    "correct_answer": "are",
+    "explanation": "Use \"there are\" with plural nouns. Example: There are three chairs."
+  },
+  {
+    "id": "beg_basic_structure_09",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "correction",
+    "question": "Fix the run-on: \"I woke up I made coffee.\"",
+    "options": null,
+    "correct_answer": "I woke up and made coffee.",
+    "explanation": "Connect two actions with \"and\" or split into two sentences."
+  },
+  {
+    "id": "beg_basic_structure_10",
+    "level": "beginner",
+    "topic": "basic_structure",
+    "type": "short_answer",
+    "question": "Add a subject and verb: \"___ happy today.\"",
+    "options": null,
+    "correct_answer": "I am happy today.",
+    "explanation": "Every sentence needs a subject and verb. Example: We are happy today."
+  }
+]

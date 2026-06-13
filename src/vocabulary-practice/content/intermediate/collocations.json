@@ -1,0 +1,124 @@
+[
+  {
+    "id": "int_collocations_01",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "mcq",
+    "question": "Which phrase collocates naturally with \"decision\"?",
+    "options": ["make a decision", "do a decision", "have a decision", "take a decision"],
+    "correct_answer": "make a decision",
+    "explanation": "We make a decision, not do a decision. Collocations are fixed word pairs that native speakers use automatically.",
+    "example_sentence": "She made a quick decision and booked the tickets."
+  },
+  {
+    "id": "int_collocations_02",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "fill_in",
+    "question": "He caught a ___ and stayed home for two days.",
+    "options": null,
+    "correct_answer": "cold",
+    "explanation": "Catch a cold is a strong collocation for becoming ill. The verb catch fits illness phrases like catch the flu.",
+    "example_sentence": "I think I caught a cold on the train."
+  },
+  {
+    "id": "int_collocations_03",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "match",
+    "question": "Match the collocation \"heavy rain\" to its meaning.",
+    "options": [
+      "Rain falling in large amounts",
+      "Rain that is very light",
+      "Rain that is warm"
+    ],
+    "correct_answer": "Rain falling in large amounts",
+    "explanation": "Heavy combines with rain, traffic, and workload to mean intense or large in amount. Light rain is the opposite.",
+    "example_sentence": "Heavy rain flooded the streets last night."
+  },
+  {
+    "id": "int_collocations_04",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "mcq",
+    "question": "Which verb goes with \"a mistake\"?",
+    "options": ["make", "do", "have", "take"],
+    "correct_answer": "make",
+    "explanation": "Make a mistake is the natural pairing. After noticing it, you can correct the mistake.",
+    "example_sentence": "Everyone makes mistakes when learning a language."
+  },
+  {
+    "id": "int_collocations_05",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "fill_in",
+    "question": "Let's ___ a break. We have been working for hours.",
+    "options": null,
+    "correct_answer": "take",
+    "explanation": "Take a break means to pause work or study. Similar patterns include take a seat and take a photo.",
+    "example_sentence": "We took a short break and had some tea."
+  },
+  {
+    "id": "int_collocations_06",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "match",
+    "question": "Match \"fast food\" to its meaning.",
+    "options": [
+      "Quick, informal meals like burgers and fries",
+      "Food that cooks very slowly",
+      "Food only eaten at formal events"
+    ],
+    "correct_answer": "Quick, informal meals like burgers and fries",
+    "explanation": "Fast food refers to quick service restaurants and the meals they sell. Fast here means speed, not running.",
+    "example_sentence": "We ordered fast food because we were in a hurry."
+  },
+  {
+    "id": "int_collocations_07",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "mcq",
+    "question": "Which word collocates with \"attention\"?",
+    "options": ["pay", "give", "make", "do"],
+    "correct_answer": "pay",
+    "explanation": "Pay attention means to focus carefully. It is essential in classrooms and meetings.",
+    "example_sentence": "Please pay attention to the instructions."
+  },
+  {
+    "id": "int_collocations_08",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "fill_in",
+    "question": "She has a strong ___ in music.",
+    "options": null,
+    "correct_answer": "interest",
+    "explanation": "Have an interest in shows enthusiasm for a topic. We also say take an interest in something new.",
+    "example_sentence": "He has a deep interest in history."
+  },
+  {
+    "id": "int_collocations_09",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "match",
+    "question": "Match \"commit a crime\" to its meaning.",
+    "options": [
+      "To do something illegal",
+      "To solve a police case",
+      "To report news"
+    ],
+    "correct_answer": "To do something illegal",
+    "explanation": "Commit pairs with crime, fraud, and error in formal English. The verb choice sounds natural to native ears.",
+    "example_sentence": "The report said he committed fraud."
+  },
+  {
+    "id": "int_collocations_10",
+    "level": "intermediate",
+    "topic": "collocations",
+    "type": "mcq",
+    "question": "Which phrase means to start a conversation with someone?",
+    "options": ["strike up a conversation", "break a conversation", "hold a conversation", "cut a conversation"],
+    "correct_answer": "strike up a conversation",
+    "explanation": "Strike up a conversation is a friendly, slightly idiomatic collocation for beginning to talk. Hold a conversation means to maintain one.",
+    "example_sentence": "He struck up a conversation with his seatmate on the bus."
+  }
+]

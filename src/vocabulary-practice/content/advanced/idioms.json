@@ -1,0 +1,128 @@
+[
+  {
+    "id": "adv_idioms_01",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "mcq",
+    "question": "What does \"break the ice\" mean?",
+    "options": [
+      "To start a conversation in an awkward situation",
+      "To damage frozen water",
+      "To cancel a formal meeting"
+    ],
+    "correct_answer": "To start a conversation in an awkward situation",
+    "explanation": "Break the ice is social language for easing tension when people first meet. The meaning is figurative, not literal.",
+    "example_sentence": "He told a joke to break the ice at the workshop."
+  },
+  {
+    "id": "adv_idioms_02",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "fill_in",
+    "question": "After the long meeting, I need to ___ a break and clear my head.",
+    "options": null,
+    "correct_answer": "take",
+    "explanation": "Take a break is idiomatic in work contexts. Here it means pause mentally and physically, not literally carry a break.",
+    "example_sentence": "Let's take a break and return in ten minutes."
+  },
+  {
+    "id": "adv_idioms_03",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "match",
+    "question": "Match \"under the weather\" to its meaning.",
+    "options": [
+      "Feeling slightly ill",
+      "Enjoying sunny weather",
+      "Working outside"
+    ],
+    "correct_answer": "Feeling slightly ill",
+    "explanation": "Under the weather is a mild, polite way to say you feel unwell. It sounds more natural than \"I am sick\" in some offices.",
+    "example_sentence": "She stayed home because she was under the weather."
+  },
+  {
+    "id": "adv_idioms_04",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "mcq",
+    "question": "If something \"costs an arm and a leg,\" it is ___",
+    "options": ["very expensive", "very cheap", "broken", "illegal"],
+    "correct_answer": "very expensive",
+    "explanation": "This idiom exaggerates price for emphasis. Use it in informal speech when complaining about high costs.",
+    "example_sentence": "That repair cost an arm and a leg."
+  },
+  {
+    "id": "adv_idioms_05",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "fill_in",
+    "question": "We are on the same ___ about the project timeline.",
+    "options": null,
+    "correct_answer": "page",
+    "explanation": "On the same page means people agree and understand each other. It is common in teamwork and negotiations.",
+    "example_sentence": "Let's make sure we're on the same page before we start."
+  },
+  {
+    "id": "adv_idioms_06",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "match",
+    "question": "Match \"hit the nail on the head\" to its meaning.",
+    "options": [
+      "To describe something exactly right",
+      "To make a physical mistake",
+      "To start a new hobby"
+    ],
+    "correct_answer": "To describe something exactly right",
+    "explanation": "Hit the nail on the head praises an accurate comment or solution. It rewards precise thinking in discussion.",
+    "example_sentence": "You hit the nail on the head with that summary."
+  },
+  {
+    "id": "adv_idioms_07",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "mcq",
+    "question": "What does \"once in a blue moon\" mean?",
+    "options": ["very rarely", "every night", "immediately", "never again"],
+    "correct_answer": "very rarely",
+    "explanation": "This idiom stresses infrequency. Blue moon refers to a rare event, so the phrase suits habits you seldom do.",
+    "example_sentence": "I only eat fast food once in a blue moon."
+  },
+  {
+    "id": "adv_idioms_08",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "fill_in",
+    "question": "Don't worry — the test is difficult, but you will ___ through it.",
+    "options": null,
+    "correct_answer": "get",
+    "explanation": "Get through means to survive or complete something challenging. It suggests effort but eventual success.",
+    "example_sentence": "We got through the busy season together."
+  },
+  {
+    "id": "adv_idioms_09",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "match",
+    "question": "Match \"let the cat out of the bag\" to its meaning.",
+    "options": [
+      "To reveal a secret by accident",
+      "To adopt a pet",
+      "To pack a suitcase"
+    ],
+    "correct_answer": "To reveal a secret by accident",
+    "explanation": "This idiom describes an unintentional disclosure. Context usually involves surprises or confidential plans.",
+    "example_sentence": "Someone let the cat out of the bag about the party."
+  },
+  {
+    "id": "adv_idioms_10",
+    "level": "advanced",
+    "topic": "idioms",
+    "type": "mcq",
+    "question": "If you \"call it a day,\" you ___",
+    "options": ["stop working for now", "start a new job", "change your opinion", "miss a deadline"],
+    "correct_answer": "stop working for now",
+    "explanation": "Call it a day ends work or effort for the moment. It is natural after long meetings or study sessions.",
+    "example_sentence": "It's late — let's call it a day and continue tomorrow."
+  }
+]

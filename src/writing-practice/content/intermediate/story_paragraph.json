@@ -1,0 +1,29 @@
+[
+  {
+    "id": "int_story_paragraph_01",
+    "level": "intermediate",
+    "topic": "story_paragraph",
+    "title": "An unexpected event",
+    "prompt": "Write a short story paragraph about an unexpected event during your day.",
+    "word_count_min": 80,
+    "word_count_max": 150
+  },
+  {
+    "id": "int_story_paragraph_02",
+    "level": "intermediate",
+    "topic": "story_paragraph",
+    "title": "A helpful stranger",
+    "prompt": "Tell a short story about a time a stranger helped you.",
+    "word_count_min": 75,
+    "word_count_max": 145
+  },
+  {
+    "id": "int_story_paragraph_03",
+    "level": "intermediate",
+    "topic": "story_paragraph",
+    "title": "Lost and found",
+    "prompt": "Write a paragraph about losing something important and finding it again.",
+    "word_count_min": 75,
+    "word_count_max": 140
+  }
+]

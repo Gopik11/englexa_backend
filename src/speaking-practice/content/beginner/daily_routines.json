@@ -1,0 +1,32 @@
+[
+  {
+    "id": "beg_daily_routines_01",
+    "level": "beginner",
+    "topic": "daily_routines",
+    "title": "Your morning",
+    "prompt": "Describe what you usually do in the morning.",
+    "reference_text": "I wake up at seven, eat breakfast, and take the bus to work.",
+    "key_vocabulary": ["wake up", "breakfast", "bus"],
+    "time_limit_seconds": 40
+  },
+  {
+    "id": "beg_daily_routines_02",
+    "level": "beginner",
+    "topic": "daily_routines",
+    "title": "After work",
+    "prompt": "Say what you often do after work or school.",
+    "reference_text": "After work, I cook dinner and watch a short show.",
+    "key_vocabulary": ["after", "cook", "dinner"],
+    "time_limit_seconds": 35
+  },
+  {
+    "id": "beg_daily_routines_03",
+    "level": "beginner",
+    "topic": "daily_routines",
+    "title": "Weekend plans",
+    "prompt": "Talk about one thing you like to do on weekends.",
+    "reference_text": "On weekends, I like to meet friends at the park.",
+    "key_vocabulary": ["weekends", "friends", "park"],
+    "time_limit_seconds": 35
+  }
+]

@@ -1,0 +1,124 @@
+[
+  {
+    "id": "beg_common_verbs_01",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "mcq",
+    "question": "Which verb means to put food in your mouth and swallow it?",
+    "options": ["eat", "drink", "cook", "wash"],
+    "correct_answer": "eat",
+    "explanation": "Eat describes the action of having a meal or snack. We use it with food nouns like rice, bread, or fruit.",
+    "example_sentence": "I eat breakfast at seven o'clock."
+  },
+  {
+    "id": "beg_common_verbs_02",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "fill_in",
+    "question": "Please ___ to the bus stop. We are late.",
+    "options": null,
+    "correct_answer": "go",
+    "explanation": "Go means to move from one place to another. It is one of the most common verbs in everyday English.",
+    "example_sentence": "They go to work by train every day."
+  },
+  {
+    "id": "beg_common_verbs_03",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "match",
+    "question": "Match the verb \"read\" to its meaning.",
+    "options": [
+      "To look at and understand written words",
+      "To listen to music loudly",
+      "To run very fast"
+    ],
+    "correct_answer": "To look at and understand written words",
+    "explanation": "Read is what you do with books, messages, and signs. You read silently or aloud depending on the situation.",
+    "example_sentence": "She likes to read stories before bed."
+  },
+  {
+    "id": "beg_common_verbs_04",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "mcq",
+    "question": "Which verb means to close your eyes and rest your body at night?",
+    "options": ["sleep", "sit", "stand", "wait"],
+    "correct_answer": "sleep",
+    "explanation": "Sleep is the natural rest we need every night. We say \"go to sleep\" when someone is ready for bed.",
+    "example_sentence": "The baby sleeps for ten hours."
+  },
+  {
+    "id": "beg_common_verbs_05",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "fill_in",
+    "question": "Can you ___ me your phone number?",
+    "options": null,
+    "correct_answer": "give",
+    "explanation": "Give means to hand something to another person. It often appears with \"me,\" \"him,\" or \"her\" after the verb.",
+    "example_sentence": "Please give the keys to your brother."
+  },
+  {
+    "id": "beg_common_verbs_06",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "match",
+    "question": "Match the verb \"write\" to its meaning.",
+    "options": [
+      "To make words with a pen or keyboard",
+      "To draw a picture with colors",
+      "To sing a song"
+    ],
+    "correct_answer": "To make words with a pen or keyboard",
+    "explanation": "Write is the opposite of read in many classroom tasks. You write emails, notes, and homework.",
+    "example_sentence": "He writes three sentences in his notebook."
+  },
+  {
+    "id": "beg_common_verbs_07",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "mcq",
+    "question": "Which verb means to use your ears to hear what someone says?",
+    "options": ["listen", "look", "smell", "touch"],
+    "correct_answer": "listen",
+    "explanation": "Listen focuses your attention on sounds or speech. We often say \"listen to\" before music or a person.",
+    "example_sentence": "Listen to the teacher carefully."
+  },
+  {
+    "id": "beg_common_verbs_08",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "fill_in",
+    "question": "I ___ English with my classmates twice a week.",
+    "options": null,
+    "correct_answer": "study",
+    "explanation": "Study means to learn a subject by reading, practising, or attending class. It shows regular effort over time.",
+    "example_sentence": "We study vocabulary every Monday."
+  },
+  {
+    "id": "beg_common_verbs_09",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "match",
+    "question": "Match the verb \"open\" to its meaning.",
+    "options": [
+      "To move something so you can go inside or see inside",
+      "To finish a lesson",
+      "To break something on purpose"
+    ],
+    "correct_answer": "To move something so you can go inside or see inside",
+    "explanation": "Open is the opposite of close. You open doors, windows, and bottles in daily life.",
+    "example_sentence": "She opens the window because it is hot."
+  },
+  {
+    "id": "beg_common_verbs_10",
+    "level": "beginner",
+    "topic": "common_verbs",
+    "type": "mcq",
+    "question": "Which verb means to move your body through water?",
+    "options": ["swim", "fly", "drive", "climb"],
+    "correct_answer": "swim",
+    "explanation": "Swim describes moving in a pool, lake, or sea. It is a common leisure verb as well as a sport.",
+    "example_sentence": "We swim in the sea during summer."
+  }
+]

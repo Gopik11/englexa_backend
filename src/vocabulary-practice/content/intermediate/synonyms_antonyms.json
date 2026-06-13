@@ -1,0 +1,112 @@
+[
+  {
+    "id": "int_synonyms_antonyms_01",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "mcq",
+    "question": "Which word is a synonym of \"big\"?",
+    "options": ["large", "tiny", "narrow", "weak"],
+    "correct_answer": "large",
+    "explanation": "Large means similar to big in size. Synonyms help you avoid repeating the same word in writing.",
+    "example_sentence": "They live in a large house near the river."
+  },
+  {
+    "id": "int_synonyms_antonyms_02",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "fill_in",
+    "question": "The antonym of \"hot\" in this weather report is ___.",
+    "options": null,
+    "correct_answer": "cold",
+    "explanation": "Antonyms express opposite meanings. Hot and cold describe temperature; knowing pairs improves reading speed.",
+    "example_sentence": "It was hot yesterday, but today is cold and windy."
+  },
+  {
+    "id": "int_synonyms_antonyms_03",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "match",
+    "question": "Match \"begin\" to its synonym.",
+    "options": ["start", "finish", "pause", "forget"],
+    "correct_answer": "start",
+    "explanation": "Begin and start both mark the first moment of an action. Formal writing may prefer begin; speech often uses start.",
+    "example_sentence": "The lesson will begin at nine o'clock."
+  },
+  {
+    "id": "int_synonyms_antonyms_04",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "mcq",
+    "question": "Which word is an antonym of \"generous\"?",
+    "options": ["selfish", "kind", "polite", "brave"],
+    "correct_answer": "selfish",
+    "explanation": "Generous people give freely; selfish people keep things for themselves. Context shows which tone fits best.",
+    "example_sentence": "It was selfish to keep all the credit."
+  },
+  {
+    "id": "int_synonyms_antonyms_05",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "fill_in",
+    "question": "A synonym for \"happy\" in formal writing is ___.",
+    "options": null,
+    "correct_answer": "delighted",
+    "explanation": "Delighted is stronger and slightly more formal than happy. Choose synonyms that match the sentence register.",
+    "example_sentence": "We were delighted to hear the good news."
+  },
+  {
+    "id": "int_synonyms_antonyms_06",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "match",
+    "question": "Match \"increase\" to its antonym.",
+    "options": ["decrease", "improve", "continue", "accept"],
+    "correct_answer": "decrease",
+    "explanation": "Increase and decrease are common opposites in reports about prices, numbers, and trends.",
+    "example_sentence": "Sales increased in March but decreased in April."
+  },
+  {
+    "id": "int_synonyms_antonyms_07",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "mcq",
+    "question": "Which word is closest in meaning to \"difficult\"?",
+    "options": ["challenging", "simple", "empty", "silent"],
+    "correct_answer": "challenging",
+    "explanation": "Challenging suggests effort is needed but in a positive way. It is useful feedback in learning contexts.",
+    "example_sentence": "The exam was challenging, but fair."
+  },
+  {
+    "id": "int_synonyms_antonyms_08",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "fill_in",
+    "question": "The antonym of \"borrow\" is ___.",
+    "options": null,
+    "correct_answer": "lend",
+    "explanation": "Borrow means you receive something temporarily; lend means you give it. Confusing them is a common learner error.",
+    "example_sentence": "Can you lend me your pen? I will return it."
+  },
+  {
+    "id": "int_synonyms_antonyms_09",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "match",
+    "question": "Match \"ancient\" to its antonym.",
+    "options": ["modern", "famous", "foreign", "local"],
+    "correct_answer": "modern",
+    "explanation": "Ancient describes very old things; modern describes current or recent styles and technology.",
+    "example_sentence": "The museum shows ancient tools next to modern devices."
+  },
+  {
+    "id": "int_synonyms_antonyms_10",
+    "level": "intermediate",
+    "topic": "synonyms_antonyms",
+    "type": "mcq",
+    "question": "Which word is a synonym of \"purchase\"?",
+    "options": ["buy", "sell", "rent", "return"],
+    "correct_answer": "buy",
+    "explanation": "Purchase is slightly more formal than buy. Both describe paying money to own something.",
+    "example_sentence": "She purchased a ticket online."
+  }
+]

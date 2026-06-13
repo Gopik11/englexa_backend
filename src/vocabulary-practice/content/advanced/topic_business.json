@@ -1,0 +1,136 @@
+[
+  {
+    "id": "adv_topic_business_01",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "mcq",
+    "question": "What is a \"stakeholder\" in business?",
+    "options": [
+      "Anyone affected by or interested in a company's decisions",
+      "Only the CEO of a company",
+      "A machine used in factories"
+    ],
+    "correct_answer": "Anyone affected by or interested in a company's decisions",
+    "explanation": "Stakeholders include employees, customers, investors, and communities. Modern reports address their concerns openly.",
+    "example_sentence": "We invited stakeholders to the strategy meeting."
+  },
+  {
+    "id": "adv_topic_business_02",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "fill_in",
+    "question": "The board will ___ a new CEO next month.",
+    "options": null,
+    "correct_answer": "appoint",
+    "explanation": "Appoint means to choose someone officially for a role. It is formal language common in corporate news.",
+    "example_sentence": "They appointed her as director of operations."
+  },
+  {
+    "id": "adv_topic_business_03",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "match",
+    "question": "Match \"cash flow\" to its meaning.",
+    "options": [
+      "Money moving in and out of a business",
+      "Water pipes in an office",
+      "A type of marketing video"
+    ],
+    "correct_answer": "Money moving in and out of a business",
+    "explanation": "Cash flow tracks liquidity — whether a company can pay bills on time. Positive cash flow supports growth.",
+    "example_sentence": "Strong sales improved our cash flow this quarter."
+  },
+  {
+    "id": "adv_topic_business_04",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "mcq",
+    "question": "What does \"ROI\" stand for?",
+    "options": [
+      "Return on investment",
+      "Rate of interest",
+      "Report of income"
+    ],
+    "correct_answer": "Return on investment",
+    "explanation": "ROI measures profit relative to cost. Leaders use it to judge whether a project was worth the money.",
+    "example_sentence": "The campaign delivered a strong ROI within six months."
+  },
+  {
+    "id": "adv_topic_business_05",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "fill_in",
+    "question": "We need to ___ our costs before expanding overseas.",
+    "options": null,
+    "correct_answer": "reduce",
+    "explanation": "Reduce costs is standard business language for cutting expenses. Pair it with strategies like automation or renegotiation.",
+    "example_sentence": "The firm reduced costs by outsourcing logistics."
+  },
+  {
+    "id": "adv_topic_business_06",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "match",
+    "question": "Match \"merger\" to its meaning.",
+    "options": [
+      "When two companies combine into one",
+      "When a company closes forever",
+      "When a product fails a test"
+    ],
+    "correct_answer": "When two companies combine into one",
+    "explanation": "A merger joins organisations to share resources and markets. News reports explain benefits and risks to staff.",
+    "example_sentence": "The merger created the largest airline in the region."
+  },
+  {
+    "id": "adv_topic_business_07",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "mcq",
+    "question": "Which word means the money a company owes to others?",
+    "options": ["liability", "profit", "revenue", "dividend"],
+    "correct_answer": "liability",
+    "explanation": "Liabilities appear on balance sheets opposite assets. Loans and unpaid invoices are common examples.",
+    "example_sentence": "Long-term liabilities increased after the loan."
+  },
+  {
+    "id": "adv_topic_business_08",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "fill_in",
+    "question": "Our team will ___ a proposal to the client on Friday.",
+    "options": null,
+    "correct_answer": "pitch",
+    "explanation": "Pitch means to present an idea persuasively. In sales it often includes slides, pricing, and timelines.",
+    "example_sentence": "She pitched the design to the marketing director."
+  },
+  {
+    "id": "adv_topic_business_09",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "match",
+    "question": "Match \"scalable\" to its meaning in startups.",
+    "options": [
+      "Able to grow without proportional cost increases",
+      "Impossible to measure",
+      "Limited to one city only"
+    ],
+    "correct_answer": "Able to grow without proportional cost increases",
+    "explanation": "Scalable business models handle more customers efficiently. Investors ask whether a product can scale globally.",
+    "example_sentence": "Cloud software is highly scalable."
+  },
+  {
+    "id": "adv_topic_business_10",
+    "level": "advanced",
+    "topic": "topic_business",
+    "type": "mcq",
+    "question": "What is \"due diligence\"?",
+    "options": [
+      "Careful investigation before a deal",
+      "A daily team meeting",
+      "A type of employee bonus"
+    ],
+    "correct_answer": "Careful investigation before a deal",
+    "explanation": "Due diligence reviews finances, legal risks, and operations before mergers or investments. It protects buyers from surprises.",
+    "example_sentence": "Legal due diligence took three weeks."
+  }
+]

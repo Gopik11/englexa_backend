@@ -1,0 +1,114 @@
+[
+  {
+    "id": "int_modals_01",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "mcq",
+    "question": "Choose: \"You ___ wear a seatbelt in the car.\" (rule)",
+    "options": [
+      "can",
+      "must",
+      "might"
+    ],
+    "correct_answer": "must",
+    "explanation": "Use \"must\" for rules and strong obligation."
+  },
+  {
+    "id": "int_modals_02",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "fill_blank",
+    "question": "She ___ (can) speak three languages.",
+    "options": null,
+    "correct_answer": "can",
+    "explanation": "Use \"can\" for ability. Example: I can swim."
+  },
+  {
+    "id": "int_modals_03",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "correction",
+    "question": "Fix: \"You should to study more.\"",
+    "options": null,
+    "correct_answer": "You should study more.",
+    "explanation": "Modal verbs are followed by the base verb without \"to\"."
+  },
+  {
+    "id": "int_modals_04",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "rewrite",
+    "question": "Rewrite with \"should\": \"It's a good idea to rest.\"",
+    "options": null,
+    "correct_answer": "You should rest.",
+    "explanation": "Use \"should\" for advice. Example: You should drink water."
+  },
+  {
+    "id": "int_modals_05",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "mcq",
+    "question": "Choose: \"It ___ rain later, so take an umbrella.\"",
+    "options": [
+      "must",
+      "might",
+      "can't"
+    ],
+    "correct_answer": "might",
+    "explanation": "Use \"might\" for possible future events."
+  },
+  {
+    "id": "int_modals_06",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "fill_blank",
+    "question": "You ___ (not) smoke here. It's forbidden.",
+    "options": null,
+    "correct_answer": "must not",
+    "explanation": "Use \"must not\" for prohibition. Example: You must not park here."
+  },
+  {
+    "id": "int_modals_07",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "correction",
+    "question": "Fix: \"He can to drive a truck.\"",
+    "options": null,
+    "correct_answer": "He can drive a truck.",
+    "explanation": "After modals, use the base verb without \"to\"."
+  },
+  {
+    "id": "int_modals_08",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "mcq",
+    "question": "Which expresses permission?",
+    "options": [
+      "You may leave early today.",
+      "You must leave early today.",
+      "You should leave early today."
+    ],
+    "correct_answer": "You may leave early today.",
+    "explanation": "Use \"may\" to give permission politely."
+  },
+  {
+    "id": "int_modals_09",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "short_answer",
+    "question": "Complete: \"I ___ (have to) finish this today.\"",
+    "options": null,
+    "correct_answer": "have to",
+    "explanation": "Use \"have to\" for external obligation. Example: I have to work tomorrow."
+  },
+  {
+    "id": "int_modals_10",
+    "level": "intermediate",
+    "topic": "modals",
+    "type": "rewrite",
+    "question": "Rewrite: \"It's impossible that he is at home now.\"",
+    "options": null,
+    "correct_answer": "He can't be at home now.",
+    "explanation": "Use \"can't\" for strong negative possibility."
+  }
+]

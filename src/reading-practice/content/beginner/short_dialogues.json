@@ -1,0 +1,199 @@
+[
+  {
+    "id": "beg_short_dialogues_01",
+    "level": "beginner",
+    "topic": "short_dialogues",
+    "title": "At the Café",
+    "passage": "Anna: Hello! I'd like a coffee, please.\nBarista: Sure. Small or large?\nAnna: Small, please.\nBarista: Anything else?\nAnna: No, thank you. How much is it?\nBarista: That's three dollars.\nAnna: Here you go. Thank you!",
+    "questions": [
+      {
+        "id": "beg_short_dialogues_01_q1",
+        "type": "mcq",
+        "question": "What does Anna want to order?",
+        "options": ["Tea", "Coffee", "Juice", "Water"],
+        "correct_answer": "Coffee",
+        "explanation": "Anna says, \"I'd like a coffee, please.\" That tells us she wants coffee, not tea, juice, or water."
+      },
+      {
+        "id": "beg_short_dialogues_01_q2",
+        "type": "short_answer",
+        "question": "What size does Anna choose?",
+        "options": null,
+        "correct_answer": "small",
+        "explanation": "When the barista asks \"Small or large?\", Anna answers \"Small, please.\" So she chooses a small coffee."
+      },
+      {
+        "id": "beg_short_dialogues_01_q3",
+        "type": "mcq",
+        "question": "How much does Anna pay?",
+        "options": ["Two dollars", "Three dollars", "Four dollars", "Five dollars"],
+        "correct_answer": "Three dollars",
+        "explanation": "The barista says, \"That's three dollars.\" Anna then pays and thanks the barista."
+      }
+    ]
+  },
+  {
+    "id": "beg_short_dialogues_02",
+    "level": "beginner",
+    "topic": "short_dialogues",
+    "title": "At the Bus Stop",
+    "passage": "Tom: Excuse me, does this bus go to the city center?\nWoman: Yes, it does. It comes every ten minutes.\nTom: Great. Is there a ticket machine here?\nWoman: No, you can pay on the bus with a card.\nTom: Perfect. Thank you for your help!\nWoman: You're welcome. Have a nice day!",
+    "questions": [
+      {
+        "id": "beg_short_dialogues_02_q1",
+        "type": "mcq",
+        "question": "Where does Tom want to go?",
+        "options": ["The airport", "The city center", "The train station", "The hospital"],
+        "correct_answer": "The city center",
+        "explanation": "Tom asks if the bus goes to the city center. The woman confirms that it does."
+      },
+      {
+        "id": "beg_short_dialogues_02_q2",
+        "type": "short_answer",
+        "question": "How often does the bus come?",
+        "options": null,
+        "correct_answer": "every ten minutes",
+        "explanation": "The woman says the bus comes every ten minutes. That means Tom does not have to wait very long."
+      },
+      {
+        "id": "beg_short_dialogues_02_q3",
+        "type": "mcq",
+        "question": "How can Tom pay for the bus?",
+        "options": ["With cash only", "With a card on the bus", "At a ticket machine", "Online before boarding"],
+        "correct_answer": "With a card on the bus",
+        "explanation": "Tom asks about a ticket machine, but the woman says there is no machine. She tells him he can pay on the bus with a card."
+      },
+      {
+        "id": "beg_short_dialogues_02_q4",
+        "type": "short_answer",
+        "question": "What does the woman say at the end?",
+        "options": null,
+        "correct_answer": "Have a nice day",
+        "explanation": "After Tom thanks her, the woman says, \"You're welcome. Have a nice day!\" It is a friendly way to end the conversation."
+      }
+    ]
+  },
+  {
+    "id": "beg_short_dialogues_03",
+    "level": "beginner",
+    "topic": "short_dialogues",
+    "title": "Shopping for Groceries",
+    "passage": "Clerk: Good afternoon! Can I help you?\nLuis: Yes, I'm looking for rice and eggs.\nClerk: The rice is in aisle three. Eggs are in aisle one, near the milk.\nLuis: Thank you. Do you have brown rice?\nClerk: Yes, we do. It's on the top shelf.\nLuis: Great. I'll take a bag of brown rice and a dozen eggs.\nClerk: Anything else today?\nLuis: No, that's all. How much will that be?\nClerk: Twelve dollars and fifty cents.\nLuis: Here is my card.",
+    "questions": [
+      {
+        "id": "beg_short_dialogues_03_q1",
+        "type": "mcq",
+        "question": "What is Luis looking for first?",
+        "options": ["Bread and butter", "Rice and eggs", "Fruit and vegetables", "Chicken and fish"],
+        "correct_answer": "Rice and eggs",
+        "explanation": "Luis tells the clerk he is looking for rice and eggs. Those are the first items he mentions."
+      },
+      {
+        "id": "beg_short_dialogues_03_q2",
+        "type": "short_answer",
+        "question": "In which aisle are the eggs?",
+        "options": null,
+        "correct_answer": "aisle one",
+        "explanation": "The clerk says eggs are in aisle one, near the milk. Luis goes there after learning where the rice is."
+      },
+      {
+        "id": "beg_short_dialogues_03_q3",
+        "type": "mcq",
+        "question": "Where is the brown rice?",
+        "options": ["On the bottom shelf", "In aisle three on the top shelf", "At the front of the store", "In aisle one"],
+        "correct_answer": "In aisle three on the top shelf",
+        "explanation": "The clerk says rice is in aisle three and that brown rice is on the top shelf. Luis decides to buy a bag of it."
+      },
+      {
+        "id": "beg_short_dialogues_03_q4",
+        "type": "short_answer",
+        "question": "How many eggs does Luis buy?",
+        "options": null,
+        "correct_answer": "a dozen",
+        "explanation": "Luis says he will take a dozen eggs. A dozen means twelve eggs."
+      },
+      {
+        "id": "beg_short_dialogues_03_q5",
+        "type": "mcq",
+        "question": "How much does Luis pay?",
+        "options": ["Ten dollars", "Eleven dollars and fifty cents", "Twelve dollars and fifty cents", "Fifteen dollars"],
+        "correct_answer": "Twelve dollars and fifty cents",
+        "explanation": "The clerk tells Luis the total is twelve dollars and fifty cents. Luis then pays with his card."
+      }
+    ]
+  },
+  {
+    "id": "beg_short_dialogues_04",
+    "level": "beginner",
+    "topic": "short_dialogues",
+    "title": "Meeting a New Neighbor",
+    "passage": "Sara: Hi! I'm Sara. I live in apartment four.\nBen: Nice to meet you, Sara. I'm Ben from apartment five.\nSara: Welcome to the building! How long have you lived here?\nBen: Just one week. I moved from another city.\nSara: If you need anything, just knock on my door.\nBen: That's very kind. Thank you!",
+    "questions": [
+      {
+        "id": "beg_short_dialogues_04_q1",
+        "type": "mcq",
+        "question": "Which apartment does Sara live in?",
+        "options": ["Apartment three", "Apartment four", "Apartment five", "Apartment six"],
+        "correct_answer": "Apartment four",
+        "explanation": "Sara introduces herself and says she lives in apartment four. Ben lives next door in apartment five."
+      },
+      {
+        "id": "beg_short_dialogues_04_q2",
+        "type": "short_answer",
+        "question": "How long has Ben lived in the building?",
+        "options": null,
+        "correct_answer": "one week",
+        "explanation": "Ben says he has lived there for just one week. He recently moved from another city."
+      },
+      {
+        "id": "beg_short_dialogues_04_q3",
+        "type": "mcq",
+        "question": "What does Sara offer to do?",
+        "options": ["Cook dinner for Ben", "Help if Ben needs anything", "Show Ben the city", "Lend Ben her car"],
+        "correct_answer": "Help if Ben needs anything",
+        "explanation": "Sara says, \"If you need anything, just knock on my door.\" She is offering friendly help to her new neighbor."
+      }
+    ]
+  },
+  {
+    "id": "beg_short_dialogues_05",
+    "level": "beginner",
+    "topic": "short_dialogues",
+    "title": "Calling the Doctor",
+    "passage": "Receptionist: Good morning, City Clinic. How can I help you?\nMaria: Hello. I'd like to make an appointment, please.\nReceptionist: Of course. What is your name?\nMaria: Maria Lopez.\nReceptionist: Thank you, Maria. Is tomorrow at two o'clock okay?\nMaria: Yes, that works for me.\nReceptionist: Great. Please arrive ten minutes early.\nMaria: I will. Thank you!",
+    "questions": [
+      {
+        "id": "beg_short_dialogues_05_q1",
+        "type": "mcq",
+        "question": "Why does Maria call the clinic?",
+        "options": ["To cancel an appointment", "To ask about medicine", "To make an appointment", "To visit a friend"],
+        "correct_answer": "To make an appointment",
+        "explanation": "Maria says she would like to make an appointment. The receptionist then asks for her name and offers a time."
+      },
+      {
+        "id": "beg_short_dialogues_05_q2",
+        "type": "short_answer",
+        "question": "What is Maria's last name?",
+        "options": null,
+        "correct_answer": "Lopez",
+        "explanation": "Maria gives her full name as Maria Lopez. Lopez is her family name, also called a last name."
+      },
+      {
+        "id": "beg_short_dialogues_05_q3",
+        "type": "mcq",
+        "question": "When is Maria's appointment?",
+        "options": ["Today at two o'clock", "Tomorrow at two o'clock", "Tomorrow at ten o'clock", "Next week at two o'clock"],
+        "correct_answer": "Tomorrow at two o'clock",
+        "explanation": "The receptionist asks if tomorrow at two o'clock is okay, and Maria agrees. That is when her appointment is scheduled."
+      },
+      {
+        "id": "beg_short_dialogues_05_q4",
+        "type": "short_answer",
+        "question": "How early should Maria arrive?",
+        "options": null,
+        "correct_answer": "ten minutes early",
+        "explanation": "The receptionist asks Maria to arrive ten minutes early. Maria says she will do that before her appointment."
+      }
+    ]
+  }
+]

@@ -1,0 +1,199 @@
+[
+  {
+    "id": "int_news_snippets_01",
+    "level": "intermediate",
+    "topic": "news_snippets",
+    "title": "City Opens New Public Library",
+    "passage": "Riverside opened its first new public library in twenty years on Saturday. The three-story building includes a children's reading room, quiet study areas, and free Wi-Fi. Mayor Lin said the project cost twelve million dollars and took three years to complete. More than two thousand residents visited on opening day. The library will be open seven days a week from nine in the morning until eight at night.",
+    "questions": [
+      {
+        "id": "int_news_snippets_01_q1",
+        "type": "mcq",
+        "question": "How long had Riverside waited for a new library?",
+        "options": ["Five years", "Ten years", "Twenty years", "Thirty years"],
+        "correct_answer": "Twenty years",
+        "explanation": "The article says this is Riverside's first new public library in twenty years. That tells us how long the city went without building one."
+      },
+      {
+        "id": "int_news_snippets_01_q2",
+        "type": "short_answer",
+        "question": "What is one feature of the new building?",
+        "options": null,
+        "correct_answer": "free Wi-Fi",
+        "explanation": "The library includes several features, such as a children's reading room, study areas, and free Wi-Fi. Any of these details would be correct."
+      },
+      {
+        "id": "int_news_snippets_01_q3",
+        "type": "mcq",
+        "question": "How many people visited on opening day?",
+        "options": ["About five hundred", "About one thousand", "More than two thousand", "More than five thousand"],
+        "correct_answer": "More than two thousand",
+        "explanation": "The report states that more than two thousand residents visited on opening day. That shows strong public interest in the project."
+      }
+    ]
+  },
+  {
+    "id": "int_news_snippets_02",
+    "level": "intermediate",
+    "topic": "news_snippets",
+    "title": "Local Team Wins Regional Championship",
+    "passage": "The Hillview Hawks defeated the Lakeside Lions 3–2 in overtime to win the regional soccer championship on Sunday. Forward Nina Ortiz scored the winning goal in the ninety-third minute after a corner kick. Coach Daniels praised the team's discipline and said the victory reflected months of early-morning training. Fans filled the stadium despite light rain. The Hawks will travel to the national tournament next month.",
+    "questions": [
+      {
+        "id": "int_news_snippets_02_q1",
+        "type": "mcq",
+        "question": "What was the final score?",
+        "options": ["2–1", "3–2", "3–3", "4–2"],
+        "correct_answer": "3–2",
+        "explanation": "The article reports that the Hawks defeated the Lions 3–2 in overtime. That is the final score of the championship game."
+      },
+      {
+        "id": "int_news_snippets_02_q2",
+        "type": "short_answer",
+        "question": "Who scored the winning goal?",
+        "options": null,
+        "correct_answer": "Nina Ortiz",
+        "explanation": "Forward Nina Ortiz scored the winning goal in the ninety-third minute. Her goal came after a corner kick."
+      },
+      {
+        "id": "int_news_snippets_02_q3",
+        "type": "mcq",
+        "question": "What did Coach Daniels say the victory reflected?",
+        "options": ["Luck in the final minutes", "Months of early-morning training", "A new stadium", "Changes to the league rules"],
+        "correct_answer": "Months of early-morning training",
+        "explanation": "Coach Daniels praised the team's discipline and said the win reflected months of early-morning training. He connects success to hard work."
+      },
+      {
+        "id": "int_news_snippets_02_q4",
+        "type": "short_answer",
+        "question": "What will the Hawks do next month?",
+        "options": null,
+        "correct_answer": "travel to the national tournament",
+        "explanation": "The article ends by saying the Hawks will travel to the national tournament next month. Winning the regional title earned them that opportunity."
+      }
+    ]
+  },
+  {
+    "id": "int_news_snippets_03",
+    "level": "intermediate",
+    "topic": "news_snippets",
+    "title": "Weather Alert for Coastal Areas",
+    "passage": "The National Weather Service issued a coastal flood warning for Bay County through Thursday morning. Forecasters expect high tides and winds up to forty miles per hour. Residents in low-lying neighborhoods are advised to move vehicles to higher ground and avoid driving through standing water. Emergency crews have placed sandbags near two bridges. Schools in the county will close on Wednesday as a precaution.",
+    "questions": [
+      {
+        "id": "int_news_snippets_03_q1",
+        "type": "mcq",
+        "question": "What type of warning was issued?",
+        "options": ["Heat advisory", "Coastal flood warning", "Tornado watch", "Air quality alert"],
+        "correct_answer": "Coastal flood warning",
+        "explanation": "The National Weather Service issued a coastal flood warning for Bay County. That is the main alert described in the article."
+      },
+      {
+        "id": "int_news_snippets_03_q2",
+        "type": "short_answer",
+        "question": "How strong are the expected winds?",
+        "options": null,
+        "correct_answer": "up to forty miles per hour",
+        "explanation": "Forecasters expect winds up to forty miles per hour along with high tides. Strong wind can make flooding more dangerous."
+      },
+      {
+        "id": "int_news_snippets_03_q3",
+        "type": "mcq",
+        "question": "What are residents in low-lying areas advised to do?",
+        "options": ["Open all windows", "Stay on the beach", "Move vehicles to higher ground", "Plant trees near rivers"],
+        "correct_answer": "Move vehicles to higher ground",
+        "explanation": "Residents in low-lying neighborhoods are told to move vehicles to higher ground and avoid driving through standing water. These steps reduce damage and risk."
+      },
+      {
+        "id": "int_news_snippets_03_q4",
+        "type": "short_answer",
+        "question": "What have emergency crews placed near two bridges?",
+        "options": null,
+        "correct_answer": "sandbags",
+        "explanation": "Emergency crews placed sandbags near two bridges to help control flooding. Sandbags are a common tool during flood warnings."
+      },
+      {
+        "id": "int_news_snippets_03_q5",
+        "type": "mcq",
+        "question": "When will schools in the county close?",
+        "options": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "correct_answer": "Wednesday",
+        "explanation": "Schools in the county will close on Wednesday as a precaution. Officials are trying to keep students safe during the warning period."
+      }
+    ]
+  },
+  {
+    "id": "int_news_snippets_04",
+    "level": "intermediate",
+    "topic": "news_snippets",
+    "title": "Tech Company Launches Green Initiative",
+    "passage": "NovaTech announced a plan to power all of its offices with renewable energy by 2028. The company will install solar panels at its headquarters and buy wind power for smaller sites. CEO Amara Singh said the move would cut carbon emissions by thirty percent over five years. Employees will also receive subsidies for public transit and electric bicycles. Industry analysts called the announcement ambitious but achievable.",
+    "questions": [
+      {
+        "id": "int_news_snippets_04_q1",
+        "type": "mcq",
+        "question": "By when does NovaTech plan to use only renewable energy in its offices?",
+        "options": ["2025", "2026", "2028", "2030"],
+        "correct_answer": "2028",
+        "explanation": "NovaTech announced a plan to power all of its offices with renewable energy by 2028. That is the target year for the initiative."
+      },
+      {
+        "id": "int_news_snippets_04_q2",
+        "type": "short_answer",
+        "question": "What will NovaTech install at its headquarters?",
+        "options": null,
+        "correct_answer": "solar panels",
+        "explanation": "The company will install solar panels at its headquarters and buy wind power for smaller sites. Solar panels are part of its renewable energy plan."
+      },
+      {
+        "id": "int_news_snippets_04_q3",
+        "type": "mcq",
+        "question": "How did industry analysts describe the announcement?",
+        "options": ["Impossible and risky", "Ambitious but achievable", "Too small to matter", "Illegal under current law"],
+        "correct_answer": "Ambitious but achievable",
+        "explanation": "Industry analysts called the announcement ambitious but achievable. They think the goal is challenging yet realistic."
+      }
+    ]
+  },
+  {
+    "id": "int_news_snippets_05",
+    "level": "intermediate",
+    "topic": "news_snippets",
+    "title": "School District Extends Summer Learning Program",
+    "passage": "Greenfield School District will expand its free summer learning program from four to six weeks starting in July. The program offers reading support, math workshops, and art classes for students in grades three through eight. Superintendent Cole said demand grew after last year's pilot, when attendance rose by forty percent. Breakfast and lunch will be provided at no cost. Families can register online until June fifteenth.",
+    "questions": [
+      {
+        "id": "int_news_snippets_05_q1",
+        "type": "mcq",
+        "question": "How long will the summer program last?",
+        "options": ["Four weeks", "Five weeks", "Six weeks", "Eight weeks"],
+        "correct_answer": "Six weeks",
+        "explanation": "The district is expanding the program from four to six weeks. The new length gives students more time for summer learning."
+      },
+      {
+        "id": "int_news_snippets_05_q2",
+        "type": "short_answer",
+        "question": "Name one subject or activity offered in the program.",
+        "options": null,
+        "correct_answer": "reading support",
+        "explanation": "The program offers reading support, math workshops, and art classes. Any one of these activities answers the question correctly."
+      },
+      {
+        "id": "int_news_snippets_05_q3",
+        "type": "mcq",
+        "question": "Why is the district expanding the program?",
+        "options": ["A new law requires it", "Demand grew after last year's pilot", "Teachers requested shorter school years", "The program lost funding"],
+        "correct_answer": "Demand grew after last year's pilot",
+        "explanation": "Superintendent Cole said demand grew after last year's pilot, when attendance rose by forty percent. Higher interest led to the expansion."
+      },
+      {
+        "id": "int_news_snippets_05_q4",
+        "type": "short_answer",
+        "question": "When is the registration deadline?",
+        "options": null,
+        "correct_answer": "June fifteenth",
+        "explanation": "Families can register online until June fifteenth. After that date, registration for the program may close."
+      }
+    ]
+  }
+]

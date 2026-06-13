@@ -1,0 +1,132 @@
+[
+  {
+    "id": "int_topic_travel_01",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "mcq",
+    "question": "What is a \"boarding pass\"?",
+    "options": [
+      "A document that lets you get on a plane",
+      "A map of the city centre",
+      "A ticket for a museum"
+    ],
+    "correct_answer": "A document that lets you get on a plane",
+    "explanation": "A boarding pass shows your seat and flight details at the gate. Airlines may issue it on your phone or on paper.",
+    "example_sentence": "Show your boarding pass before you board the plane."
+  },
+  {
+    "id": "int_topic_travel_02",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "fill_in",
+    "question": "We arrived at the hotel and went to the front ___ to check in.",
+    "options": null,
+    "correct_answer": "desk",
+    "explanation": "The front desk (or reception) is where guests register and get room keys. It is essential travel vocabulary.",
+    "example_sentence": "The clerk at the front desk gave us our key cards."
+  },
+  {
+    "id": "int_topic_travel_03",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "match",
+    "question": "Match \"layover\" to its meaning.",
+    "options": [
+      "A short stop between connecting flights",
+      "A long holiday at the beach",
+      "A discount on train tickets"
+    ],
+    "correct_answer": "A short stop between connecting flights",
+    "explanation": "A layover is waiting time between flights, often in another city. A long layover can allow a quick tour.",
+    "example_sentence": "We had a three-hour layover in Dubai."
+  },
+  {
+    "id": "int_topic_travel_04",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "mcq",
+    "question": "Which word means bags and suitcases you take on a trip?",
+    "options": ["luggage", "furniture", "equipment", "inventory"],
+    "correct_answer": "luggage",
+    "explanation": "Luggage is uncountable in most sentences. At airports you may hear baggage with the same meaning.",
+    "example_sentence": "Please do not leave your luggage unattended."
+  },
+  {
+    "id": "int_topic_travel_05",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "fill_in",
+    "question": "The flight was ___ because of bad weather.",
+    "options": null,
+    "correct_answer": "delayed",
+    "explanation": "Delayed means later than planned. Travellers often check apps for delay updates.",
+    "example_sentence": "Our train was delayed by forty minutes."
+  },
+  {
+    "id": "int_topic_travel_06",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "match",
+    "question": "Match \"sightseeing\" to its meaning.",
+    "options": [
+      "Visiting famous places as a tourist",
+      "Buying gifts for friends",
+      "Sleeping on a long journey"
+    ],
+    "correct_answer": "Visiting famous places as a tourist",
+    "explanation": "Sightseeing means touring landmarks and attractions. We often go sightseeing in a new city.",
+    "example_sentence": "We spent the afternoon sightseeing in Rome."
+  },
+  {
+    "id": "int_topic_travel_07",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "mcq",
+    "question": "What does \"book in advance\" mean?",
+    "options": [
+      "Reserve something before you travel",
+      "Cancel a reservation",
+      "Pay at the door only"
+    ],
+    "correct_answer": "Reserve something before you travel",
+    "explanation": "Booking in advance secures tickets or rooms early, often at a better price. It reduces stress during peak season.",
+    "example_sentence": "We booked the hotel in advance for summer."
+  },
+  {
+    "id": "int_topic_travel_08",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "fill_in",
+    "question": "Do you have your ___? You need it to enter another country.",
+    "options": null,
+    "correct_answer": "passport",
+    "explanation": "A passport is official ID for international travel. Keep it safe and check the expiry date before you fly.",
+    "example_sentence": "Her passport expires next year."
+  },
+  {
+    "id": "int_topic_travel_09",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "match",
+    "question": "Match \"customs\" to its meaning at an airport.",
+    "options": [
+      "The place where officials check goods you bring into a country",
+      "The area where planes take off",
+      "The shop that sells snacks"
+    ],
+    "correct_answer": "The place where officials check goods you bring into a country",
+    "explanation": "Customs controls imports and declares items you must pay tax on. Travellers complete a customs form on some flights.",
+    "example_sentence": "We went through customs after landing."
+  },
+  {
+    "id": "int_topic_travel_10",
+    "level": "intermediate",
+    "topic": "topic_travel",
+    "type": "mcq",
+    "question": "Which phrase means to leave the hotel and return the room key?",
+    "options": ["check out", "check in", "set off", "turn back"],
+    "correct_answer": "check out",
+    "explanation": "Check out ends your hotel stay and settles the bill. Check in is the opposite when you arrive.",
+    "example_sentence": "We need to check out before noon."
+  }
+]

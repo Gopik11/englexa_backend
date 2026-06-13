@@ -1,0 +1,32 @@
+[
+  {
+    "id": "adv_presentations_01",
+    "level": "advanced",
+    "topic": "presentations",
+    "title": "Open a presentation",
+    "prompt": "Give a short opening for a presentation about teamwork.",
+    "reference_text": "Good morning everyone. Today I will explain why teamwork improves results in modern companies.",
+    "key_vocabulary": ["presentation", "teamwork", "results"],
+    "time_limit_seconds": 50
+  },
+  {
+    "id": "adv_presentations_02",
+    "level": "advanced",
+    "topic": "presentations",
+    "title": "Summarise findings",
+    "prompt": "Summarise research findings in a formal tone.",
+    "reference_text": "Our research indicates that consistent feedback leads to measurable performance gains.",
+    "key_vocabulary": ["research", "indicates", "measurable"],
+    "time_limit_seconds": 55
+  },
+  {
+    "id": "adv_presentations_03",
+    "level": "advanced",
+    "topic": "presentations",
+    "title": "Close with a call to action",
+    "prompt": "End a presentation by asking the audience to take one clear action.",
+    "reference_text": "In conclusion, I encourage you to adopt these practices in your next project review.",
+    "key_vocabulary": ["conclusion", "encourage", "practices"],
+    "time_limit_seconds": 50
+  }
+]

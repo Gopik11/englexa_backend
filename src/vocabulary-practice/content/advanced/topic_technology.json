@@ -1,0 +1,140 @@
+[
+  {
+    "id": "adv_topic_technology_01",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "mcq",
+    "question": "What does \"algorithm\" mean in computing?",
+    "options": [
+      "A step-by-step set of rules to solve a problem",
+      "A physical cable inside a laptop",
+      "A social media username"
+    ],
+    "correct_answer": "A step-by-step set of rules to solve a problem",
+    "explanation": "Algorithms power search, recommendations, and routing. Understanding them helps you discuss AI responsibly.",
+    "example_sentence": "The app uses an algorithm to sort your photos."
+  },
+  {
+    "id": "adv_topic_technology_02",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "fill_in",
+    "question": "Always use two-factor ___ to protect your accounts.",
+    "options": null,
+    "correct_answer": "authentication",
+    "explanation": "Authentication verifies identity, often with a password plus a code. It reduces risk if passwords leak.",
+    "example_sentence": "Authentication failed because the code expired."
+  },
+  {
+    "id": "adv_topic_technology_03",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "match",
+    "question": "Match \"bandwidth\" to its meaning.",
+    "options": [
+      "The capacity of a network to transfer data",
+      "The width of a computer screen",
+      "A type of computer virus"
+    ],
+    "correct_answer": "The capacity of a network to transfer data",
+    "explanation": "Bandwidth affects video calls and downloads. Low bandwidth causes lag; providers advertise higher bandwidth plans.",
+    "example_sentence": "Our bandwidth was too low for HD streaming."
+  },
+  {
+    "id": "adv_topic_technology_04",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "mcq",
+    "question": "What is \"open source\" software?",
+    "options": [
+      "Software whose code can be viewed and modified by users",
+      "Software that works only offline",
+      "Software that cannot be updated"
+    ],
+    "correct_answer": "Software whose code can be viewed and modified by users",
+    "explanation": "Open source encourages collaboration and transparency. Many tools like Linux and Firefox use this model.",
+    "example_sentence": "The project released an open source library."
+  },
+  {
+    "id": "adv_topic_technology_05",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "fill_in",
+    "question": "The developer will ___ the bug in the next software update.",
+    "options": null,
+    "correct_answer": "patch",
+    "explanation": "Patch means to fix a flaw with a small update. Security patches should be installed promptly.",
+    "example_sentence": "IT installed a patch overnight."
+  },
+  {
+    "id": "adv_topic_technology_06",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "match",
+    "question": "Match \"cloud computing\" to its meaning.",
+    "options": [
+      "Using remote servers over the internet instead of only local hardware",
+      "Storing files only on a USB stick",
+      "Weather forecasting with satellites"
+    ],
+    "correct_answer": "Using remote servers over the internet instead of only local hardware",
+    "explanation": "Cloud computing lets teams access data and apps from anywhere. Providers handle maintenance and scaling.",
+    "example_sentence": "We moved email to the cloud last year."
+  },
+  {
+    "id": "adv_topic_technology_07",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "mcq",
+    "question": "What is \"encryption\"?",
+    "options": [
+      "Converting data into a secure code",
+      "Deleting old files",
+      "Printing a document"
+    ],
+    "correct_answer": "Converting data into a secure code",
+    "explanation": "Encryption protects messages and payments from unauthorised reading. End-to-end encryption is common in messaging apps.",
+    "example_sentence": "The bank uses encryption for online transfers."
+  },
+  {
+    "id": "adv_topic_technology_08",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "fill_in",
+    "question": "Machine learning models ___ on large datasets to improve accuracy.",
+    "options": null,
+    "correct_answer": "train",
+    "explanation": "Train in AI means feeding data so the model learns patterns. Better data often beats bigger models alone.",
+    "example_sentence": "They trained the model on millions of images."
+  },
+  {
+    "id": "adv_topic_technology_09",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "match",
+    "question": "Match \"latency\" to its meaning.",
+    "options": [
+      "Delay before data responds in a network",
+      "Total storage on a hard drive",
+      "Battery life of a phone"
+    ],
+    "correct_answer": "Delay before data responds in a network",
+    "explanation": "Low latency matters for gaming, trading, and video calls. High latency feels like slow reactions.",
+    "example_sentence": "The server latency dropped after the upgrade."
+  },
+  {
+    "id": "adv_topic_technology_10",
+    "level": "advanced",
+    "topic": "topic_technology",
+    "type": "mcq",
+    "question": "What does \"deprecated\" mean for a software feature?",
+    "options": [
+      "Officially discouraged and planned for removal",
+      "Brand new and recommended",
+      "Free for all users"
+    ],
+    "correct_answer": "Officially discouraged and planned for removal",
+    "explanation": "Deprecated APIs still work temporarily but should be replaced. Release notes warn developers to migrate early.",
+    "example_sentence": "That endpoint is deprecated; use the v2 API instead."
+  }
+]
