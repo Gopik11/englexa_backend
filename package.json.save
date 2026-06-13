@@ -1,4 +1,3 @@
-{
   "name": "englexa-backend",
   "version": "0.1.0",
   "description": "EngLexa API – English learning platform backend",
@@ -8,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "prisma generate",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "nest build",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:prod": "node dist/main",

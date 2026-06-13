@@ -1,13 +1,23 @@
 services:
+  backend:
+    build: .
+    container_name: englexa-backend
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:16-alpine
     container_name: englexa-postgres
     restart: unless-stopped
     ports:
-      - '5433:5432'
+      - "5433:5432"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: englexa_user
+      POSTGRES_PASSWORD: MyP@$$w0rd
       POSTGRES_DB: englexa
     volumes:
       - englexa_pg_data:/var/lib/postgresql/data
