@@ -1,7 +1,8 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import type { NextFunction, Request, Response } from 'express';
+import type { NextFunction, Request, Response } from '../types/express-http';
 
-const WINDOW_MS = 60_000;const MAX_REQUESTS = 60;
+const WINDOW_MS = 60_000;
+const MAX_REQUESTS = 60;
 
 interface Bucket {
   count: number;

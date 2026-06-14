@@ -6,7 +6,7 @@ import {
   HttpStatus,
   Logger,
 } from '@nestjs/common';
-import type { Request, Response } from 'express';
+import type { Request, Response } from '../types/express-http';
 import { errorResponse } from '../dto/api-response.dto';
 import {
   DATABASE_UNAVAILABLE_CODE,

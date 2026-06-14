@@ -1,12 +1,12 @@
 import { Injectable, Logger, NestMiddleware } from '@nestjs/common';
-import type { NextFunction, Request, Response } from 'express';
+import type { NextFunction, Request, Response } from '../types/express-http';
 
 const SLOW_REQUEST_MS = 500;
+
 @Injectable()
 export class LoggingMiddleware implements NestMiddleware {
   private readonly logger = new Logger('HTTP');
-  private readonly isDebug =
-    process.env.NODE_ENV !== 'production';
+  private readonly isDebug = process.env.NODE_ENV !== 'production';
 
   use(req: Request, res: Response, next: NextFunction): void {
     if (!this.isDebug) {

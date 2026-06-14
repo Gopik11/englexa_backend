@@ -16,9 +16,7 @@
     "baseUrl": "./",
     "incremental": true,
     "strict": false,
-    "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "express"]
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*.spec.ts", "**/*.test.ts", "**/testing/**"]
