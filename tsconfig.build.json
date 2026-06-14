@@ -3,7 +3,8 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "incremental": false
+    "incremental": false,
+    "types": ["node", "express"]
   },
   "include": ["src/**/*"],
   "exclude": [

@@ -1,6 +1,5 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { NextFunction, Request, Response } from 'express';
-
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS = 60;
 

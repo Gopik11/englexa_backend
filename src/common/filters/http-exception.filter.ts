@@ -7,8 +7,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { errorResponse } from '../dto/api-response.dto';
-import {
+import { errorResponse } from '../dto/api-response.dto';import {
   DATABASE_UNAVAILABLE_CODE,
   DATABASE_UNAVAILABLE_MESSAGE,
   formatPrismaError,

@@ -1,6 +1,5 @@
 import { Injectable, Logger, NestMiddleware } from '@nestjs/common';
 import { NextFunction, Request, Response } from 'express';
-
 const SLOW_REQUEST_MS = 500;
 
 @Injectable()
