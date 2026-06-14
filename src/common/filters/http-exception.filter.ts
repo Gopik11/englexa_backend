@@ -6,7 +6,7 @@ import {
   HttpStatus,
   Logger,
 } from '@nestjs/common';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { errorResponse } from '../dto/api-response.dto';
 import {
   DATABASE_UNAVAILABLE_CODE,
@@ -20,7 +20,8 @@ export class HttpExceptionFilter implements ExceptionFilter {
   private readonly logger = new Logger(HttpExceptionFilter.name);
   private readonly isDebug = process.env.NODE_ENV !== 'production';
 
-  catch(exception: unknown, host: ArgumentsHost): void {    const ctx = host.switchToHttp();
+  catch(exception: unknown, host: ArgumentsHost): void {
+    const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
 

@@ -4,7 +4,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "incremental": false,
-    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "typeRoots": ["./node_modules/@types"],
     "types": ["node", "express"]
   },
   "include": ["src/**/*"],

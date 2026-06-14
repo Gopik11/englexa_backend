@@ -1,5 +1,5 @@
 import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
-import { Response } from 'express';
+import type { Response } from 'express';
 import { PrismaService } from '../prisma/prisma.service';
 import { errorResponse, successResponse } from '../common/dto/api-response.dto';
 
