@@ -14,7 +14,7 @@ if (-not (Test-Path $psql)) {
   exit 1
 }
 
-$env:PGPASSWORD = $MyP@$$w0rd
+$env:PGPASSWORD = $Password
 
 Write-Host "Creating database '$Database' on ${Host}:${Port}..."
 & $psql -h $Host -p $Port -U $User -d postgres -c "CREATE DATABASE $Database;" 2>$null

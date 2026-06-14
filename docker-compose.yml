@@ -6,7 +6,7 @@ services:
     env_file: .env
     environment:
       NODE_ENV: production
-      DATABASE_URL: postgresql://englexa_user:MyP%40%24%24w0rd@postgres:5432/englexa?schema=public
+      DATABASE_URL: postgresql://englexa_user:PassLexa@postgres:5432/englexa?schema=public
       REDIS_URL: redis://redis:6379
       REDIS_ENABLED: "false"
       JOBS_ENABLED: "true"
@@ -36,7 +36,7 @@ services:
       - "5433:5432"
     environment:
       POSTGRES_USER: englexa_user
-      POSTGRES_PASSWORD: MyP@$$w0rd
+      POSTGRES_PASSWORD: PassLexa
       POSTGRES_DB: englexa
     volumes:
       - englexa_pg_data:/var/lib/postgresql/data
