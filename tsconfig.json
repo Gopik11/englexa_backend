@@ -17,6 +17,7 @@
     "incremental": true,
     "strict": false,
     "skipLibCheck": true,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
     "types": ["node", "express"]
   },
   "include": ["src/**/*"],
