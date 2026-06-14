@@ -10,6 +10,22 @@
       {
         "include": "grammar-practice/content/**/*.json",
         "outDir": "dist"
+      },
+      {
+        "include": "vocabulary-practice/content/**/*.json",
+        "outDir": "dist"
+      },
+      {
+        "include": "reading-practice/content/**/*.json",
+        "outDir": "dist"
+      },
+      {
+        "include": "writing-practice/content/**/*.json",
+        "outDir": "dist"
+      },
+      {
+        "include": "speaking-practice/content/**/*.json",
+        "outDir": "dist"
       }
     ]
   }

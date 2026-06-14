@@ -13,6 +13,7 @@ import { GamificationModule } from './gamification/gamification.module';
 import { MissionsModule } from './missions/missions.module';
 import { SubscriptionModule } from './subscription/subscription.module';
 import { configuration } from './config/configuration';
+import { validateConfig } from './config/env.validation';
 import { ExercisesModule } from './exercises/exercises.module';
 import { GrammarPracticeModule } from './grammar-practice/grammar-practice.module';
 import { VocabularyPracticeModule } from './vocabulary-practice/vocabulary-practice.module';
@@ -42,6 +43,7 @@ import { UsersModule } from './users/users.module';
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],
+      validate: validateConfig,
     }),
     CacheModule,
     PrismaModule,
