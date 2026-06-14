@@ -4,6 +4,7 @@ import { ErrorPatternsModule } from '../error-patterns/error-patterns.module';
 import { AiModule } from '../ai/ai.module';
 import { GamificationModule } from '../gamification/gamification.module';
 import { ProgressModule } from '../progress/progress.module';
+import { GrammarModule } from '../modules/grammar/grammar.module';
 import { GrammarPracticeController } from './grammar-practice.controller';
 import { GrammarPracticeService } from './grammar-practice.service';
 import { AiExerciseGenerator } from './utils/ai-exercise-generator';
@@ -15,6 +16,7 @@ import { AiExerciseGenerator } from './utils/ai-exercise-generator';
     AiModule,
     GamificationModule,
     ProgressModule,
+    GrammarModule,
   ],
   controllers: [GrammarPracticeController],
   providers: [GrammarPracticeService, AiExerciseGenerator],

@@ -88,8 +88,114 @@ model User {
   analyticsSnapshots     AnalyticsSnapshot[]
   practiceStats          UserPracticeStats?
   dailyActivity          UserDailyActivity[]
+  userGrammarProgress    UserGrammarProgress[]
 
   @@map("users")
+}
+
+enum PracticeLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum GrammarExerciseType {
+  FILL_BLANK
+  MCQ
+  CORRECTION
+  REWRITE
+  SHORT_ANSWER
+}
+
+enum ContentSource {
+  FILE_IMPORT
+  AI_GENERATED
+  ADMIN_CREATED
+}
+
+enum ContentStatus {
+  DRAFT
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+  ARCHIVED
+}
+
+model GrammarTopic {
+  id          String        @id @default(uuid()) @db.Uuid
+  slug        String        @unique
+  name        String
+  level       PracticeLevel
+  tags        String[]      @default([])
+  description String?
+  sortOrder   Int           @default(0) @map("sort_order")
+  isPublished Boolean       @default(true) @map("is_published")
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+
+  exercises    GrammarExercise[]
+  examples     GrammarExample[]
+  userProgress UserGrammarProgress[]
+
+  @@index([level, isPublished])
+  @@map("grammar_topics")
+}
+
+model GrammarExercise {
+  id          String              @id @default(uuid()) @db.Uuid
+  topicId     String              @map("topic_id") @db.Uuid
+  legacyId    String?             @map("legacy_id")
+  type        GrammarExerciseType
+  question    String
+  optionsJson Json?               @map("options_json")
+  answerJson  Json                @map("answer_json")
+  explanation String?
+  difficulty  Int                 @default(1)
+  source      ContentSource       @default(FILE_IMPORT)
+  status      ContentStatus       @default(APPROVED)
+  createdAt   DateTime            @default(now()) @map("created_at")
+  updatedAt   DateTime            @updatedAt @map("updated_at")
+
+  topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@unique([topicId, legacyId])
+  @@index([topicId, status, difficulty])
+  @@map("grammar_exercises")
+}
+
+model GrammarExample {
+  id        String        @id @default(uuid()) @db.Uuid
+  topicId   String        @map("topic_id") @db.Uuid
+  sentence  String
+  highlight String?
+  note      String?
+  source    ContentSource @default(FILE_IMPORT)
+  status    ContentStatus @default(APPROVED)
+  createdAt DateTime      @default(now()) @map("created_at")
+
+  topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@index([topicId, status])
+  @@map("grammar_examples")
+}
+
+model UserGrammarProgress {
+  id            String         @id @default(uuid()) @db.Uuid
+  userId        String         @map("user_id") @db.Uuid
+  topicId       String         @map("topic_id") @db.Uuid
+  status        ProgressStatus @default(NOT_STARTED)
+  lastScore     Int?           @map("last_score")
+  attempts      Int            @default(0)
+  lastAttemptAt DateTime?      @map("last_attempt_at")
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+
+  user  User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, topicId])
+  @@index([userId])
+  @@map("user_grammar_progress")
 }
 
 model Lesson {

@@ -16,6 +16,7 @@ import { configuration } from './config/configuration';
 import { validateConfig } from './config/env.validation';
 import { ExercisesModule } from './exercises/exercises.module';
 import { GrammarPracticeModule } from './grammar-practice/grammar-practice.module';
+import { GrammarModule } from './modules/grammar/grammar.module';
 import { VocabularyPracticeModule } from './vocabulary-practice/vocabulary-practice.module';
 import { ReadingPracticeModule } from './reading-practice/reading-practice.module';
 import { SpeakingPracticeModule } from './speaking-practice/speaking-practice.module';
@@ -56,6 +57,7 @@ import { UsersModule } from './users/users.module';
     ProgressModule,
     GamificationModule,
     AiModule,
+    GrammarModule,
     GrammarPracticeModule,
     VocabularyPracticeModule,
     ReadingPracticeModule,

@@ -64,7 +64,7 @@ import {
 
 import { identifyConcept } from './utils/concept-detector';
 
-import { loadGrammarExercises } from './utils/content-loader';
+import { GrammarContentService } from '../modules/grammar/services/grammar-content.service';
 
 import {
 
@@ -94,8 +94,6 @@ export class GrammarPracticeService {
 
   private readonly logger = new Logger(GrammarPracticeService.name);
 
-  private readonly moduleDir = __dirname;
-
 
 
   constructor(
@@ -111,6 +109,8 @@ export class GrammarPracticeService {
     private readonly adaptiveService: AdaptiveService,
 
     private readonly errorPatternsService: ErrorPatternsService,
+
+    private readonly grammarContentService: GrammarContentService,
 
   ) {}
 
@@ -161,7 +161,7 @@ export class GrammarPracticeService {
 
 
 
-    const jsonPool = loadGrammarExercises(level, topic, this.moduleDir);
+    const jsonPool = this.grammarContentService.loadExercises(level, topic);
 
     const jsonRemaining = jsonPool.filter(
 
@@ -625,7 +625,7 @@ export class GrammarPracticeService {
 
 
 
-    const jsonPool = loadGrammarExercises(level, topic, this.moduleDir);
+    const jsonPool = this.grammarContentService.loadExercises(level, topic);
 
     return jsonPool.find((item) => item.id === exerciseId) ?? null;
 
