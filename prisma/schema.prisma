@@ -121,6 +121,18 @@ enum ContentStatus {
   ARCHIVED
 }
 
+enum DraftStatus {
+  DRAFT
+  APPROVED
+  REJECTED
+}
+
+enum GrammarDraftType {
+  TOPIC
+  EXERCISE
+  EXAMPLE
+}
+
 model GrammarTopic {
   id          String        @id @default(uuid()) @db.Uuid
   slug        String        @unique
@@ -130,12 +142,14 @@ model GrammarTopic {
   description String?
   sortOrder   Int           @default(0) @map("sort_order")
   isPublished Boolean       @default(true) @map("is_published")
+  version     Int           @default(1)
   createdAt   DateTime      @default(now()) @map("created_at")
   updatedAt   DateTime      @updatedAt @map("updated_at")
 
   exercises    GrammarExercise[]
   examples     GrammarExample[]
   userProgress UserGrammarProgress[]
+  topicHistory GrammarTopicHistory[]
 
   @@index([level, isPublished])
   @@map("grammar_topics")
@@ -153,10 +167,12 @@ model GrammarExercise {
   difficulty  Int                 @default(1)
   source      ContentSource       @default(FILE_IMPORT)
   status      ContentStatus       @default(APPROVED)
+  version     Int                 @default(1)
   createdAt   DateTime            @default(now()) @map("created_at")
   updatedAt   DateTime            @updatedAt @map("updated_at")
 
   topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  exerciseHistory GrammarExerciseHistory[]
 
   @@unique([topicId, legacyId])
   @@index([topicId, status, difficulty])
@@ -171,9 +187,11 @@ model GrammarExample {
   note      String?
   source    ContentSource @default(FILE_IMPORT)
   status    ContentStatus @default(APPROVED)
+  version   Int           @default(1)
   createdAt DateTime      @default(now()) @map("created_at")
 
   topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  exampleHistory GrammarExampleHistory[]
 
   @@index([topicId, status])
   @@map("grammar_examples")
@@ -196,6 +214,85 @@ model UserGrammarProgress {
   @@unique([userId, topicId])
   @@index([userId])
   @@map("user_grammar_progress")
+}
+
+model GrammarTopicDraft {
+  id          String      @id @default(uuid()) @db.Uuid
+  contentJson Json        @map("content_json")
+  version     Int         @default(1)
+  status      DraftStatus @default(DRAFT)
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  @@index([status])
+  @@map("grammar_topic_drafts")
+}
+
+model GrammarExerciseDraft {
+  id          String      @id @default(uuid()) @db.Uuid
+  topicId     String?     @map("topic_id") @db.Uuid
+  contentJson Json        @map("content_json")
+  version     Int         @default(1)
+  status      DraftStatus @default(DRAFT)
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  @@index([topicId, status])
+  @@map("grammar_exercise_drafts")
+}
+
+model GrammarExampleDraft {
+  id          String      @id @default(uuid()) @db.Uuid
+  topicId     String?     @map("topic_id") @db.Uuid
+  contentJson Json        @map("content_json")
+  version     Int         @default(1)
+  status      DraftStatus @default(DRAFT)
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  @@index([topicId, status])
+  @@map("grammar_example_drafts")
+}
+
+model GrammarTopicHistory {
+  id          String   @id @default(uuid()) @db.Uuid
+  topicId     String   @map("topic_id") @db.Uuid
+  contentJson Json     @map("content_json")
+  version     Int
+  archivedAt  DateTime @default(now()) @map("archived_at")
+
+  topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@index([topicId, version])
+  @@map("grammar_topic_history")
+}
+
+model GrammarExerciseHistory {
+  id          String   @id @default(uuid()) @db.Uuid
+  exerciseId  String   @map("exercise_id") @db.Uuid
+  topicId     String   @map("topic_id") @db.Uuid
+  contentJson Json     @map("content_json")
+  version     Int
+  archivedAt  DateTime @default(now()) @map("archived_at")
+
+  exercise GrammarExercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+
+  @@index([exerciseId, version])
+  @@map("grammar_exercise_history")
+}
+
+model GrammarExampleHistory {
+  id          String   @id @default(uuid()) @db.Uuid
+  exampleId   String   @map("example_id") @db.Uuid
+  topicId     String   @map("topic_id") @db.Uuid
+  contentJson Json     @map("content_json")
+  version     Int
+  archivedAt  DateTime @default(now()) @map("archived_at")
+
+  example GrammarExample @relation(fields: [exampleId], references: [id], onDelete: Cascade)
+
+  @@index([exampleId, version])
+  @@map("grammar_example_history")
 }
 
 model Lesson {

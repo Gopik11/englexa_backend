@@ -6,6 +6,16 @@ import { AiContentProvider } from '../../modules/core/ai-content-provider.interf
 export class StubAiContentProvider implements AiContentProvider {
   private readonly logger = new Logger(StubAiContentProvider.name);
 
+  async generateTopic(input: any) {
+    this.logger.debug(`AI topic stub: ${JSON.stringify(input)}`);
+    return {
+      slug: input?.slug ?? 'topic',
+      name: 'Stub Topic',
+      level: 'BEGINNER',
+      description: 'Stub topic (Phase 1)',
+    };
+  }
+
   async generateExplanation(input: any) {
     this.logger.debug(`AI explanation stub: ${JSON.stringify(input)}`);
     return { output: 'Stub AI output (Phase 1)' };
