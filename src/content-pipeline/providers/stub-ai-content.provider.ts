@@ -1,9 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { AiContentProvider } from '../../modules/core/ai-content-provider.interface';
 
 /** Phase 1 stub — no external AI provider calls. */
 @Injectable()
-export class StubAiContentProvider implements AiContentProvider {
+export class StubAiContentProvider {
   private readonly logger = new Logger(StubAiContentProvider.name);
 
   async generateTopic(input: any) {

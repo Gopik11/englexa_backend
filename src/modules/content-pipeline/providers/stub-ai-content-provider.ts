@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { AiContentProvider } from '../../core/ai-content-provider.interface';
 
 @Injectable()
-export class StubAiContentProvider implements AiContentProvider {
+export class StubAiContentProvider {
   async generateTopic(input: any) {
     return {
       slug: input?.slug ?? 'topic',

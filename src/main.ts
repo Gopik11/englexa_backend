@@ -9,6 +9,10 @@ import { WinstonLogger } from './common/logging/winston.logger';
 import { PrismaService } from './prisma/prisma.service';
 
 async function bootstrap() {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('Missing OPENAI_API_KEY');
+  }
+
   const app = await NestFactory.create(AppModule, {
     bufferLogs: true,
     logger: new WinstonLogger(),

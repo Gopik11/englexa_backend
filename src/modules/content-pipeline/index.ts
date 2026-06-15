@@ -4,6 +4,7 @@ export { StubAiContentProvider } from './providers/stub-ai-content-provider';
 export { LlmAiContentProvider } from './providers/llm-ai-content.provider';
 export { ContentPipelineModule } from './content-pipeline.module';
 export { ContentPipelineService } from './services/content-pipeline.service';
+export { AiContentProviderService } from './providers/ai-content-provider.service';
 export { ContentPublishingService } from './services/content-publishing.service';
 export { ContentValidationService } from './services/content-validation.service';
 export { ContentVersioningService } from './services/content-versioning.service';

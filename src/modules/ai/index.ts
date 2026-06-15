@@ -1,5 +1,6 @@
-export { AiModule } from './ai.module';
-export { AiVocabularyController } from './ai-vocabulary.controller';
-export { AiVocabularyService } from './ai-vocabulary.service';
-export { AiSpeakingController } from './ai-speaking.controller';
-export { AiSpeakingService } from './ai-speaking.service';
+/**
+ * Learner AI controllers are registered via src/ai/ai.module.ts (single /ai route module).
+ * This barrel re-exports controller classes for tests and external imports.
+ */
+export { AiVocabularyController } from './controllers/ai-vocabulary.controller';
+export { AiSpeakingController } from './controllers/ai-speaking.controller';

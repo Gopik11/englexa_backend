@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaGrammarDraftRepository } from '../../grammar/repositories/prisma-grammar-draft.repository';
 import { PrismaGrammarTopicRepository } from '../../grammar/repositories/prisma-grammar-topic.repository';
-import { LlmAiContentProvider } from '../providers/llm-ai-content.provider';
+import { AiContentProviderService } from '../providers/ai-content-provider.service';
+import { GenerateSpeakingDto } from '../dto/generate-speaking.dto';
+import { GenerateVocabularyDto } from '../dto/generate-vocabulary.dto';
 import { ContentValidationService } from './content-validation.service';
 
 @Injectable()
 export class ContentPipelineService {
   constructor(
-    private readonly aiProvider: LlmAiContentProvider,
+    private readonly aiProvider: AiContentProviderService,
     private readonly validationService: ContentValidationService,
     private readonly draftRepository: PrismaGrammarDraftRepository,
     private readonly topicRepository: PrismaGrammarTopicRepository,
@@ -80,5 +82,17 @@ export class ContentPipelineService {
       );
     }
     return drafts;
+  }
+
+  async generateVocabulary(input: GenerateVocabularyDto) {
+    const generated = await this.aiProvider.generateVocabulary(input);
+    this.validationService.validateVocabulary(generated);
+    return generated;
+  }
+
+  async generateSpeaking(input: GenerateSpeakingDto) {
+    const generated = await this.aiProvider.generateSpeaking(input);
+    this.validationService.validateSpeaking(generated);
+    return generated;
   }
 }

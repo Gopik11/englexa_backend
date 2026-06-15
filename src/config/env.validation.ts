@@ -8,6 +8,10 @@ export function validateConfig(
     errors.push('DATABASE_URL is required');
   }
 
+  if (!config.OPENAI_API_KEY) {
+    errors.push('OPENAI_API_KEY is required');
+  }
+
   const accessSecret = config.JWT_ACCESS_SECRET;
   if (!accessSecret || String(accessSecret).length < 32) {
     errors.push('JWT_ACCESS_SECRET must be at least 32 characters');

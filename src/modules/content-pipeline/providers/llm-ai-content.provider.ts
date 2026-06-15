@@ -1,10 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PracticeLevel } from '@prisma/client';
-import { AiContentProvider } from '../../core/ai-content-provider.interface';
 
 /** LLM wrapper — uses structured templates when no external API key is configured. */
 @Injectable()
-export class LlmAiContentProvider implements AiContentProvider {
+export class LlmAiContentProvider {
   private readonly logger = new Logger(LlmAiContentProvider.name);
 
   async generateTopic(input: {
