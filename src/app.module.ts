@@ -6,6 +6,8 @@ import { LoggingMiddleware } from './common/middleware/logging.middleware';
 import { ApiRootController } from './api-root.controller';
 import { ConfigModule } from '@nestjs/config';
 import { AiModule } from './ai/ai.module';
+import { AiModule as AiStubModule } from './modules/ai';
+import { ContentPipelineModule } from './modules/content-pipeline';
 import { AnalyticsModule } from './analytics/analytics.module';
 import { LessonSummaryModule } from './lesson-summary/lesson-summary.module';
 import { AuthModule } from './auth/auth.module';
@@ -57,6 +59,8 @@ import { UsersModule } from './users/users.module';
     ProgressModule,
     GamificationModule,
     AiModule,
+    AiStubModule,
+    ContentPipelineModule,
     GrammarModule,
     GrammarPracticeModule,
     VocabularyPracticeModule,

@@ -1,68 +1,39 @@
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import * as path from 'path';
-import { GRAMMAR_TOPICS_BY_LEVEL } from '../../../content/grammar-topics.constants';
 import { LearnerLevel } from '../../../content/englexa-content-spec.constants';
 import {
   GrammarExercise,
   GrammarTopic,
 } from '../../../grammar-practice/interfaces/grammar-exercise.interface';
 import { loadGrammarExercises } from '../../../grammar-practice/utils/content-loader';
-import { toPublicExercise } from '../../../grammar-practice/utils/exercise-helpers';
-import { GrammarTopicRecord } from '../../core/interfaces/content-repository.interface';
-import { PracticeLevel } from '../../core/types/practice-level.type';
-import { FileGrammarExerciseRepository } from '../repositories/file-grammar-exercise.repository';
-import { FileGrammarTopicRepository } from '../repositories/file-grammar-topic.repository';
-import { normalizePracticeLevel, normalizeTopicSlug } from '../utils/slug-utils';
+import { FileGrammarRepository } from '../repositories/file-grammar.repository';
 
 @Injectable()
 export class GrammarContentService {
-  private readonly moduleDir = path.join(__dirname, '../../../grammar-practice');
+  private readonly grammarPracticeDir = path.join(__dirname, '../../../grammar-practice');
 
-  constructor(
-    private readonly topicRepo: FileGrammarTopicRepository,
-    private readonly exerciseRepo: FileGrammarExerciseRepository,
-  ) {}
+  constructor(private readonly fileRepository: FileGrammarRepository) {}
 
-  /** Used by GrammarPracticeService adaptive flow (Phase 1 file source). */
+  /** Preserves grammar-practice adaptive flow (file-based, unchanged). */
   loadExercises(level: LearnerLevel, topic: GrammarTopic): GrammarExercise[] {
-    return loadGrammarExercises(level, topic, this.moduleDir);
+    return loadGrammarExercises(level, topic, this.grammarPracticeDir);
   }
 
-  async listTopicsByLevel(): Promise<Record<PracticeLevel, GrammarTopicRecord[]>> {
-    const result = {} as Record<PracticeLevel, GrammarTopicRecord[]>;
-    for (const level of Object.keys(GRAMMAR_TOPICS_BY_LEVEL) as PracticeLevel[]) {
-      result[level] = (await this.topicRepo.listByLevel(level)).filter((t) => t.level === level);
-    }
-    return result;
+  async getTopics(): Promise<any[]> {
+    const items = await this.fileRepository.getAll();
+    return items.filter((item) => item.topicId === undefined && item.level !== undefined);
   }
 
-  async listExercises(query: {
-    level?: string;
-    topicId?: string;
-    topic?: string;
-    difficulty?: number;
-  }) {
-    const level = query.level ? normalizePracticeLevel(query.level) : null;
-    const slug = normalizeTopicSlug(query.topicId ?? query.topic ?? '');
-    if (!level || !slug) {
-      throw new BadRequestException('level and topicId (or topic) are required');
-    }
-    await this.assertTopic(level, slug);
-    const exercises = (await this.exerciseRepo.findByTopic(level, slug)) as GrammarExercise[];
-    return exercises.map((e) => toPublicExercise(e));
+  async getExercises(topicId: string): Promise<any[]> {
+    return this.fileRepository.filter((item) => item.topicId === topicId);
   }
 
-  async listExamples(topicId: string) {
-    if (!normalizeTopicSlug(topicId)) {
-      throw new BadRequestException('topicId is required');
-    }
-    return [];
+  async getExamples(topicId: string): Promise<any[]> {
+    const items = await this.fileRepository.getAll();
+    return items.filter((item) => item.topicId === topicId && item.sentence !== undefined);
   }
 
-  private async assertTopic(level: PracticeLevel, slug: string): Promise<void> {
-    const topic = await this.topicRepo.findBySlug(slug);
-    if (!topic || topic.level !== level) {
-      throw new NotFoundException(`Topic "${slug}" not found for level "${level}"`);
-    }
+  async getAllExercises(): Promise<any[]> {
+    return this.fileRepository.filter((item) => item.topicId !== undefined && item.question !== undefined);
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { PracticeLevel } from '../../modules/core/types/practice-level.type';
+import { PracticeLevel } from '../../modules/core/practice-level.type';
 import { GrammarContentGenerator } from '../interfaces/grammar-content-generator.interface';
 import { StubAiContentProvider } from '../providers/stub-ai-content.provider';
 

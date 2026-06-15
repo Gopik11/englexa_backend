@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ex_articles_01",
+    "topicId": "articles",
+    "sentence": "An apple a day keeps the doctor away.",
+    "highlight": "An",
+    "note": "Use 'an' before vowel sounds."
+  },
+  {
+    "id": "ex_present_vs_continuous_01",
+    "topicId": "present_vs_continuous",
+    "sentence": "I am studying English right now.",
+    "highlight": "am studying",
+    "note": "Present continuous for actions happening now."
+  }
+]

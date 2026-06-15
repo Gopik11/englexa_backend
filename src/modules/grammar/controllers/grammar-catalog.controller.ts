@@ -1,62 +1,33 @@
-import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../../../auth/guards/jwt-auth.guard';
-import { AuthJwtPayload } from '../../../auth/interfaces/jwt-payload.interface';
-import { CurrentUser } from '../../../common/decorators/current-user.decorator';
 import { successResponse } from '../../../common/dto/api-response.dto';
 import { GrammarContentService } from '../services/grammar-content.service';
-import { GrammarProgressService } from '../services/grammar-progress.service';
 
+/**
+ * Phase-1 catalog routes (file-based JSON under data/grammar/).
+ * Route coexistence note:
+ * - GET /grammar/exercises/:topic  → Phase-1 catalog (this controller)
+ * - GET /grammar/:level/:topic     → legacy grammar-practice adaptive flow
+ * Both remain until Phase-2 DB migration.
+ */
 @Controller('grammar')
 @UseGuards(JwtAuthGuard)
 export class GrammarCatalogController {
-  constructor(
-    private readonly contentService: GrammarContentService,
-    private readonly progressService: GrammarProgressService,
-  ) {}
+  constructor(private readonly contentService: GrammarContentService) {}
 
   @Get('topics')
   async getTopics() {
-    return successResponse(await this.contentService.listTopicsByLevel());
+    return successResponse(await this.contentService.getTopics());
   }
 
-  @Get('exercises')
-  async getExercises(
-    @Query('level') level?: string,
-    @Query('topicId') topicId?: string,
-    @Query('topic') topic?: string,
-    @Query('difficulty') difficulty?: string,
-  ) {
-    const parsedDifficulty = difficulty != null ? Number(difficulty) : undefined;
-    return successResponse(
-      await this.contentService.listExercises({
-        level,
-        topicId,
-        topic,
-        difficulty: Number.isFinite(parsedDifficulty) ? parsedDifficulty : undefined,
-      }),
-    );
+  @Get('exercises/:topic')
+  async getExercises(@Param('topic') topic: string) {
+    return successResponse(await this.contentService.getExercises(topic));
   }
 
-  @Get('examples')
-  async getExamples(@Query('topicId') topicId?: string) {
-    return successResponse(await this.contentService.listExamples(topicId ?? ''));
-  }
-
-  @Get('progress')
-  async getProgress(@CurrentUser() user: AuthJwtPayload) {
-    return successResponse(await this.progressService.getUserProgress(user.sub));
-  }
-
-  @Post('progress')
-  async postProgress(
-    @CurrentUser() user: AuthJwtPayload,
-    @Body() body: { topicId?: string; score?: number },
-  ) {
-    return successResponse(
-      await this.progressService.recordProgress(user.sub, body.topicId ?? '', {
-        score: body.score,
-      }),
-    );
+  @Get('examples/:topic')
+  async getExamples(@Param('topic') topic: string) {
+    return successResponse(await this.contentService.getExamples(topic));
   }
 }
 
@@ -66,20 +37,7 @@ export class ExercisesAliasController {
   constructor(private readonly contentService: GrammarContentService) {}
 
   @Get()
-  async getExercises(
-    @Query('level') level?: string,
-    @Query('topicId') topicId?: string,
-    @Query('topic') topic?: string,
-    @Query('difficulty') difficulty?: string,
-  ) {
-    const parsedDifficulty = difficulty != null ? Number(difficulty) : undefined;
-    return successResponse(
-      await this.contentService.listExercises({
-        level,
-        topicId,
-        topic,
-        difficulty: Number.isFinite(parsedDifficulty) ? parsedDifficulty : undefined,
-      }),
-    );
+  async getAllExercises() {
+    return successResponse(await this.contentService.getAllExercises());
   }
 }

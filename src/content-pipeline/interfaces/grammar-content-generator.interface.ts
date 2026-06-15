@@ -1,14 +1,14 @@
-import { GenerateExamplesInput, GenerateExercisesInput } from '../../modules/core/interfaces/ai-content-provider.interface';
+import { PracticeLevel } from '../../modules/core/practice-level.type';
 
 export interface GrammarContentGenerator {
   generateGrammarExercises(
     topicId: string,
-    level: GenerateExercisesInput['level'],
+    level: PracticeLevel,
     count: number,
   ): Promise<void>;
   generateExamples(
     topicId: string,
-    level: GenerateExamplesInput['level'],
+    level: PracticeLevel,
     count: number,
   ): Promise<void>;
 }

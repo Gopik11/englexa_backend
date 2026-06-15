@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AI_CONTENT_PROVIDER } from '../modules/core/interfaces/ai-content-provider.interface';
+import { AI_CONTENT_PROVIDER } from '../modules/core/ai-content-provider.interface';
 import { GRAMMAR_CONTENT_GENERATOR } from './interfaces/grammar-content-generator.interface';
 import { StubAiContentProvider } from './providers/stub-ai-content.provider';
 import { GrammarContentGeneratorService } from './services/grammar-content-generator.service';
