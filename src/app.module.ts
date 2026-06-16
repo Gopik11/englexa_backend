@@ -22,6 +22,7 @@ import { AdminModule } from './modules/admin/admin.module';
 import { VocabularyPracticeModule } from './vocabulary-practice/vocabulary-practice.module';
 import { ReadingPracticeModule } from './reading-practice/reading-practice.module';
 import { SpeakingPracticeModule } from './speaking-practice/speaking-practice.module';
+import { SpokenEnglishModule } from './spoken-english/spoken-english.module';
 import { WritingPracticeModule } from './writing-practice/writing-practice.module';
 import { HomeModule } from './home/home.module';
 import { AdaptiveModule } from './adaptive/adaptive.module';
@@ -66,6 +67,7 @@ import { UsersModule } from './users/users.module';
     VocabularyPracticeModule,
     ReadingPracticeModule,
     SpeakingPracticeModule,
+    SpokenEnglishModule,
     WritingPracticeModule,
     HomeModule,
     AdaptiveModule,

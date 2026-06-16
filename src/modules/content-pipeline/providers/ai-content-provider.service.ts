@@ -229,4 +229,290 @@ export class AiContentProviderService implements AiContentProvider {
       throw new InternalServerErrorException('AI generation failed');
     }
   }
+
+  async detectLanguage(text: string): Promise<string> {
+    const parsed = await this.createChatCompletion(
+      [
+        'Detect the language of the user text.',
+        'Return JSON only: {"language":"iso639-1 code"}',
+        'Supported codes: hi, ar, ta, te, ml, ur, bn, fil, en.',
+      ].join(' '),
+      JSON.stringify({ text }),
+    );
+    return typeof parsed.language === 'string' ? parsed.language : 'en';
+  }
+
+  async translate(
+    text: string,
+    sourceLang: string,
+    targetLang: string,
+  ): Promise<string> {
+    const parsed = await this.createChatCompletion(
+      [
+        'Translate the text accurately for English learners.',
+        'Return JSON only: {"translation":"string"}',
+      ].join(' '),
+      JSON.stringify({ text, sourceLang, targetLang }),
+    );
+    return typeof parsed.translation === 'string' ? parsed.translation : text;
+  }
+
+  async explainEnglish(
+    question: string,
+    context: { translatedQuestion?: string; sourceLanguage?: string } = {},
+  ): Promise<{ explanation: string; exampleSentence: string }> {
+    const parsed = await this.createChatCompletion(
+      [
+        'You are a friendly spoken English coach for EngLexa.',
+        'Explain how to say or use the phrase in clear, simple English.',
+        'Return JSON only:',
+        '{"explanation":"string","exampleSentence":"string"}',
+      ].join(' '),
+      JSON.stringify({
+        question,
+        translatedQuestion: context.translatedQuestion ?? question,
+        sourceLanguage: context.sourceLanguage ?? 'en',
+      }),
+    );
+
+    return {
+      explanation:
+        typeof parsed.explanation === 'string'
+          ? parsed.explanation
+          : 'Here is a clear English explanation for your question.',
+      exampleSentence:
+        typeof parsed.exampleSentence === 'string'
+          ? parsed.exampleSentence
+          : 'Practice saying the sentence slowly and clearly.',
+    };
+  }
+
+  async textToSpeech(text: string, lang: string): Promise<string> {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      throw new InternalServerErrorException('AI provider not configured');
+    }
+
+    try {
+      const response = await fetch('https://api.openai.com/v1/audio/speech', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: process.env.OPENAI_TTS_MODEL ?? 'tts-1',
+          input: text,
+          voice: process.env.OPENAI_TTS_VOICE ?? 'alloy',
+          response_format: 'mp3',
+        }),
+      });
+
+      if (!response.ok) {
+        const errorBody = await response.text();
+        throw new Error(`OpenAI TTS HTTP ${response.status}: ${errorBody}`);
+      }
+
+      const audioBuffer = Buffer.from(await response.arrayBuffer());
+      this.logger.debug(`TTS generated for lang=${lang}, bytes=${audioBuffer.length}`);
+      return audioBuffer.toString('base64');
+    } catch (err) {
+      this.logger.error(err);
+      throw new InternalServerErrorException('Text-to-speech failed');
+    }
+  }
+
+  async speechToText(
+    audioBase64: string,
+    options: { languageHint?: string; mimeType?: string } = {},
+  ): Promise<{ text: string; language: string }> {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      throw new InternalServerErrorException('AI provider not configured');
+    }
+
+    try {
+      const buffer = Buffer.from(audioBase64, 'base64');
+      const mimeType = options.mimeType ?? 'audio/webm';
+      const extension = mimeType.includes('wav')
+        ? 'wav'
+        : mimeType.includes('mpeg') || mimeType.includes('mp3')
+          ? 'mp3'
+          : 'webm';
+
+      const formData = new FormData();
+      formData.append(
+        'file',
+        new Blob([buffer], { type: mimeType }),
+        `recording.${extension}`,
+      );
+      formData.append('model', process.env.OPENAI_WHISPER_MODEL ?? 'whisper-1');
+      if (options.languageHint) {
+        formData.append('language', options.languageHint);
+      }
+      formData.append('response_format', 'json');
+
+      const response = await fetch(
+        'https://api.openai.com/v1/audio/transcriptions',
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: formData,
+        },
+      );
+
+      if (!response.ok) {
+        const errorBody = await response.text();
+        throw new Error(`OpenAI STT HTTP ${response.status}: ${errorBody}`);
+      }
+
+      const result = (await response.json()) as { text?: string };
+      const text = result.text?.trim() ?? '';
+      const language = text
+        ? await this.detectLanguage(text)
+        : (options.languageHint ?? 'en');
+
+      return { text, language };
+    } catch (err) {
+      this.logger.error(err);
+      throw new InternalServerErrorException('Speech-to-text failed');
+    }
+  }
+
+  async evaluateSpeakingPractice(input: {
+    prompt: string;
+    userResponse: string;
+    level?: string;
+    language?: string;
+  }) {
+    const parsed = await this.createChatCompletion(
+      [
+        'Evaluate spoken English practice for grammar, pronunciation clarity, and fluency.',
+        'Scores are integers 0-100.',
+        'Return JSON only:',
+        '{"grammarScore":0,"pronunciationScore":0,"fluencyScore":0,"grammarFeedback":"string","pronunciationFeedback":"string","overallFeedback":"string","suggestedImprovement":"string"}',
+      ].join(' '),
+      JSON.stringify(input),
+    );
+
+    return {
+      grammarScore: this.toScore(parsed.grammarScore),
+      pronunciationScore: this.toScore(parsed.pronunciationScore),
+      fluencyScore: this.toScore(parsed.fluencyScore),
+      grammarFeedback:
+        typeof parsed.grammarFeedback === 'string'
+          ? parsed.grammarFeedback
+          : 'Keep practicing grammar with short daily sentences.',
+      pronunciationFeedback:
+        typeof parsed.pronunciationFeedback === 'string'
+          ? parsed.pronunciationFeedback
+          : 'Focus on clear word endings and steady pacing.',
+      overallFeedback:
+        typeof parsed.overallFeedback === 'string'
+          ? parsed.overallFeedback
+          : 'Good effort! Repeat the prompt and aim for smoother delivery.',
+      suggestedImprovement:
+        typeof parsed.suggestedImprovement === 'string'
+          ? parsed.suggestedImprovement
+          : 'Say the sentence in three short chunks, then combine them.',
+    };
+  }
+
+  async generatePracticePrompt(input: { level?: string; language?: string }) {
+    const parsed = await this.createChatCompletion(
+      [
+        'Generate one spoken English practice prompt for EngLexa.',
+        'Return JSON only:',
+        '{"promptId":"string","prompt":"string","exampleAnswer":"string"}',
+      ].join(' '),
+      JSON.stringify({
+        level: input.level ?? 'beginner',
+        language: input.language ?? 'en',
+      }),
+    );
+
+    return {
+      promptId:
+        typeof parsed.promptId === 'string'
+          ? parsed.promptId
+          : randomUUID(),
+      prompt:
+        typeof parsed.prompt === 'string'
+          ? parsed.prompt
+          : 'Introduce yourself in one or two sentences.',
+      exampleAnswer:
+        typeof parsed.exampleAnswer === 'string'
+          ? parsed.exampleAnswer
+          : 'Hello, my name is Alex. I am learning English every day.',
+    };
+  }
+
+  async evaluateSpeakingConfidence(text: string) {
+    const parsed = await this.createChatCompletion(
+      [
+        'Evaluate spoken English confidence for EngLexa learners.',
+        'Score grammar, pronunciation clarity, fluency, clarity, and confidence markers as integers 0-100.',
+        'confidenceMarkers measures hesitation, filler words, and self-assurance in delivery.',
+        'Return JSON only:',
+        '{"grammarScore":0,"pronunciationScore":0,"fluencyScore":0,"clarityScore":0,"confidenceMarkers":0,"feedback":"string","encouragement":"string"}',
+      ].join(' '),
+      JSON.stringify({ text }),
+    );
+
+    const grammarScore = this.toScore(parsed.grammarScore);
+    const pronunciationScore = this.toScore(parsed.pronunciationScore);
+    const fluencyScore = this.toScore(parsed.fluencyScore);
+    const clarityScore = this.toScore(parsed.clarityScore);
+    const confidenceMarkers = this.toScore(parsed.confidenceMarkers);
+    const confidenceScore = this.computeWeightedConfidenceScore({
+      grammarScore,
+      pronunciationScore,
+      fluencyScore,
+      clarityScore,
+      confidenceMarkers,
+    });
+
+    return {
+      grammarScore,
+      pronunciationScore,
+      fluencyScore,
+      clarityScore,
+      confidenceMarkers,
+      confidenceScore,
+      feedback:
+        typeof parsed.feedback === 'string'
+          ? parsed.feedback
+          : 'Keep practicing with short, clear sentences.',
+      encouragement:
+        typeof parsed.encouragement === 'string'
+          ? parsed.encouragement
+          : "You're improving — focus on clarity, not speed.",
+    };
+  }
+
+  private toScore(value: unknown): number {
+    const score = typeof value === 'number' ? value : Number(value);
+    if (Number.isNaN(score)) {
+      return 70;
+    }
+    return Math.max(0, Math.min(100, Math.round(score)));
+  }
+
+  private computeWeightedConfidenceScore(scores: {
+    grammarScore: number;
+    pronunciationScore: number;
+    fluencyScore: number;
+    clarityScore: number;
+    confidenceMarkers: number;
+  }): number {
+    return Math.round(
+      scores.grammarScore * 0.25 +
+        scores.pronunciationScore * 0.25 +
+        scores.fluencyScore * 0.2 +
+        scores.clarityScore * 0.15 +
+        scores.confidenceMarkers * 0.15,
+    );
+  }
 }

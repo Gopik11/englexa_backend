@@ -89,6 +89,7 @@ model User {
   practiceStats          UserPracticeStats?
   dailyActivity          UserDailyActivity[]
   userGrammarProgress    UserGrammarProgress[]
+  speakingConfidence     SpeakingConfidence[]
 
   @@map("users")
 }
@@ -624,4 +625,21 @@ model UserDailyActivity {
   @@unique([userId, activityDate])
   @@index([userId, activityDate])
   @@map("user_daily_activity")
+}
+
+model SpeakingConfidence {
+  id              String   @id @default(uuid()) @db.Uuid
+  userId          String   @map("user_id") @db.Uuid
+  sessionId       String   @default(uuid()) @map("session_id") @db.Uuid
+  prompt          String
+  userResponse    String   @map("user_response")
+  aiFeedback      String   @map("ai_feedback")
+  confidenceScore Int      @map("confidence_score")
+  language        String
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@map("speaking_confidence")
 }
