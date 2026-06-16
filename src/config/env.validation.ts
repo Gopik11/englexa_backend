@@ -8,8 +8,8 @@ export function validateConfig(
     errors.push('DATABASE_URL is required');
   }
 
-  if (!config.OPENAI_API_KEY) {
-    errors.push('OPENAI_API_KEY is required');
+  if (!config.OPENAI_API_KEY && !config.SPEECH_API_KEY) {
+    errors.push('OPENAI_API_KEY or SPEECH_API_KEY is required');
   }
 
   const accessSecret = config.JWT_ACCESS_SECRET;
@@ -29,6 +29,12 @@ export function validateConfig(
 
   if (errors.length > 0 && nodeEnv === 'production') {
     throw new Error(`Environment validation failed:\n- ${errors.join('\n- ')}`);
+  }
+
+  if (errors.length > 0 && nodeEnv !== 'production') {
+    console.warn(
+      `[env] Configuration warnings (dev):\n- ${errors.join('\n- ')}`,
+    );
   }
 
   return config;

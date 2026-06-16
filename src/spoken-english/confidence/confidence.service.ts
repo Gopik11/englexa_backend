@@ -71,19 +71,25 @@ export class ConfidenceService {
       evaluationText,
     );
 
-    await this.repository.saveConfidenceRecord(
-      input.userId,
-      sessionId,
-      input.prompt,
-      input.userResponse,
-      evaluation.feedback,
-      evaluation.confidenceScore,
-      input.language,
-    );
+    try {
+      await this.repository.saveConfidenceRecord(
+        input.userId,
+        sessionId,
+        input.prompt,
+        input.userResponse,
+        evaluation.feedback,
+        evaluation.confidenceScore,
+        input.language,
+      );
 
-    this.logger.log(
-      `confidence saved user=${input.userId} score=${evaluation.confidenceScore}`,
-    );
+      this.logger.log(
+        `confidence saved user=${input.userId} score=${evaluation.confidenceScore}`,
+      );
+    } catch {
+      this.logger.warn(
+        `confidence evaluation succeeded but DB save failed user=${input.userId}`,
+      );
+    }
 
     return {
       ...evaluation,

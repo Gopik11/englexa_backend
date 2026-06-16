@@ -22,7 +22,8 @@ export const configuration = () => ({
     enabled: process.env.JOBS_ENABLED !== 'false',
   },
   ai: {
-    openaiApiKey: process.env.OPENAI_API_KEY,
+    openaiApiKey: process.env.OPENAI_API_KEY ?? process.env.SPEECH_API_KEY,
+    speechApiKey: process.env.SPEECH_API_KEY ?? process.env.OPENAI_API_KEY,
     openaiModel: process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
     freeTutorDailyLimit: parseInt(process.env.AI_FREE_TUTOR_DAILY_LIMIT ?? '5', 10),
     premiumTutorDailyLimit: parseInt(

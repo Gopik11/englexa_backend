@@ -2,8 +2,13 @@ import {
   Injectable,
   InternalServerErrorException,
   Logger,
+  ServiceUnavailableException,
 } from '@nestjs/common';
 import { randomUUID } from 'crypto';
+import {
+  openAiFetch,
+  resolveOpenAiApiKey,
+} from '../../../common/utils/openai-fetch.util';
 import { AiContentProvider } from '../../core/ai-content-provider.interface';
 import { LlmAiContentProvider } from './llm-ai-content.provider';
 
@@ -187,28 +192,35 @@ export class AiContentProviderService implements AiContentProvider {
     system: string,
     user: string,
   ): Promise<Record<string, unknown>> {
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = resolveOpenAiApiKey();
     if (!apiKey) {
-      throw new InternalServerErrorException('AI provider not configured');
+      throw new ServiceUnavailableException(
+        'AI provider not configured (set OPENAI_API_KEY)',
+      );
     }
 
+    const startedAt = Date.now();
+
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
+      const response = await openAiFetch(
+        'https://api.openai.com/v1/chat/completions',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
+            messages: [
+              { role: 'system', content: system },
+              { role: 'user', content: user },
+            ] satisfies ChatMessage[],
+            response_format: { type: 'json_object' },
+            temperature: 0.7,
+          }),
         },
-        body: JSON.stringify({
-          model: process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
-          messages: [
-            { role: 'system', content: system },
-            { role: 'user', content: user },
-          ] satisfies ChatMessage[],
-          response_format: { type: 'json_object' },
-          temperature: 0.7,
-        }),
-      });
+      );
 
       if (!response.ok) {
         const errorBody = await response.text();
@@ -223,9 +235,16 @@ export class AiContentProviderService implements AiContentProvider {
         throw new Error('Empty AI response');
       }
 
+      this.logger.debug(
+        `chat completion ok latencyMs=${Date.now() - startedAt}`,
+      );
+
       return JSON.parse(content) as Record<string, unknown>;
     } catch (err) {
-      this.logger.error(err);
+      this.logger.error(
+        `chat completion failed latencyMs=${Date.now() - startedAt}`,
+        err,
+      );
       throw new InternalServerErrorException('AI generation failed');
     }
   }
@@ -288,25 +307,32 @@ export class AiContentProviderService implements AiContentProvider {
   }
 
   async textToSpeech(text: string, lang: string): Promise<string> {
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = resolveOpenAiApiKey();
     if (!apiKey) {
-      throw new InternalServerErrorException('AI provider not configured');
+      throw new ServiceUnavailableException(
+        'AI provider not configured (set OPENAI_API_KEY)',
+      );
     }
 
+    const startedAt = Date.now();
+
     try {
-      const response = await fetch('https://api.openai.com/v1/audio/speech', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
+      const response = await openAiFetch(
+        'https://api.openai.com/v1/audio/speech',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: process.env.OPENAI_TTS_MODEL ?? 'tts-1',
+            input: text,
+            voice: process.env.OPENAI_TTS_VOICE ?? 'alloy',
+            response_format: 'mp3',
+          }),
         },
-        body: JSON.stringify({
-          model: process.env.OPENAI_TTS_MODEL ?? 'tts-1',
-          input: text,
-          voice: process.env.OPENAI_TTS_VOICE ?? 'alloy',
-          response_format: 'mp3',
-        }),
-      });
+      );
 
       if (!response.ok) {
         const errorBody = await response.text();
@@ -314,10 +340,12 @@ export class AiContentProviderService implements AiContentProvider {
       }
 
       const audioBuffer = Buffer.from(await response.arrayBuffer());
-      this.logger.debug(`TTS generated for lang=${lang}, bytes=${audioBuffer.length}`);
+      this.logger.debug(
+        `TTS ok lang=${lang} bytes=${audioBuffer.length} latencyMs=${Date.now() - startedAt}`,
+      );
       return audioBuffer.toString('base64');
     } catch (err) {
-      this.logger.error(err);
+      this.logger.error(`TTS failed latencyMs=${Date.now() - startedAt}`, err);
       throw new InternalServerErrorException('Text-to-speech failed');
     }
   }
@@ -326,19 +354,23 @@ export class AiContentProviderService implements AiContentProvider {
     audioBase64: string,
     options: { languageHint?: string; mimeType?: string } = {},
   ): Promise<{ text: string; language: string }> {
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = resolveOpenAiApiKey();
     if (!apiKey) {
-      throw new InternalServerErrorException('AI provider not configured');
+      throw new ServiceUnavailableException(
+        'AI provider not configured (set OPENAI_API_KEY)',
+      );
     }
+
+    const startedAt = Date.now();
 
     try {
       const buffer = Buffer.from(audioBase64, 'base64');
+      if (buffer.length === 0) {
+        throw new Error('Audio payload is empty');
+      }
+
       const mimeType = options.mimeType ?? 'audio/webm';
-      const extension = mimeType.includes('wav')
-        ? 'wav'
-        : mimeType.includes('mpeg') || mimeType.includes('mp3')
-          ? 'mp3'
-          : 'webm';
+      const extension = this.resolveAudioExtension(mimeType);
 
       const formData = new FormData();
       formData.append(
@@ -352,7 +384,7 @@ export class AiContentProviderService implements AiContentProvider {
       }
       formData.append('response_format', 'json');
 
-      const response = await fetch(
+      const response = await openAiFetch(
         'https://api.openai.com/v1/audio/transcriptions',
         {
           method: 'POST',
@@ -361,6 +393,7 @@ export class AiContentProviderService implements AiContentProvider {
           },
           body: formData,
         },
+        { timeoutMs: 90_000 },
       );
 
       if (!response.ok) {
@@ -374,11 +407,32 @@ export class AiContentProviderService implements AiContentProvider {
         ? await this.detectLanguage(text)
         : (options.languageHint ?? 'en');
 
+      this.logger.debug(
+        `STT ok bytes=${buffer.length} latencyMs=${Date.now() - startedAt}`,
+      );
+
       return { text, language };
     } catch (err) {
-      this.logger.error(err);
+      this.logger.error(`STT failed latencyMs=${Date.now() - startedAt}`, err);
       throw new InternalServerErrorException('Speech-to-text failed');
     }
+  }
+
+  private resolveAudioExtension(mimeType: string): string {
+    const normalized = mimeType.toLowerCase();
+    if (normalized.includes('m4a') || normalized.includes('mp4')) {
+      return 'm4a';
+    }
+    if (normalized.includes('wav')) {
+      return 'wav';
+    }
+    if (normalized.includes('mpeg') || normalized.includes('mp3')) {
+      return 'mp3';
+    }
+    if (normalized.includes('ogg')) {
+      return 'ogg';
+    }
+    return 'webm';
   }
 
   async evaluateSpeakingPractice(input: {

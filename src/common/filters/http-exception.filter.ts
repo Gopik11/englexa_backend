@@ -11,8 +11,11 @@ import { errorResponse } from '../dto/api-response.dto';
 import {
   DATABASE_UNAVAILABLE_CODE,
   DATABASE_UNAVAILABLE_MESSAGE,
+  DATABASE_SCHEMA_OUTDATED_CODE,
+  DATABASE_SCHEMA_OUTDATED_MESSAGE,
   formatPrismaError,
   isPrismaConnectionError,
+  isPrismaSchemaError,
 } from '../utils/prisma-error.util';
 
 @Catch()
@@ -41,6 +44,28 @@ export class HttpExceptionFilter implements ExceptionFilter {
         errorResponse(
           DATABASE_UNAVAILABLE_CODE,
           DATABASE_UNAVAILABLE_MESSAGE,
+          this.isDebug ? { prismaCode: formatted.code } : undefined,
+        ),
+      );
+      return;
+    }
+
+    if (isPrismaSchemaError(exception)) {
+      const formatted = formatPrismaError(exception);
+      this.logger.error(
+        JSON.stringify({
+          event: 'database_schema_outdated',
+          method: request.method,
+          path: request.url,
+          code: formatted.code,
+          message: formatted.message,
+        }),
+      );
+
+      response.status(HttpStatus.SERVICE_UNAVAILABLE).json(
+        errorResponse(
+          DATABASE_SCHEMA_OUTDATED_CODE,
+          DATABASE_SCHEMA_OUTDATED_MESSAGE,
           this.isDebug ? { prismaCode: formatted.code } : undefined,
         ),
       );
@@ -90,7 +115,13 @@ export class HttpExceptionFilter implements ExceptionFilter {
       }
     }
 
-    if (status >= HttpStatus.INTERNAL_SERVER_ERROR && this.isDebug) {
+    if (status === HttpStatus.NOT_FOUND) {
+      this.logger.warn(
+        `${request.method} ${request.url} → 404 (route not found or wrong HTTP method)`,
+      );
+    }
+
+    if (status >= HttpStatus.INTERNAL_SERVER_ERROR) {
       this.logger.error(
         `${request.method} ${request.url} ${status} ${code}: ${message}`,
       );

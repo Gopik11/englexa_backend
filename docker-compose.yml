@@ -2,7 +2,7 @@ services:
   backend:
     build: .
     container_name: englexa-backend
-    restart: unless-stopped
+    restart: always
     env_file: .env
     environment:
       NODE_ENV: production
@@ -10,6 +10,11 @@ services:
       REDIS_URL: redis://redis:6379
       REDIS_ENABLED: "false"
       JOBS_ENABLED: "true"
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      SPEECH_API_KEY: ${SPEECH_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      OPENAI_WHISPER_MODEL: ${OPENAI_WHISPER_MODEL:-whisper-1}
+      OPENAI_TTS_MODEL: ${OPENAI_TTS_MODEL:-tts-1}
     ports:
       - "3000:3000"
     depends_on:
@@ -31,7 +36,7 @@ services:
   postgres:
     image: postgres:16-alpine
     container_name: englexa-postgres
-    restart: unless-stopped
+    restart: always
     ports:
       - "5433:5432"
     environment:
