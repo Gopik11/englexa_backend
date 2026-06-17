@@ -1,6 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import compression from 'compression';
+import { json, urlencoded } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { AppModule } from './app.module';
@@ -15,6 +16,8 @@ async function bootstrap() {
   });
   const isProduction = process.env.NODE_ENV === 'production';
 
+  app.use(json({ limit: '15mb' }));
+  app.use(urlencoded({ extended: true, limit: '15mb' }));
   app.use(compression({ threshold: 1024 }));
   app.use(
     morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev', {

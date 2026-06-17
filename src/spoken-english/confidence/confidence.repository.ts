@@ -20,9 +20,9 @@ export class ConfidenceRepository {
     aiFeedback: string,
     confidenceScore: number,
     language: string,
-  ) {
+  ): Promise<{ id: string } | null> {
     try {
-      return await this.prisma.speakingConfidence.create({
+      const row = await this.prisma.speakingConfidence.create({
         data: {
           userId,
           sessionId,
@@ -33,6 +33,7 @@ export class ConfidenceRepository {
           language,
         },
       });
+      return { id: row.id };
     } catch (error) {
       const formatted = formatPrismaError(error);
       if (isPrismaSchemaError(error)) {
@@ -44,9 +45,11 @@ export class ConfidenceRepository {
           `confidence save skipped — user ${userId} not found (${formatted.code})`,
         );
       } else {
-        this.logger.error('confidence save failed', error);
+        this.logger.error(
+          `confidence save failed code=${formatted.code} message=${formatted.message}`,
+        );
       }
-      throw error;
+      return null;
     }
   }
 
@@ -58,13 +61,11 @@ export class ConfidenceRepository {
         take: limit,
       });
     } catch (error) {
-      if (isPrismaSchemaError(error)) {
-        this.logger.error(
-          'speaking_confidence table missing — returning empty history',
-        );
-        return [];
-      }
-      throw error;
+      const formatted = formatPrismaError(error);
+      this.logger.error(
+        `confidence history failed code=${formatted.code} — returning empty history`,
+      );
+      return [];
     }
   }
 }
