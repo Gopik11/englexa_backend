@@ -3,6 +3,7 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
 import { successResponse } from '../common/dto/api-response.dto';
+import { emptyHomeData } from './dto/home-data.dto';
 import { HomeService } from './home.service';
 
 @Controller('home')
@@ -13,13 +14,22 @@ export class HomeController {
   @Get('word-of-the-day')
   async getWordOfTheDay(@CurrentUser() user: AuthJwtPayload) {
     const word = await this.homeService.getWordOfTheDay(user.sub);
-    return successResponse(word);
+    return successResponse({
+      word: word.word ?? '',
+      meaning: word.meaning ?? '',
+      example: word.example ?? '',
+      level: word.level ?? 'beginner',
+    });
   }
 
   @Get('quote-of-the-day')
   async getQuoteOfTheDay(@CurrentUser() user: AuthJwtPayload) {
     const quote = await this.homeService.getQuoteOfTheDay(user.sub);
-    return successResponse(quote);
+    return successResponse({
+      quote: quote.quote ?? '',
+      category: quote.category ?? '',
+      explanation: quote.explanation ?? '',
+    });
   }
 
   @Get('puzzle-of-the-day')
@@ -43,7 +53,7 @@ export class HomeController {
   @Get('srs-due')
   async getSrsDue(@CurrentUser() user: AuthJwtPayload) {
     const items = await this.homeService.getSrsDueReviews(user.sub);
-    return successResponse({ items });
+    return successResponse({ items: items ?? [] });
   }
 
   @Get('predictions')
@@ -51,7 +61,7 @@ export class HomeController {
     const predictions = await this.homeService.getPredictionRecommendations(
       user.sub,
     );
-    return successResponse({ predictions });
+    return successResponse({ predictions: predictions ?? [] });
   }
 
   @Get('daily-challenge')
@@ -63,6 +73,6 @@ export class HomeController {
   @Get('home-data')
   async getHomeData(@CurrentUser() user: AuthJwtPayload) {
     const data = await this.homeService.getHomeData(user.sub);
-    return successResponse(data);
+    return successResponse(data ?? emptyHomeData());
   }
 }

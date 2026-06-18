@@ -1,5 +1,6 @@
 const DEFAULT_TIMEOUT_MS = 60_000;
 const RETRYABLE_STATUS = new Set([429, 502, 503, 504]);
+const DEFAULT_RETRIES = 3;
 
 export async function openAiFetch(
   url: string,
@@ -7,7 +8,7 @@ export async function openAiFetch(
   options: { timeoutMs?: number; retries?: number } = {},
 ): Promise<Response> {
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
-  const retries = options.retries ?? 1;
+  const retries = options.retries ?? DEFAULT_RETRIES;
   let lastError: unknown;
 
   for (let attempt = 0; attempt <= retries; attempt += 1) {

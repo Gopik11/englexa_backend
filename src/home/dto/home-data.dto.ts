@@ -50,3 +50,19 @@ export interface HomeDataResponse {
   predictions: ShapedPrediction[];
   gamification: HomeGamificationSummary;
 }
+
+export function emptyHomeData(): HomeDataResponse {
+  return {
+    word_of_the_day: { word: '', definition: '', example: '' },
+    daily_challenge: null,
+    mini_lesson: null,
+    srs_due: [],
+    predictions: [],
+    gamification: {
+      xp: 0,
+      level: 1,
+      streak: 0,
+      xp_to_next_level: 200,
+    },
+  };
+}

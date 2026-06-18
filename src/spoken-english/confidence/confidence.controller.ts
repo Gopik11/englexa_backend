@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
@@ -17,12 +17,19 @@ export class ConfidenceController {
     @Body() dto: RecordConfidenceDto,
   ) {
     const result = await this.confidenceService.recordConfidence(user.sub, dto);
-    return successResponse(result);
+    return successResponse({
+      confidenceScore: result.confidenceScore ?? 0,
+      feedback: result.feedback ?? '',
+      encouragement: result.encouragement ?? '',
+      sessionId: result.sessionId ?? '',
+    });
   }
 
   @Get('history')
   async getHistory(@CurrentUser() user: AuthJwtPayload) {
     const history = await this.confidenceService.getHistory(user.sub);
-    return successResponse({ history });
+    return successResponse({
+      history: history ?? [],
+    });
   }
 }

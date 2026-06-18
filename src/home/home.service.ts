@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 
 import { Level } from '@prisma/client';
 
@@ -46,6 +46,8 @@ import {
 
   ShapedSrsDueItem,
 
+  emptyHomeData,
+
 } from './dto/home-data.dto';
 
 import { generatePuzzleOfTheDay, PuzzleOfTheDay } from './utils/puzzle-generator';
@@ -59,6 +61,8 @@ import { generateWordOfTheDay, WordOfTheDay } from './utils/word-generator';
 @Injectable()
 
 export class HomeService {
+
+  private readonly logger = new Logger(HomeService.name);
 
   constructor(
 
@@ -83,81 +87,64 @@ export class HomeService {
 
 
   async getHomeData(userId: string): Promise<HomeDataResponse> {
+    try {
+      return await this.cachedData.getOrSet(
+        CacheKeys.homeData(userId),
+        CacheTtl.untilMidnight(),
+        () => this.buildHomeData(userId),
+      );
+    } catch (error) {
+      this.logger.error(`home-data failed user=${userId}`, error);
+      return emptyHomeData();
+    }
+  }
 
-    return this.cachedData.getOrSet(
+  private async buildHomeData(userId: string): Promise<HomeDataResponse> {
+    const [
+      word,
+      dailyChallenge,
+      miniLesson,
+      srsDue,
+      predictions,
+      gamification,
+    ] = await Promise.all([
+      this.getWordOfTheDay(userId).catch(() => ({
+        word: '',
+        meaning: '',
+        example: '',
+        level: 'beginner' as LearnerLevel,
+      })),
+      this.getDailyChallenge(userId).catch(() => null),
+      this.getFeaturedMiniLesson(userId).catch(() => null),
+      this.getSrsDueReviews(userId).catch(() => [] as SrsDueItem[]),
+      this.getPredictionRecommendations(userId).catch(
+        () => [] as ConceptPrediction[],
+      ),
+      this.gamificationService.getStatus(userId).catch(() => ({
+        xp: 0,
+        level: 1,
+        streak: 0,
+        xpToNextLevel: 200,
+      })),
+    ]);
 
-      CacheKeys.homeData(userId),
-
-      CacheTtl.untilMidnight(),
-
-      async () => {
-
-        const [
-
-          word,
-
-          dailyChallenge,
-
-          miniLesson,
-
-          srsDue,
-
-          predictions,
-
-          gamification,
-
-        ] = await Promise.all([
-
-          this.getWordOfTheDay(userId),
-
-          this.getDailyChallenge(userId).catch(() => null),
-
-          this.getFeaturedMiniLesson(userId).catch(() => null),
-
-          this.getSrsDueReviews(userId),
-
-          this.getPredictionRecommendations(userId),
-
-          this.gamificationService.getStatus(userId),
-
-        ]);
-
-
-
-        return {
-
-          word_of_the_day: {
-            word: word.word,
-            definition: word.meaning,
-            example: word.example,
-          },
-
-          daily_challenge: shapeDailyChallenge(dailyChallenge),
-
-          mini_lesson: shapeMiniLesson(miniLesson),
-
-          srs_due: shapeSrsItems(srsDue),
-
-          predictions: shapePredictions(predictions),
-
-          gamification: {
-
-            xp: gamification.xp,
-
-            level: gamification.level,
-
-            streak: gamification.streak,
-
-            xp_to_next_level: gamification.xpToNextLevel,
-
-          },
-
-        };
-
+    return {
+      word_of_the_day: {
+        word: word.word ?? '',
+        definition: word.meaning ?? '',
+        example: word.example ?? '',
       },
-
-    );
-
+      daily_challenge: shapeDailyChallenge(dailyChallenge),
+      mini_lesson: shapeMiniLesson(miniLesson),
+      srs_due: shapeSrsItems(srsDue ?? []),
+      predictions: shapePredictions(predictions ?? []),
+      gamification: {
+        xp: gamification.xp ?? 0,
+        level: gamification.level ?? 1,
+        streak: gamification.streak ?? 0,
+        xp_to_next_level: gamification.xpToNextLevel ?? 200,
+      },
+    };
   }
 
 

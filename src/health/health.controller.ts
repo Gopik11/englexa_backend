@@ -19,6 +19,12 @@ export class HealthController {
     });
   }
 
+  /** Minimal probe for load balancers — always returns 200 when API process is up. */
+  @Get('live')
+  live() {
+    return { status: 'ok', timestamp: new Date().toISOString() };
+  }
+
   @Get('db')
   async checkDatabase(@Res({ passthrough: true }) res: Response) {
     const dbHealth = await this.prisma.checkHealth();
@@ -38,7 +44,7 @@ export class HealthController {
     return successResponse({
       status: 'ok',
       connected: true,
-      latencyMs: dbHealth.latencyMs,
+      latencyMs: dbHealth.latencyMs ?? 0,
       timestamp: new Date().toISOString(),
     });
   }

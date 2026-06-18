@@ -17,6 +17,10 @@ import {
   buildConfidenceTip,
   buildPracticeConfidenceTip,
 } from './utils/confidence-builder.util';
+import {
+  normalizePracticeResult,
+  normalizeVoiceResult,
+} from './utils/response-normalizer.util';
 
 export interface AskQuestionResult {
   english: string;
@@ -100,12 +104,12 @@ export class SpokenEnglishService {
     );
 
     return {
-      english: explanation.explanation,
-      local: localExplanation,
-      audioBase64,
+      english: explanation.explanation ?? '',
+      local: localExplanation ?? '',
+      audioBase64: audioBase64 ?? '',
       confidenceTip: buildConfidenceTip(`${userId}:${dto.text}`),
       detectedLanguage,
-      translatedQuestion,
+      translatedQuestion: translatedQuestion ?? '',
     };
   }
 
@@ -142,13 +146,13 @@ export class SpokenEnglishService {
       languageHint: detectedLanguage,
     });
 
-    return {
+    return normalizeVoiceResult({
       ...askResult,
       transcribedText: transcription.text,
       confidenceScore: confidence.confidenceScore,
       feedback: confidence.feedback,
       encouragement: confidence.encouragement,
-    };
+    });
   }
 
   async practice(userId: string, dto: PracticeDto): Promise<PracticeResult> {
@@ -201,7 +205,7 @@ export class SpokenEnglishService {
       fluencyScore: evaluation.fluencyScore,
     });
 
-    return {
+    return normalizePracticeResult({
       promptId: generatedPrompt.promptId,
       prompt: generatedPrompt.prompt,
       exampleAnswer: generatedPrompt.exampleAnswer,
@@ -219,7 +223,7 @@ export class SpokenEnglishService {
       encouragement: confidence.encouragement,
       audioBase64,
       localFeedback,
-    };
+    });
   }
 
   listSupportedLanguages() {

@@ -21,6 +21,7 @@ import {
   UploadedAudioFile,
   validateUploadedAudioFile,
 } from './utils/voice-audio.util';
+import { normalizePracticeResult } from './utils/response-normalizer.util';
 
 @Controller('spoken-english')
 @UseGuards(JwtAuthGuard)
@@ -92,7 +93,9 @@ export class SpokenEnglishController {
     @CurrentUser() user: AuthJwtPayload,
     @Body() dto: PracticeDto,
   ) {
-    const result = await this.spokenEnglishService.practice(user.sub, dto);
+    const result = normalizePracticeResult(
+      await this.spokenEnglishService.practice(user.sub, dto),
+    );
     return successResponse({
       promptId: result.promptId,
       prompt: result.prompt,

@@ -1,9 +1,10 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
 import { successResponse } from '../common/dto/api-response.dto';
 import { mapEnrichedFeedbackToApi } from '../common/utils/enriched-feedback.mapper';
+import { LearnerLevel } from '../content/englexa-content-spec.constants';
 import { GetReadingPassageDto } from './dto/get-reading-passage.dto';
 import { SubmitReadingAnswerDto } from './dto/submit-reading-answer.dto';
 import { ReadingPracticeService } from './reading-practice.service';
@@ -13,6 +14,23 @@ import { validateReadingTopicForLevel } from './utils/validate-reading-params';
 @UseGuards(JwtAuthGuard)
 export class ReadingPracticeController {
   constructor(private readonly readingPracticeService: ReadingPracticeService) {}
+
+  /** Lists available reading topics (alias for clients expecting /reading/questions). */
+  @Get('questions')
+  listQuestions(@Query('level') level?: LearnerLevel) {
+    const topics = level
+      ? this.readingPracticeService.listTopicsForLevel(level)
+      : this.readingPracticeService.listTopics();
+
+    return successResponse({
+      topics,
+      questions: topics.map((topic) => ({
+        topic,
+        level: level ?? null,
+        path: level ? `/reading/${level}/${topic}` : null,
+      })),
+    });
+  }
 
   @Get(':level/:topic')
   async getPassage(
@@ -27,7 +45,20 @@ export class ReadingPracticeController {
       params.topic,
     );
 
-    return successResponse(result);
+    return successResponse({
+      passage: result.passage ?? {
+        id: '',
+        level: params.level,
+        topic: params.topic,
+        title: '',
+        passage: '',
+        questions: [],
+      },
+      effectiveLevel: result.effectiveLevel ?? params.level,
+      difficultyLevel: result.difficultyLevel ?? 1,
+      hasMore: result.hasMore ?? false,
+      jsonRemaining: result.jsonRemaining ?? 0,
+    });
   }
 
   @Post('submit')
@@ -48,18 +79,18 @@ export class ReadingPracticeController {
       dto.topic,
     );
 
-    const payload = result.results.map((item) => ({
-      questionId: item.questionId,
-      is_correct: item.isCorrect,
-      correct_answer: item.correctAnswer,
-      explanation: item.explanation,
+    const payload = (result.results ?? []).map((item) => ({
+      questionId: item.questionId ?? '',
+      is_correct: item.isCorrect ?? false,
+      correct_answer: item.correctAnswer ?? '',
+      explanation: item.explanation ?? '',
       error_pattern: item.errorPattern ?? null,
       ...mapEnrichedFeedbackToApi(item),
     }));
 
     return successResponse({
       results: payload,
-      passage_complete: result.passageComplete,
+      passage_complete: result.passageComplete ?? false,
       xp_earned: result.xpEarned ?? 0,
       streak: result.streak ?? 0,
       difficultyLevel: result.difficultyLevel ?? 1,
