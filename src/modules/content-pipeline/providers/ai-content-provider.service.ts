@@ -1,10 +1,11 @@
-import {
-  Injectable,
-  InternalServerErrorException,
-  Logger,
-  ServiceUnavailableException,
-} from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { randomUUID } from 'crypto';
+import {
+  AiCallContext,
+  logAiCallFailure,
+  logAiCallStart,
+  logAiCallSuccess,
+} from '../../../common/utils/ai-error.util';
 import {
   openAiFetch,
   resolveOpenAiApiKey,
@@ -78,13 +79,31 @@ export class AiContentProviderService implements AiContentProvider {
       count,
     });
 
-    const parsed = await this.createChatCompletion(system, user);
-    const exercises = Array.isArray(parsed.exercises) ? parsed.exercises : [];
+    const parsed = await this.createChatCompletion(system, user, {
+      operation: 'chat',
+      route: 'generateVocabulary',
+    });
+    const exercises = Array.isArray(parsed?.exercises) ? parsed.exercises : [];
+
+    if (exercises.length === 0) {
+      return {
+        mode: 'vocabulary-practice',
+        exercises: [
+          this.normalizeVocabExercise({}, input, 0),
+        ],
+        effectiveLevel: input.level,
+        difficultyLevel: 1,
+        hasMore: true,
+        jsonRemaining: 0,
+        aiDegraded: true,
+      };
+    }
 
     return {
       mode: 'vocabulary-practice',
-      exercises: exercises.map((exercise: Record<string, unknown>, index: number) =>
-        this.normalizeVocabExercise(exercise, input, index),
+      exercises: exercises.map(
+        (exercise: Record<string, unknown>, index: number) =>
+          this.normalizeVocabExercise(exercise, input, index),
       ),
       effectiveLevel: input.level,
       difficultyLevel: 1,
@@ -113,21 +132,27 @@ export class AiContentProviderService implements AiContentProvider {
       message: input.message ?? null,
     });
 
-    const parsed = await this.createChatCompletion(system, user);
+    const parsed = await this.createChatCompletion(system, user, {
+      operation: 'chat',
+      route: 'generateSpeaking',
+    });
     const prompt =
-      parsed.prompt && typeof parsed.prompt === 'object'
+      parsed?.prompt && typeof parsed.prompt === 'object'
         ? (parsed.prompt as Record<string, unknown>)
         : {};
 
     return {
       reply:
-        typeof parsed.reply === 'string'
+        typeof parsed?.reply === 'string'
           ? parsed.reply
           : 'Here is your speaking practice prompt.',
       sessionId:
-        typeof parsed.sessionId === 'string' ? parsed.sessionId : randomUUID(),
+        typeof parsed?.sessionId === 'string'
+          ? parsed.sessionId
+          : randomUUID(),
       confidence:
-        typeof parsed.confidence === 'number' ? parsed.confidence : 0.85,
+        typeof parsed?.confidence === 'number' ? parsed.confidence : 0.85,
+      aiDegraded: parsed == null,
       prompt: {
         id:
           typeof prompt.id === 'string'
@@ -191,15 +216,26 @@ export class AiContentProviderService implements AiContentProvider {
   private async createChatCompletion(
     system: string,
     user: string,
-  ): Promise<Record<string, unknown>> {
+    context: Partial<AiCallContext> = {},
+  ): Promise<Record<string, unknown> | null> {
     const apiKey = resolveOpenAiApiKey();
+    const callContext: AiCallContext = {
+      operation: context.operation ?? 'chat',
+      route: context.route,
+      userId: context.userId,
+      model: context.model ?? process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
+    };
+
     if (!apiKey) {
-      throw new ServiceUnavailableException(
-        'AI provider not configured (set OPENAI_API_KEY)',
+      logAiCallFailure(
+        this.logger,
+        callContext,
+        new Error('OPENAI_API_KEY not configured'),
       );
+      return null;
     }
 
-    const startedAt = Date.now();
+    const startedAt = logAiCallStart(this.logger, callContext);
 
     try {
       const response = await openAiFetch(
@@ -211,7 +247,7 @@ export class AiContentProviderService implements AiContentProvider {
             Authorization: `Bearer ${apiKey}`,
           },
           body: JSON.stringify({
-            model: process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
+            model: callContext.model,
             messages: [
               { role: 'system', content: system },
               { role: 'user', content: user },
@@ -235,17 +271,11 @@ export class AiContentProviderService implements AiContentProvider {
         throw new Error('Empty AI response');
       }
 
-      this.logger.debug(
-        `chat completion ok latencyMs=${Date.now() - startedAt}`,
-      );
-
+      logAiCallSuccess(this.logger, callContext, startedAt);
       return JSON.parse(content) as Record<string, unknown>;
     } catch (err) {
-      this.logger.error(
-        `chat completion failed latencyMs=${Date.now() - startedAt}`,
-        err,
-      );
-      throw new InternalServerErrorException('AI generation failed');
+      logAiCallFailure(this.logger, callContext, err, startedAt);
+      return null;
     }
   }
 
@@ -257,8 +287,9 @@ export class AiContentProviderService implements AiContentProvider {
         'Supported codes: hi, ar, ta, te, ml, ur, bn, fil, en.',
       ].join(' '),
       JSON.stringify({ text }),
+      { operation: 'detect-language', route: 'detectLanguage' },
     );
-    return typeof parsed.language === 'string' ? parsed.language : 'en';
+    return typeof parsed?.language === 'string' ? parsed.language : 'en';
   }
 
   async translate(
@@ -272,8 +303,9 @@ export class AiContentProviderService implements AiContentProvider {
         'Return JSON only: {"translation":"string"}',
       ].join(' '),
       JSON.stringify({ text, sourceLang, targetLang }),
+      { operation: 'translate', route: 'translate' },
     );
-    return typeof parsed.translation === 'string' ? parsed.translation : text;
+    return typeof parsed?.translation === 'string' ? parsed.translation : text;
   }
 
   async explainEnglish(
@@ -292,15 +324,16 @@ export class AiContentProviderService implements AiContentProvider {
         translatedQuestion: context.translatedQuestion ?? question,
         sourceLanguage: context.sourceLanguage ?? 'en',
       }),
+      { operation: 'chat', route: 'explainEnglish' },
     );
 
     return {
       explanation:
-        typeof parsed.explanation === 'string'
+        typeof parsed?.explanation === 'string'
           ? parsed.explanation
           : 'Here is a clear English explanation for your question.',
       exampleSentence:
-        typeof parsed.exampleSentence === 'string'
+        typeof parsed?.exampleSentence === 'string'
           ? parsed.exampleSentence
           : 'Practice saying the sentence slowly and clearly.',
     };
@@ -308,13 +341,22 @@ export class AiContentProviderService implements AiContentProvider {
 
   async textToSpeech(text: string, lang: string): Promise<string> {
     const apiKey = resolveOpenAiApiKey();
+    const callContext: AiCallContext = {
+      operation: 'tts',
+      route: 'textToSpeech',
+      model: process.env.OPENAI_TTS_MODEL ?? 'tts-1',
+    };
+
     if (!apiKey) {
-      throw new ServiceUnavailableException(
-        'AI provider not configured (set OPENAI_API_KEY)',
+      logAiCallFailure(
+        this.logger,
+        callContext,
+        new Error('OPENAI_API_KEY not configured'),
       );
+      return '';
     }
 
-    const startedAt = Date.now();
+    const startedAt = logAiCallStart(this.logger, callContext);
 
     try {
       const response = await openAiFetch(
@@ -326,7 +368,7 @@ export class AiContentProviderService implements AiContentProvider {
             Authorization: `Bearer ${apiKey}`,
           },
           body: JSON.stringify({
-            model: process.env.OPENAI_TTS_MODEL ?? 'tts-1',
+            model: callContext.model,
             input: text,
             voice: process.env.OPENAI_TTS_VOICE ?? 'alloy',
             response_format: 'mp3',
@@ -340,13 +382,14 @@ export class AiContentProviderService implements AiContentProvider {
       }
 
       const audioBuffer = Buffer.from(await response.arrayBuffer());
+      logAiCallSuccess(this.logger, callContext, startedAt);
       this.logger.debug(
-        `TTS ok lang=${lang} bytes=${audioBuffer.length} latencyMs=${Date.now() - startedAt}`,
+        `TTS ok lang=${lang} bytes=${audioBuffer.length}`,
       );
       return audioBuffer.toString('base64');
     } catch (err) {
-      this.logger.error(`TTS failed latencyMs=${Date.now() - startedAt}`, err);
-      throw new InternalServerErrorException('Text-to-speech failed');
+      logAiCallFailure(this.logger, callContext, err, startedAt);
+      return '';
     }
   }
 
@@ -355,13 +398,22 @@ export class AiContentProviderService implements AiContentProvider {
     options: { languageHint?: string; mimeType?: string } = {},
   ): Promise<{ text: string; language: string }> {
     const apiKey = resolveOpenAiApiKey();
+    const callContext: AiCallContext = {
+      operation: 'stt',
+      route: 'speechToText',
+      model: process.env.OPENAI_WHISPER_MODEL ?? 'whisper-1',
+    };
+
     if (!apiKey) {
-      throw new ServiceUnavailableException(
-        'AI provider not configured (set OPENAI_API_KEY)',
+      logAiCallFailure(
+        this.logger,
+        callContext,
+        new Error('OPENAI_API_KEY not configured'),
       );
+      return { text: '', language: options.languageHint ?? 'en' };
     }
 
-    const startedAt = Date.now();
+    const startedAt = logAiCallStart(this.logger, callContext);
 
     try {
       const buffer = Buffer.from(audioBase64, 'base64');
@@ -378,7 +430,10 @@ export class AiContentProviderService implements AiContentProvider {
         new Blob([buffer], { type: mimeType }),
         `recording.${extension}`,
       );
-      formData.append('model', process.env.OPENAI_WHISPER_MODEL ?? 'whisper-1');
+      formData.append(
+        'model',
+        process.env.OPENAI_WHISPER_MODEL ?? 'whisper-1',
+      );
       if (options.languageHint) {
         formData.append('language', options.languageHint);
       }
@@ -407,14 +462,13 @@ export class AiContentProviderService implements AiContentProvider {
         ? await this.detectLanguage(text)
         : (options.languageHint ?? 'en');
 
-      this.logger.debug(
-        `STT ok bytes=${buffer.length} latencyMs=${Date.now() - startedAt}`,
-      );
+      logAiCallSuccess(this.logger, callContext, startedAt);
+      this.logger.debug(`STT ok bytes=${buffer.length}`);
 
       return { text, language };
     } catch (err) {
-      this.logger.error(`STT failed latencyMs=${Date.now() - startedAt}`, err);
-      throw new InternalServerErrorException('Speech-to-text failed');
+      logAiCallFailure(this.logger, callContext, err, startedAt);
+      return { text: '', language: options.languageHint ?? 'en' };
     }
   }
 
@@ -449,28 +503,30 @@ export class AiContentProviderService implements AiContentProvider {
         '{"grammarScore":0,"pronunciationScore":0,"fluencyScore":0,"grammarFeedback":"string","pronunciationFeedback":"string","overallFeedback":"string","suggestedImprovement":"string"}',
       ].join(' '),
       JSON.stringify(input),
+      { operation: 'evaluate-speaking', route: 'evaluateSpeakingPractice' },
     );
 
     return {
-      grammarScore: this.toScore(parsed.grammarScore),
-      pronunciationScore: this.toScore(parsed.pronunciationScore),
-      fluencyScore: this.toScore(parsed.fluencyScore),
+      grammarScore: this.toScore(parsed?.grammarScore),
+      pronunciationScore: this.toScore(parsed?.pronunciationScore),
+      fluencyScore: this.toScore(parsed?.fluencyScore),
       grammarFeedback:
-        typeof parsed.grammarFeedback === 'string'
+        typeof parsed?.grammarFeedback === 'string'
           ? parsed.grammarFeedback
           : 'Keep practicing grammar with short daily sentences.',
       pronunciationFeedback:
-        typeof parsed.pronunciationFeedback === 'string'
+        typeof parsed?.pronunciationFeedback === 'string'
           ? parsed.pronunciationFeedback
           : 'Focus on clear word endings and steady pacing.',
       overallFeedback:
-        typeof parsed.overallFeedback === 'string'
+        typeof parsed?.overallFeedback === 'string'
           ? parsed.overallFeedback
           : 'Good effort! Repeat the prompt and aim for smoother delivery.',
       suggestedImprovement:
-        typeof parsed.suggestedImprovement === 'string'
+        typeof parsed?.suggestedImprovement === 'string'
           ? parsed.suggestedImprovement
           : 'Say the sentence in three short chunks, then combine them.',
+      aiDegraded: parsed == null,
     };
   }
 
@@ -485,21 +541,21 @@ export class AiContentProviderService implements AiContentProvider {
         level: input.level ?? 'beginner',
         language: input.language ?? 'en',
       }),
+      { operation: 'chat', route: 'generatePracticePrompt' },
     );
 
     return {
       promptId:
-        typeof parsed.promptId === 'string'
-          ? parsed.promptId
-          : randomUUID(),
+        typeof parsed?.promptId === 'string' ? parsed.promptId : randomUUID(),
       prompt:
-        typeof parsed.prompt === 'string'
+        typeof parsed?.prompt === 'string'
           ? parsed.prompt
           : 'Introduce yourself in one or two sentences.',
       exampleAnswer:
-        typeof parsed.exampleAnswer === 'string'
+        typeof parsed?.exampleAnswer === 'string'
           ? parsed.exampleAnswer
           : 'Hello, my name is Alex. I am learning English every day.',
+      aiDegraded: parsed == null,
     };
   }
 
@@ -513,13 +569,14 @@ export class AiContentProviderService implements AiContentProvider {
         '{"grammarScore":0,"pronunciationScore":0,"fluencyScore":0,"clarityScore":0,"confidenceMarkers":0,"feedback":"string","encouragement":"string"}',
       ].join(' '),
       JSON.stringify({ text }),
+      { operation: 'evaluate-speaking', route: 'evaluateSpeakingConfidence' },
     );
 
-    const grammarScore = this.toScore(parsed.grammarScore);
-    const pronunciationScore = this.toScore(parsed.pronunciationScore);
-    const fluencyScore = this.toScore(parsed.fluencyScore);
-    const clarityScore = this.toScore(parsed.clarityScore);
-    const confidenceMarkers = this.toScore(parsed.confidenceMarkers);
+    const grammarScore = this.toScore(parsed?.grammarScore);
+    const pronunciationScore = this.toScore(parsed?.pronunciationScore);
+    const fluencyScore = this.toScore(parsed?.fluencyScore);
+    const clarityScore = this.toScore(parsed?.clarityScore);
+    const confidenceMarkers = this.toScore(parsed?.confidenceMarkers);
     const confidenceScore = this.computeWeightedConfidenceScore({
       grammarScore,
       pronunciationScore,
@@ -536,13 +593,14 @@ export class AiContentProviderService implements AiContentProvider {
       confidenceMarkers,
       confidenceScore,
       feedback:
-        typeof parsed.feedback === 'string'
+        typeof parsed?.feedback === 'string'
           ? parsed.feedback
           : 'Keep practicing with short, clear sentences.',
       encouragement:
-        typeof parsed.encouragement === 'string'
+        typeof parsed?.encouragement === 'string'
           ? parsed.encouragement
           : "You're improving — focus on clarity, not speed.",
+      aiDegraded: parsed == null,
     };
   }
 

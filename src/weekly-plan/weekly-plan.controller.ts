@@ -2,7 +2,7 @@ import { Controller, Get, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { WeeklyPlanService } from './weekly-plan.service';
 
 @Controller('weekly-plan')
@@ -13,6 +13,7 @@ export class WeeklyPlanController {
   @Get()
   async getWeeklyPlan(@CurrentUser() user: AuthJwtPayload) {
     const plan = await this.weeklyPlanService.getWeeklyPlan(user.sub);
-    return successResponse(plan);
+    return normalizeResponse(plan);
   }
 }
+

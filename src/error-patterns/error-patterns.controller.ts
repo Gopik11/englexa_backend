@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { ErrorPatternsService } from './error-patterns.service';
 import { ErrorPatternModule } from './entities/error-pattern.entity';
 
@@ -24,7 +24,7 @@ export class ErrorPatternsController {
   @Post('detect')
   async detect(@Body() body: DetectErrorDto) {
     const pattern = this.errorPatternsService.detectErrorPattern(body);
-    return successResponse(pattern);
+    return normalizeResponse(pattern);
   }
 
   @Post('record')
@@ -38,13 +38,13 @@ export class ErrorPatternsController {
       detected,
       body.userAnswer,
     );
-    return successResponse(stored);
+    return normalizeResponse(stored);
   }
 
   @Get('profile')
   async getProfile(@CurrentUser() user: AuthJwtPayload) {
     const profile = await this.errorPatternsService.getErrorProfile(user.sub);
-    return successResponse(profile);
+    return normalizeResponse(profile);
   }
 
   @Get('top')
@@ -57,6 +57,7 @@ export class ErrorPatternsController {
       user.sub,
       Number.isFinite(parsedLimit) ? parsedLimit : 10,
     );
-    return successResponse({ patterns });
+    return normalizeResponse({ patterns });
   }
 }
+

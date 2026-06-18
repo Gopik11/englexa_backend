@@ -2,7 +2,7 @@ import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { LessonSummaryService } from './lesson-summary.service';
 import { SummaryModule } from './utils/summary-generator';
 
@@ -25,6 +25,7 @@ export class LessonSummaryController {
       module: body.module,
       session_data: body.session_data ?? {},
     });
-    return successResponse(summary);
+    return normalizeResponse(summary);
   }
 }
+

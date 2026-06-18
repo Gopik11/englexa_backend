@@ -2,7 +2,7 @@ import { Injectable, NestMiddleware } from '@nestjs/common';
 import type { NextFunction, Request, Response } from '../types/express-http';
 
 const WINDOW_MS = 60_000;
-const MAX_REQUESTS = 60;
+const MAX_REQUESTS = process.env.AI_DEV_MODE === 'true' ? 10_000 : 60;
 
 interface Bucket {
   count: number;
@@ -14,6 +14,10 @@ export class RateLimitMiddleware implements NestMiddleware {
   private readonly buckets = new Map<string, Bucket>();
 
   use(req: Request, res: Response, next: NextFunction): void {
+    if (process.env.AI_DEV_MODE === 'true') {
+      next();
+      return;
+    }
     const key = this.resolveKey(req);
     const now = Date.now();
     const bucket = this.buckets.get(key) ?? { count: 0, resetAt: now + WINDOW_MS };

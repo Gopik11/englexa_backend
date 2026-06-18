@@ -41,6 +41,18 @@ describe('PlanService', () => {
   });
 
   it('returns lower AI limits for free users', () => {
+    delete process.env.AI_DEV_MODE;
+    (configService.get as jest.Mock).mockImplementation(
+      (key: string, fallback?: number) => {
+        if (key === 'ai.devMode') return false;
+        if (key === 'ai.freeTutorDailyLimit') return 5;
+        if (key === 'ai.freePronunciationDailyLimit') return 3;
+        if (key === 'ai.freeSpeakingDailyLimit') return 5;
+        if (key === 'ai.freeWritingDailyLimit') return 5;
+        return fallback;
+      },
+    );
+
     const limits = service.getAiLimits({
       planType: PlanType.FREE,
       planExpiresAt: null,

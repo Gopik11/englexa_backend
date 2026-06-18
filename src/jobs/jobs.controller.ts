@@ -3,7 +3,7 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AppRole } from '../common/constants/roles';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { DailyJobsService } from './daily-jobs.service';
 import { JobsStatusService } from './jobs-status.service';
 import { MonthlyJobsService } from './monthly-jobs.service';
@@ -21,7 +21,7 @@ export class JobsController {
 
   @Get('status')
   getStatus() {
-    return successResponse({
+    return normalizeResponse({
       jobs: this.status.getStatus(),
       last_daily_run: this.status.getLastDailyRun()?.toISOString() ?? null,
     });
@@ -31,21 +31,21 @@ export class JobsController {
   async runDaily(@CurrentUser() user: AuthJwtPayload) {
     this.assertAdmin(user);
     await this.dailyJobs.runDailyJobs();
-    return successResponse({ started: true, period: 'daily' });
+    return normalizeResponse({ started: true, period: 'daily' });
   }
 
   @Post('run/weekly')
   async runWeekly(@CurrentUser() user: AuthJwtPayload) {
     this.assertAdmin(user);
     await this.weeklyJobs.runWeeklyJobs();
-    return successResponse({ started: true, period: 'weekly' });
+    return normalizeResponse({ started: true, period: 'weekly' });
   }
 
   @Post('run/monthly')
   async runMonthly(@CurrentUser() user: AuthJwtPayload) {
     this.assertAdmin(user);
     await this.monthlyJobs.runMonthlyJobs();
-    return successResponse({ started: true, period: 'monthly' });
+    return normalizeResponse({ started: true, period: 'monthly' });
   }
 
   private assertAdmin(user: AuthJwtPayload): void {
@@ -54,3 +54,4 @@ export class JobsController {
     }
   }
 }
+

@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { mapEnrichedFeedbackToApi } from '../common/utils/enriched-feedback.mapper';
 import { GetExercisesDto } from './dto/get-exercises.dto';
 import { SubmitAnswerDto } from './dto/submit-answer.dto';
@@ -27,7 +27,7 @@ export class GrammarPracticeController {
       params.topic,
     );
 
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Post('submit')
@@ -45,7 +45,7 @@ export class GrammarPracticeController {
       dto.topic,
     );
 
-    return successResponse({
+    return normalizeResponse({
       isCorrect: result.isCorrect,
       correctAnswer: result.correctAnswer,
       normalizedUserAnswer: result.normalizedUserAnswer,
@@ -62,3 +62,4 @@ export class GrammarPracticeController {
     });
   }
 }
+

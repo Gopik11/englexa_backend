@@ -2,7 +2,7 @@ import { Controller, Get, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { LearnerDashboardService } from './learner-dashboard.service';
 
 @Controller('analytics')
@@ -17,6 +17,7 @@ export class AnalyticsController {
     const dashboard = await this.learnerDashboardService.getDashboard(
       user.sub,
     );
-    return successResponse(dashboard);
+    return normalizeResponse(dashboard);
   }
 }
+

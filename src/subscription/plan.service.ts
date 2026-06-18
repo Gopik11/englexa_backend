@@ -2,11 +2,14 @@ import { ForbiddenException, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { AiUsageType, Level, PlanType, User } from '@prisma/client';
 import { PREMIUM_REQUIRED_CODE } from '../common/constants/premium';
+import { isAiDevMode } from '../common/utils/ai-error.util';
 import { PrismaService } from '../prisma/prisma.service';
 
 export interface AiLimits {
   tutor: number;
   pronunciation: number;
+  speaking: number;
+  writing: number;
 }
 
 @Injectable()
@@ -61,21 +64,33 @@ export class PlanService {
   }
 
   getAiLimits(user: Pick<User, 'planType' | 'planExpiresAt'>): AiLimits {
+    if (isAiDevMode() || this.configService.get<boolean>('ai.devMode')) {
+      return {
+        tutor: 999_999,
+        pronunciation: 999_999,
+        speaking: 999_999,
+        writing: 999_999,
+      };
+    }
+
     const premium = this.isPremium(user);
 
     return {
       tutor: premium
-        ? this.configService.get<number>('ai.premiumTutorDailyLimit', 20)
-        : this.configService.get<number>('ai.freeTutorDailyLimit', 5),
+        ? this.configService.get<number>('ai.premiumTutorDailyLimit', 999)
+        : this.configService.get<number>('ai.freeTutorDailyLimit', 999),
       pronunciation: premium
         ? this.configService.get<number>(
             'ai.premiumPronunciationDailyLimit',
-            10,
+            999,
           )
-        : this.configService.get<number>(
-            'ai.freePronunciationDailyLimit',
-            3,
-          ),
+        : this.configService.get<number>('ai.freePronunciationDailyLimit', 999),
+      speaking: premium
+        ? this.configService.get<number>('ai.premiumSpeakingDailyLimit', 999)
+        : this.configService.get<number>('ai.freeSpeakingDailyLimit', 999),
+      writing: premium
+        ? this.configService.get<number>('ai.premiumWritingDailyLimit', 999)
+        : this.configService.get<number>('ai.freeWritingDailyLimit', 999),
     };
   }
 
@@ -90,8 +105,10 @@ export class PlanService {
         return limits.tutor;
       case AiUsageType.PRONUNCIATION:
         return limits.pronunciation;
+      case AiUsageType.EVALUATION:
+        return limits.writing;
       default:
-        return 50;
+        return 999;
     }
   }
 }

@@ -2,8 +2,7 @@ import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
-import { successResponse } from '../../common/dto/api-response.dto';
-import { ConfidenceService } from './confidence.service';
+import { normalizeResponse } from '../../common/utils/response-normalizer.util';import { ConfidenceService } from './confidence.service';
 import { RecordConfidenceDto } from './dto/record-confidence.dto';
 
 @Controller('spoken-english/confidence')
@@ -17,7 +16,7 @@ export class ConfidenceController {
     @Body() dto: RecordConfidenceDto,
   ) {
     const result = await this.confidenceService.recordConfidence(user.sub, dto);
-    return successResponse({
+    return normalizeResponse({
       confidenceScore: result.confidenceScore ?? 0,
       feedback: result.feedback ?? '',
       encouragement: result.encouragement ?? '',
@@ -28,8 +27,9 @@ export class ConfidenceController {
   @Get('history')
   async getHistory(@CurrentUser() user: AuthJwtPayload) {
     const history = await this.confidenceService.getHistory(user.sub);
-    return successResponse({
+    return normalizeResponse({
       history: history ?? [],
     });
   }
 }
+

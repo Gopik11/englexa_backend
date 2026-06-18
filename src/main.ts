@@ -7,17 +7,26 @@ import morgan from 'morgan';
 import { AppModule } from './app.module';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { WinstonLogger } from './common/logging/winston.logger';
+import { isAiConfigured } from './common/utils/ai-error.util';
 import { PrismaService } from './prisma/prisma.service';
 
 async function bootstrap() {
+  if (!isAiConfigured()) {
+    console.error(
+      '[FATAL] OPENAI_API_KEY (or SPEECH_API_KEY) is not set. AI routes will return degraded fallback responses.',
+    );
+  } else {
+    console.log('[startup] OpenAI API key detected.');
+  }
+
   const app = await NestFactory.create(AppModule, {
     bufferLogs: true,
     logger: new WinstonLogger(),
   });
   const isProduction = process.env.NODE_ENV === 'production';
 
-  app.use(json({ limit: '15mb' }));
-  app.use(urlencoded({ extended: true, limit: '15mb' }));
+  app.use(json({ limit: '25mb' }));
+  app.use(urlencoded({ extended: true, limit: '25mb' }));
   app.use(compression({ threshold: 1024 }));
   app.use(
     morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev', {

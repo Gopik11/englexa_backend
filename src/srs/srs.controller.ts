@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { RecordReviewDto } from './entities/srs.entity';
 import { SrsService } from './srs.service';
 
@@ -17,7 +17,7 @@ export class SrsController {
     @Body() body: RecordReviewDto,
   ) {
     const item = await this.srsService.recordReview(user.sub, body);
-    return successResponse(item);
+    return normalizeResponse(item);
   }
 
   @Get('due/:userId')
@@ -27,7 +27,7 @@ export class SrsController {
   ) {
     await this.srsService.assertUserAccess(userId, user.sub);
     const items = await this.srsService.getDueReviews(userId);
-    return successResponse({ items });
+    return normalizeResponse({ items });
   }
 
   @Get('status/:userId')
@@ -37,6 +37,7 @@ export class SrsController {
   ) {
     await this.srsService.assertUserAccess(userId, user.sub);
     const status = await this.srsService.getSrsStatus(userId);
-    return successResponse(status);
+    return normalizeResponse(status);
   }
 }
+

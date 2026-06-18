@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
 import { Level } from '@prisma/client';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { SubmitProgressDto } from './dto/submit-progress.dto';
 import { ProgressService } from './progress.service';
@@ -18,7 +18,7 @@ export class ProgressController {
     @Body() dto: SubmitProgressDto,
   ) {
     const result = await this.progressService.submit(user.sub, dto);
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Get('summary')
@@ -27,7 +27,7 @@ export class ProgressController {
     @Query('level') level?: Level,
   ) {
     const summary = await this.progressService.getSummary(user.sub, level);
-    return successResponse(summary);
+    return normalizeResponse(summary);
   }
 
   @Get('grammar')
@@ -35,6 +35,7 @@ export class ProgressController {
     const mastery = await this.progressService.getGrammarConceptMastery(
       user.sub,
     );
-    return successResponse({ concepts: mastery });
+    return normalizeResponse({ concepts: mastery });
   }
 }
+

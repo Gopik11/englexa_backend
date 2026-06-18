@@ -1,9 +1,22 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Logger,
+  Param,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
 import { mapEnrichedFeedbackToApi } from '../common/utils/enriched-feedback.mapper';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
+import {
+  buildWritingFallback,
+  normalizeWritingSubmitPayload,
+  validateWritingText,
+} from '../common/utils/writing-response.util';
 import { GetWritingPromptDto } from './dto/get-writing-prompt.dto';
 import { SubmitWritingDto } from './dto/submit-writing.dto';
 import { WritingPracticeService } from './writing-practice.service';
@@ -12,6 +25,8 @@ import { validateWritingTopicForLevel } from './utils/validate-writing-params';
 @Controller('writing')
 @UseGuards(JwtAuthGuard)
 export class WritingPracticeController {
+  private readonly logger = new Logger(WritingPracticeController.name);
+
   constructor(private readonly writingPracticeService: WritingPracticeService) {}
 
   @Get(':level/:topic')
@@ -27,7 +42,7 @@ export class WritingPracticeController {
       params.topic,
     );
 
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Post('submit')
@@ -36,26 +51,43 @@ export class WritingPracticeController {
     @Body() dto: SubmitWritingDto,
   ) {
     validateWritingTopicForLevel(dto.level, dto.topic);
+    validateWritingText(dto.text);
 
-    const result = await this.writingPracticeService.submitWriting(
-      user.sub,
-      dto.level,
-      dto.topic,
-      dto.text,
-    );
+    try {
+      const result = await this.writingPracticeService.submitWriting(
+        user.sub,
+        dto.level,
+        dto.topic,
+        dto.text,
+      );
 
-    return successResponse({
-      corrected_text: result.correctedText,
-      grammar_feedback: result.grammarFeedback,
-      vocabulary_feedback: result.vocabularyFeedback,
-      coherence_feedback: result.coherenceFeedback,
-      structure_feedback: result.structureFeedback,
-      micro_lesson: result.microLesson,
-      xp_earned: result.xpEarned ?? 0,
-      streak: result.streak ?? 0,
-      difficultyLevel: result.difficultyLevel ?? 1,
-      errorPattern: result.errorPattern ?? null,
-      ...mapEnrichedFeedbackToApi(result),
-    });
+      return normalizeResponse({
+        ...normalizeWritingSubmitPayload(result),
+        ...mapEnrichedFeedbackToApi(result),
+      });
+    } catch (err) {
+      this.logger.error(
+        `writing/submit failed user=${user.sub} topic=${dto.topic}`,
+        err instanceof Error ? err.message : err,
+      );
+
+      const fallback = buildWritingFallback(
+        user.sub,
+        dto.level,
+        dto.topic,
+        dto.text,
+      );
+
+      return normalizeResponse(
+        normalizeWritingSubmitPayload({
+          ...fallback,
+          xpEarned: 0,
+          streak: 0,
+          difficultyLevel: 1,
+          errorPattern: null,
+        }),
+        'AI temporarily unavailable — showing offline feedback',
+      );
+    }
   }
 }

@@ -69,4 +69,5 @@ export interface SubmitSpeakingAudioResult extends EnrichedFeedback {
     concept: string;
     error_type: string;
   } | null;
+  aiDegraded?: boolean;
 }

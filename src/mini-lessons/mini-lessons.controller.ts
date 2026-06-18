@@ -10,7 +10,7 @@ import {
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import {
   CompleteLessonDto,
   GenerateLessonDto,
@@ -33,7 +33,7 @@ export class MiniLessonsController {
       concept,
       Number.isFinite(parsed) ? parsed : 2,
     );
-    return successResponse(lesson);
+    return normalizeResponse(lesson);
   }
 
   @Get('weak-areas/:userId')
@@ -43,7 +43,7 @@ export class MiniLessonsController {
   ) {
     await this.miniLessonsService.assertUserAccess(userId, user.sub);
     const lessons = await this.miniLessonsService.getLessonsForWeakAreas(userId);
-    return successResponse({ lessons });
+    return normalizeResponse({ lessons });
   }
 
   @Get('random/:module')
@@ -55,19 +55,19 @@ export class MiniLessonsController {
       module as MiniLessonModule,
       user.sub,
     );
-    return successResponse(lesson);
+    return normalizeResponse(lesson);
   }
 
   @Get('featured')
   async getFeatured(@CurrentUser() user: AuthJwtPayload) {
     const lesson = await this.miniLessonsService.getFeaturedLesson(user.sub);
-    return successResponse(lesson);
+    return normalizeResponse(lesson);
   }
 
   @Post('generate')
   generate(@Body() body: GenerateLessonDto) {
     const lesson = this.miniLessonsService.generateLessonFromDto(body);
-    return successResponse(lesson);
+    return normalizeResponse(lesson);
   }
 
   @Post('complete')
@@ -79,6 +79,7 @@ export class MiniLessonsController {
       user.sub,
       body,
     );
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 }
+

@@ -1,8 +1,8 @@
 import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
 import type { Response } from '../common/types/express-http';
 import { PrismaService } from '../prisma/prisma.service';
-import { errorResponse, successResponse } from '../common/dto/api-response.dto';
-
+import { errorResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 @Controller('health')
 export class HealthController {
   constructor(private readonly prisma: PrismaService) {}
@@ -11,7 +11,7 @@ export class HealthController {
   async check() {
     const dbHealth = await this.prisma.checkHealth();
 
-    return successResponse({
+    return normalizeResponse({
       status: dbHealth.connected ? 'ok' : 'degraded',
       service: 'englexa-api',
       database: dbHealth.connected ? 'ok' : 'error',
@@ -41,7 +41,7 @@ export class HealthController {
       );
     }
 
-    return successResponse({
+    return normalizeResponse({
       status: 'ok',
       connected: true,
       latencyMs: dbHealth.latencyMs ?? 0,
@@ -49,3 +49,4 @@ export class HealthController {
     });
   }
 }
+

@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { AdaptiveService } from './adaptive.service';
 import { AdaptiveModule } from './entities/difficulty.entity';
 
@@ -34,7 +34,7 @@ export class AdaptiveController {
       body.isCorrect,
     );
 
-    return successResponse(state);
+    return normalizeResponse(state);
   }
 
   @Get('difficulty')
@@ -48,6 +48,7 @@ export class AdaptiveController {
       query.concept,
     );
 
-    return successResponse(state);
+    return normalizeResponse(state);
   }
 }
+

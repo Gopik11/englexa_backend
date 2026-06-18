@@ -1,64 +1,13 @@
 import { BadRequestException } from '@nestjs/common';
+import {
+  rejectLocalFilePath,
+  validateUploadedAudioFile,
+  UploadedAudioFile,
+} from '../../common/utils/audio-upload.util';
 
-const MAX_AUDIO_BYTES = 10 * 1024 * 1024;
+export type { UploadedAudioFile };
 
-const ALLOWED_AUDIO_MIME_TYPES = new Set([
-  'audio/mp4',
-  'audio/m4a',
-  'audio/x-m4a',
-  'audio/aac',
-  'audio/mpeg',
-  'audio/mp3',
-  'audio/webm',
-  'audio/wav',
-  'audio/x-wav',
-  'application/octet-stream',
-]);
-
-const ALLOWED_AUDIO_EXTENSIONS = new Set([
-  'm4a',
-  'mp4',
-  'aac',
-  'mp3',
-  'webm',
-  'wav',
-]);
-
-export interface UploadedAudioFile {
-  buffer: Buffer;
-  mimetype?: string;
-  originalname?: string;
-  size?: number;
-}
-
-export function validateUploadedAudioFile(file: UploadedAudioFile): void {
-  if (!file.buffer?.length) {
-    throw new BadRequestException('Uploaded audio file is empty');
-  }
-
-  const byteLength = file.size ?? file.buffer.length;
-  if (byteLength > MAX_AUDIO_BYTES) {
-    throw new BadRequestException(
-      'Audio file exceeds the 10MB upload limit',
-    );
-  }
-
-  const mimeType = file.mimetype?.toLowerCase() ?? '';
-  const extension = file.originalname?.split('.').pop()?.toLowerCase() ?? '';
-
-  const mimeAllowed =
-    !mimeType ||
-    ALLOWED_AUDIO_MIME_TYPES.has(mimeType) ||
-    mimeType.startsWith('audio/');
-  const extensionAllowed =
-    !extension || ALLOWED_AUDIO_EXTENSIONS.has(extension);
-
-  if (!mimeAllowed && !extensionAllowed) {
-    throw new BadRequestException(
-      'Unsupported audio format. Upload m4a, mp4, mp3, webm, or wav.',
-    );
-  }
-}
+export { validateUploadedAudioFile, rejectLocalFilePath };
 
 export function mapVoiceResponse(result: {
   transcribedText: string;
@@ -71,6 +20,7 @@ export function mapVoiceResponse(result: {
   confidenceScore?: number;
   feedback?: string;
   encouragement?: string;
+  aiDegraded?: boolean;
 }) {
   return {
     transcribedText: result.transcribedText ?? '',
@@ -85,5 +35,37 @@ export function mapVoiceResponse(result: {
     confidenceScore: result.confidenceScore ?? 0,
     feedback: result.feedback ?? '',
     encouragement: result.encouragement ?? '',
+    aiDegraded: result.aiDegraded ?? false,
   };
+}
+
+export function ensureAudioPayload(
+  file?: UploadedAudioFile,
+  audioBase64?: string,
+  audioUrl?: string,
+): { audioBase64: string; mimeType: string } {
+  rejectLocalFilePath(audioBase64);
+  rejectLocalFilePath(audioUrl);
+
+  if (file?.buffer?.length) {
+    validateUploadedAudioFile(file);
+    return {
+      audioBase64: file.buffer.toString('base64'),
+      mimeType: file.mimetype || 'audio/mp4',
+    };
+  }
+
+  if (audioBase64?.trim()) {
+    return { audioBase64: audioBase64.trim(), mimeType: 'audio/mp4' };
+  }
+
+  if (audioUrl?.trim()) {
+    throw new BadRequestException(
+      'Remote audioUrl is not supported. Upload multipart field "file" or send audioBase64.',
+    );
+  }
+
+  throw new BadRequestException(
+    'No audio file received. Upload multipart field "file" or send audioBase64.',
+  );
 }

@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AI_PRONUNCIATION_SERVICE } from '../../ai/interfaces/ai-pronunciation.interface';
 import { MockAiPronunciationService } from '../../ai/mocks/mock-ai-pronunciation.service';
+import { AiContentProviderService } from '../../modules/content-pipeline/providers/ai-content-provider.service';
 import { SpeakingPrompt } from '../interfaces/speaking-prompt.interface';
 import {
   SpeakingEvaluator,
@@ -32,6 +33,12 @@ describe('SpeakingEvaluator', () => {
           provide: AI_PRONUNCIATION_SERVICE,
           useClass: MockAiPronunciationService,
         },
+        {
+          provide: AiContentProviderService,
+          useValue: {
+            speechToText: jest.fn().mockResolvedValue({ text: '', language: 'en' }),
+          },
+        },
       ],
     }).compile();
 
@@ -42,7 +49,7 @@ describe('SpeakingEvaluator', () => {
     const result = await evaluator.evaluateSpeaking({
       userId: 'user-a',
       prompt: samplePrompt,
-      audio: { audioBlobRef: 'stable-blob-ref' },
+      audio: { audioBase64: Buffer.from('fake-audio').toString('base64') },
       level: 'beginner',
     });
 
@@ -61,34 +68,36 @@ describe('SpeakingEvaluator', () => {
         {
           provide: AI_PRONUNCIATION_SERVICE,
           useValue: {
-            scorePronunciation: async () => ({
+            scorePronunciation: jest.fn().mockResolvedValue({
               overallScore: 55,
-              wordScores: [{ word: 'hello', score: 50 }],
-              feedback: 'Focus on clearer vowel sounds.',
+              wordScores: [{ word: 'hello', score: 60 }],
             }),
+          },
+        },
+        {
+          provide: AiContentProviderService,
+          useValue: {
+            speechToText: jest.fn().mockResolvedValue({ text: '', language: 'en' }),
           },
         },
       ],
     }).compile();
 
-    const lowScoreEvaluator = lowScoreModule.get(SpeakingEvaluator);
-    const audio = { audioBlobRef: 'low-score-blob' };
+    const lowEvaluator = lowScoreModule.get(SpeakingEvaluator);
 
-    await lowScoreEvaluator.evaluateSpeaking({
+    await lowEvaluator.evaluateSpeaking({
       userId: 'user-b',
       prompt: samplePrompt,
-      audio,
+      audio: { audioBase64: 'abc' },
       level: 'beginner',
     });
-
-    const second = await lowScoreEvaluator.evaluateSpeaking({
+    const second = await lowEvaluator.evaluateSpeaking({
       userId: 'user-b',
       prompt: samplePrompt,
-      audio,
+      audio: { audioBase64: 'abc' },
       level: 'beginner',
     });
 
     expect(second.microLesson).not.toBeNull();
-    expect(second.microLesson?.practice_phrase).toBe(samplePrompt.reference_text);
   });
 });

@@ -2,7 +2,7 @@ import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { TutorFeedbackRequestDto } from './dto/tutor-feedback.dto';
 import { TutorFeedbackService } from './tutor-feedback.service';
 
@@ -22,6 +22,7 @@ export class TutorController {
       level: dto.level,
     });
 
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 }
+

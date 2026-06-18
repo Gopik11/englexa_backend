@@ -3,7 +3,7 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
 import { PaginationQueryDto, paginateArray } from '../common/dto/pagination.dto';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { DailyChallengeService } from './daily-challenge.service';
 import { SubmitChallengeDto } from './entities/daily-challenge.entity';
 
@@ -19,7 +19,7 @@ export class DailyChallengeController {
   ) {
     await this.dailyChallengeService.assertUserAccess(userId, user.sub);
     const challenge = await this.dailyChallengeService.getTodayChallenge(userId);
-    return successResponse(challenge);
+    return normalizeResponse(challenge);
   }
 
   @Post('submit')
@@ -31,7 +31,7 @@ export class DailyChallengeController {
       user.sub,
       body.answer ?? '',
     );
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Get('history/:userId')
@@ -42,6 +42,7 @@ export class DailyChallengeController {
   ) {
     await this.dailyChallengeService.assertUserAccess(userId, user.sub);
     const history = await this.dailyChallengeService.getChallengeHistory(userId);
-    return successResponse(paginateArray(history, query.page, query.limit));
+    return normalizeResponse(paginateArray(history, query.page, query.limit));
   }
 }
+

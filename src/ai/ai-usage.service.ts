@@ -1,6 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { AiUsageType } from '@prisma/client';
 import { PREMIUM_REQUIRED_CODE } from '../common/constants/premium';
+import { isAiDevMode } from '../common/utils/ai-error.util';
 import { PrismaService } from '../prisma/prisma.service';
 import { PlanService } from '../subscription/plan.service';
 
@@ -9,12 +11,17 @@ export class AiUsageService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly planService: PlanService,
+    private readonly configService: ConfigService,
   ) {}
 
   async checkAndIncrement(
     userId: string,
     type: AiUsageType,
   ): Promise<{ used: number; limit: number }> {
+    if (isAiDevMode() || this.configService.get<boolean>('ai.devMode')) {
+      return { used: 0, limit: 999_999 };
+    }
+
     const user = await this.planService.getUserPlan(userId);
     const limit = this.planService.getLimitForType(user, type);
     const { periodStart, periodEnd } = this.currentDayWindow();

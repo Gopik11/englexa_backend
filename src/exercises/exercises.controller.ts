@@ -11,7 +11,7 @@ import {
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AppRole } from '../common/constants/roles';
 import { Roles } from '../common/decorators/roles.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { CreateExerciseDto } from './dto/create-exercise.dto';
 import { UpdateExerciseDto } from './dto/update-exercise.dto';
@@ -26,30 +26,31 @@ export class ExercisesController {
   @Post()
   async create(@Body() dto: CreateExerciseDto) {
     const exercise = await this.exercisesService.create(dto);
-    return successResponse(exercise);
+    return normalizeResponse(exercise);
   }
 
   @Get('lesson/:lessonId')
   async findByLesson(@Param('lessonId') lessonId: string) {
     const exercises = await this.exercisesService.findByLesson(lessonId);
-    return successResponse(exercises);
+    return normalizeResponse(exercises);
   }
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const exercise = await this.exercisesService.findById(id);
-    return successResponse(exercise);
+    return normalizeResponse(exercise);
   }
 
   @Patch(':id')
   async update(@Param('id') id: string, @Body() dto: UpdateExerciseDto) {
     const exercise = await this.exercisesService.update(id, dto);
-    return successResponse(exercise);
+    return normalizeResponse(exercise);
   }
 
   @Delete(':id')
   async remove(@Param('id') id: string) {
     const exercise = await this.exercisesService.remove(id);
-    return successResponse(exercise);
+    return normalizeResponse(exercise);
   }
 }
+

@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { ConversationService } from './conversation.service';
 
 class SendMessageDto {
@@ -24,7 +24,7 @@ export class ConversationController {
   @Post('start')
   async start(@CurrentUser() user: AuthJwtPayload) {
     const session = await this.conversationService.startSession(user.sub);
-    return successResponse(session);
+    return normalizeResponse(session);
   }
 
   @Post('send')
@@ -33,7 +33,7 @@ export class ConversationController {
     @Body() body: SendMessageDto,
   ) {
     const result = await this.conversationService.sendMessage(user.sub, body);
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Post('end')
@@ -45,7 +45,7 @@ export class ConversationController {
       user.sub,
       body.sessionId,
     );
-    return successResponse(session);
+    return normalizeResponse(session);
   }
 
   @Get('session/:id')
@@ -54,6 +54,7 @@ export class ConversationController {
     @Param('id') id: string,
   ) {
     const session = await this.conversationService.getSession(user.sub, id);
-    return successResponse(session);
+    return normalizeResponse(session);
   }
 }
+

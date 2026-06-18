@@ -2,7 +2,7 @@ import { Body, Controller, Param, Post, Query, UseGuards } from '@nestjs/common'
 import { JwtAuthGuard } from '../../../auth/guards/jwt-auth.guard';
 import { AppRole } from '../../../common/constants/roles';
 import { Roles } from '../../../common/decorators/roles.decorator';
-import { successResponse } from '../../../common/dto/api-response.dto';
+import { normalizeResponse } from '../../../common/utils/response-normalizer.util';
 import { RolesGuard } from '../../../common/guards/roles.guard';
 import { ContentPipelineService } from '../../content-pipeline/services/content-pipeline.service';
 import { ContentPublishingService } from '../../content-pipeline/services/content-publishing.service';
@@ -27,7 +27,7 @@ export class GrammarAdminController {
       tags?: string[];
     },
   ) {
-    return successResponse(await this.pipelineService.generateTopic(body));
+    return normalizeResponse(await this.pipelineService.generateTopic(body));
   }
 
   @Post('generate-exercises')
@@ -40,7 +40,7 @@ export class GrammarAdminController {
       level?: string;
     },
   ) {
-    return successResponse(await this.pipelineService.generateExercises(body));
+    return normalizeResponse(await this.pipelineService.generateExercises(body));
   }
 
   @Post('generate-examples')
@@ -52,7 +52,7 @@ export class GrammarAdminController {
       count?: number;
     },
   ) {
-    return successResponse(await this.pipelineService.generateExamples(body));
+    return normalizeResponse(await this.pipelineService.generateExamples(body));
   }
 
   @Post('approve/:draftId')
@@ -60,7 +60,7 @@ export class GrammarAdminController {
     @Param('draftId') draftId: string,
     @Query('type') type: 'topic' | 'exercise' | 'example',
   ) {
-    return successResponse(await this.publishingService.approveDraft(draftId, type));
+    return normalizeResponse(await this.publishingService.approveDraft(draftId, type));
   }
 
   @Post('reject/:draftId')
@@ -68,6 +68,7 @@ export class GrammarAdminController {
     @Param('draftId') draftId: string,
     @Query('type') type: 'topic' | 'exercise' | 'example',
   ) {
-    return successResponse(await this.publishingService.rejectDraft(draftId, type));
+    return normalizeResponse(await this.publishingService.rejectDraft(draftId, type));
   }
 }
+

@@ -19,6 +19,7 @@ export function normalizePracticeResult(result: PracticeResult): PracticeResult 
     encouragement: result.encouragement ?? '',
     audioBase64: result.audioBase64 ?? '',
     localFeedback: result.localFeedback ?? '',
+    aiDegraded: result.aiDegraded ?? false,
   };
 }
 

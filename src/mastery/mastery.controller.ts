@@ -2,7 +2,7 @@ import { Controller, Get, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { MasteryService } from './mastery.service';
 
 @Controller('mastery')
@@ -13,7 +13,7 @@ export class MasteryController {
   @Get('overview')
   async getOverview(@CurrentUser() user: AuthJwtPayload) {
     const overview = await this.masteryService.getOverview(user.sub);
-    return successResponse(overview);
+    return normalizeResponse(overview);
   }
 
   @Get('recommendation')
@@ -21,6 +21,7 @@ export class MasteryController {
     const recommendation = await this.masteryService.getRecommendation(
       user.sub,
     );
-    return successResponse(recommendation);
+    return normalizeResponse(recommendation);
   }
 }
+

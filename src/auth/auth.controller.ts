@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
@@ -12,18 +12,19 @@ export class AuthController {
   @Post('register')
   async register(@Body() dto: RegisterDto) {
     const result = await this.authService.register(dto);
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Post('login')
   async login(@Body() dto: LoginDto) {
     const result = await this.authService.login(dto);
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Post('refresh')
   async refresh(@Body() dto: RefreshTokenDto) {
     const tokens = await this.authService.refresh(dto.refreshToken);
-    return successResponse(tokens);
+    return normalizeResponse(tokens);
   }
 }
+

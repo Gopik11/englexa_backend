@@ -2,7 +2,7 @@ import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { PredictionService } from './prediction.service';
 
 @Controller('prediction')
@@ -23,7 +23,7 @@ export class PredictionController {
       module,
       concept,
     );
-    return successResponse(prediction);
+    return normalizeResponse(prediction);
   }
 
   @Get('module/:userId/:module')
@@ -37,7 +37,7 @@ export class PredictionController {
       userId,
       module,
     );
-    return successResponse({ predictions });
+    return normalizeResponse({ predictions });
   }
 
   @Get('all/:userId')
@@ -47,7 +47,7 @@ export class PredictionController {
   ) {
     await this.predictionService.assertUserAccess(userId, user.sub);
     const predictions = await this.predictionService.predictForAll(userId);
-    return successResponse({ predictions });
+    return normalizeResponse({ predictions });
   }
 
   @Get('recommendations/:userId')
@@ -58,6 +58,7 @@ export class PredictionController {
     await this.predictionService.assertUserAccess(userId, user.sub);
     const recommendations =
       await this.predictionService.getRecommendations(userId);
-    return successResponse(recommendations);
+    return normalizeResponse(recommendations);
   }
 }
+

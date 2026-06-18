@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { UpdateXpDto } from './entities/profile.entity';
 import { ProfileService } from './profile.service';
 import { ProfileXpSource } from './utils/xp-calculator';
@@ -19,7 +19,7 @@ export class ProfileController {
   ) {
     await this.profileService.assertUserAccess(userId, user.sub);
     const badges = await this.profileService.getBadges(userId);
-    return successResponse({ badges });
+    return normalizeResponse({ badges });
   }
 
   @Get('achievements/:userId')
@@ -29,7 +29,7 @@ export class ProfileController {
   ) {
     await this.profileService.assertUserAccess(userId, user.sub);
     const achievements = await this.profileService.getAchievements(userId);
-    return successResponse({ achievements });
+    return normalizeResponse({ achievements });
   }
 
   @Get(':userId')
@@ -39,7 +39,7 @@ export class ProfileController {
   ) {
     await this.profileService.assertUserAccess(userId, user.sub);
     const profile = await this.profileService.getProfile(userId);
-    return successResponse(profile);
+    return normalizeResponse(profile);
   }
 
   @Post('update-xp')
@@ -57,12 +57,13 @@ export class ProfileController {
           perfectAccuracy: body.perfect_accuracy,
         });
 
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 
   @Post('update-streak')
   async updateStreak(@CurrentUser() user: AuthJwtPayload) {
     const streak = await this.profileService.updateStreak(user.sub);
-    return successResponse({ streak });
+    return normalizeResponse({ streak });
   }
 }
+

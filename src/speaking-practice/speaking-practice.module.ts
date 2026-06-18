@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AdaptiveModule } from '../adaptive/adaptive.module';
 import { ErrorPatternsModule } from '../error-patterns/error-patterns.module';
 import { AiModule } from '../ai/ai.module';
+import { ContentPipelineModule } from '../modules/content-pipeline/content-pipeline.module';
 import { GamificationModule } from '../gamification/gamification.module';
 import { MasteryModule } from '../mastery/mastery.module';
 import { ProfileModule } from '../profile/profile.module';
@@ -15,6 +16,7 @@ import { SpeakingEvaluator } from './utils/speaking-evaluator';
     AdaptiveModule,
     ErrorPatternsModule,
     AiModule,
+    ContentPipelineModule,
     GamificationModule,
     MasteryModule,
     ProfileModule,

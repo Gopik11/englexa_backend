@@ -1,11 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
-import { successResponse } from './common/dto/api-response.dto';
-
+import { normalizeResponse } from './common/utils/response-normalizer.util';
 @Controller()
 export class ApiRootController {
   @Get()
   root() {
-    return successResponse({
+    return normalizeResponse({
       service: 'englexa-api',
       version: 'v1',
       status: 'running',
@@ -34,3 +33,4 @@ export class ApiRootController {
     });
   }
 }
+

@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { SubmitMissionDto } from './dto/submit-mission.dto';
 import { MissionsService } from './missions.service';
 
@@ -14,7 +14,7 @@ export class MissionsController {
   @Get('today')
   async getToday(@CurrentUser() user: AuthJwtPayload) {
     const mission = await this.missionsService.getTodayMission(user.sub);
-    return successResponse(mission);
+    return normalizeResponse(mission);
   }
 
   @Post('submit')
@@ -26,6 +26,7 @@ export class MissionsController {
       user.sub,
       dto.answer,
     );
-    return successResponse(result);
+    return normalizeResponse(result);
   }
 }
+

@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Query, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { LessonQueryDto } from './dto/lesson-query.dto';
 import { LessonsService } from './lessons.service';
@@ -20,7 +20,7 @@ export class LearnerLessonsController {
       user.sub,
       query,
     );
-    return successResponse(lessons);
+    return normalizeResponse(lessons);
   }
 
   @Get(':id')
@@ -32,6 +32,7 @@ export class LearnerLessonsController {
       id,
       user.sub,
     );
-    return successResponse(lesson);
+    return normalizeResponse(lesson);
   }
 }
+

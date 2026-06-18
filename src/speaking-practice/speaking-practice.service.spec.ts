@@ -6,7 +6,9 @@ import { createMockErrorPatternsService } from '../error-patterns/testing/mock-e
 import { AI_PRONUNCIATION_SERVICE } from '../ai/interfaces/ai-pronunciation.interface';
 import { GamificationService } from '../gamification/gamification.service';
 import { MasteryService } from '../mastery/mastery.service';
+import { ProfileService } from '../profile/profile.service';
 import { MockAiPronunciationService } from '../ai/mocks/mock-ai-pronunciation.service';
+import { AiContentProviderService } from '../modules/content-pipeline/providers/ai-content-provider.service';
 import { SpeakingPracticeService } from './speaking-practice.service';
 import {
   AiSpeakingPromptGenerator,
@@ -18,6 +20,11 @@ import {
   SpeakingEvaluator,
   clearSpeakingEvaluatorState,
 } from './utils/speaking-evaluator';
+
+const sampleAudio = {
+  audioBase64: Buffer.from('fake-recording').toString('base64'),
+  mimeType: 'audio/mp4',
+};
 
 describe('SpeakingPracticeService', () => {
   let service: SpeakingPracticeService;
@@ -38,6 +45,12 @@ describe('SpeakingPracticeService', () => {
           useClass: MockAiPronunciationService,
         },
         {
+          provide: AiContentProviderService,
+          useValue: {
+            speechToText: jest.fn().mockResolvedValue({ text: '', language: 'en' }),
+          },
+        },
+        {
           provide: GamificationService,
           useValue: {
             awardActivityXp: jest.fn().mockResolvedValue({
@@ -50,6 +63,12 @@ describe('SpeakingPracticeService', () => {
           provide: MasteryService,
           useValue: {
             recordConceptActivity: jest.fn().mockResolvedValue({}),
+          },
+        },
+        {
+          provide: ProfileService,
+          useValue: {
+            awardXpForActivity: jest.fn().mockResolvedValue(undefined),
           },
         },
         {
@@ -90,7 +109,7 @@ describe('SpeakingPracticeService', () => {
     const result = await service.submitSpeakingAudio(
       'user-2',
       batch.prompt.id,
-      { audioBlobRef: 'blob://recording-1' },
+      sampleAudio,
       'beginner',
       'daily_routines',
     );
@@ -114,7 +133,7 @@ describe('SpeakingPracticeService', () => {
       await service.submitSpeakingAudio(
         userId,
         batch.prompt.id,
-        { audioUrl: `https://cdn.example/audio-${i}.wav` },
+        sampleAudio,
         level,
         topic,
       );

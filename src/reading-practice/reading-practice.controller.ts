@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/co
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { mapEnrichedFeedbackToApi } from '../common/utils/enriched-feedback.mapper';
 import { LearnerLevel } from '../content/englexa-content-spec.constants';
 import { GetReadingPassageDto } from './dto/get-reading-passage.dto';
@@ -22,7 +22,7 @@ export class ReadingPracticeController {
       ? this.readingPracticeService.listTopicsForLevel(level)
       : this.readingPracticeService.listTopics();
 
-    return successResponse({
+    return normalizeResponse({
       topics,
       questions: topics.map((topic) => ({
         topic,
@@ -45,7 +45,7 @@ export class ReadingPracticeController {
       params.topic,
     );
 
-    return successResponse({
+    return normalizeResponse({
       passage: result.passage ?? {
         id: '',
         level: params.level,
@@ -88,7 +88,7 @@ export class ReadingPracticeController {
       ...mapEnrichedFeedbackToApi(item),
     }));
 
-    return successResponse({
+    return normalizeResponse({
       results: payload,
       passage_complete: result.passageComplete ?? false,
       xp_earned: result.xpEarned ?? 0,
@@ -98,3 +98,4 @@ export class ReadingPracticeController {
     });
   }
 }
+

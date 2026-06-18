@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { AuthJwtPayload } from '../auth/interfaces/jwt-payload.interface';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
-import { successResponse } from '../common/dto/api-response.dto';
+import { normalizeResponse } from '../common/utils/response-normalizer.util';
 import { GamificationService } from './gamification.service';
 import { XpActivity } from './entities/xp.entity';
 
@@ -19,13 +19,13 @@ export class GamificationController {
   @Get('status')
   async getStatus(@CurrentUser() user: AuthJwtPayload) {
     const status = await this.gamificationService.getStatus(user.sub);
-    return successResponse(status);
+    return normalizeResponse(status);
   }
 
   @Get('profile')
   async getProfile(@CurrentUser() user: AuthJwtPayload) {
     const profile = await this.gamificationService.getProfile(user.sub);
-    return successResponse(profile);
+    return normalizeResponse(profile);
   }
 
   @Post('add-xp')
@@ -35,19 +35,20 @@ export class GamificationController {
         user.sub,
         body.activity,
       );
-      return successResponse(result);
+      return normalizeResponse(result);
     }
 
     const xp = await this.gamificationService.addXp(
       user.sub,
       body.amount ?? 0,
     );
-    return successResponse({ xp });
+    return normalizeResponse({ xp });
   }
 
   @Post('reset-streak')
   async resetStreak(@CurrentUser() user: AuthJwtPayload) {
     const streak = await this.gamificationService.resetStreak(user.sub);
-    return successResponse({ streak });
+    return normalizeResponse({ streak });
   }
 }
+

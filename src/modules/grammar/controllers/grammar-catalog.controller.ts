@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { Public } from '../../../auth/decorators/public.decorator';
-import { successResponse } from '../../../common/dto/api-response.dto';
+import { normalizeResponse } from '../../../common/utils/response-normalizer.util';
 import { GrammarContentService } from '../services/grammar-content.service';
 
 /**
@@ -17,19 +17,19 @@ export class GrammarCatalogController {
   @Public()
   @Get('topics')
   async getTopics() {
-    return successResponse(await this.contentService.getTopics());
+    return normalizeResponse(await this.contentService.getTopics());
   }
 
   @Public()
   @Get('exercises/:topic')
   async getExercises(@Param('topic') topic: string) {
-    return successResponse(await this.contentService.getExercises(topic));
+    return normalizeResponse(await this.contentService.getExercises(topic));
   }
 
   @Public()
   @Get('examples/:topic')
   async getExamples(@Param('topic') topic: string) {
-    return successResponse(await this.contentService.getExamples(topic));
+    return normalizeResponse(await this.contentService.getExamples(topic));
   }
 }
 
@@ -40,6 +40,7 @@ export class ExercisesAliasController {
   @Public()
   @Get()
   async getAllExercises() {
-    return successResponse(await this.contentService.getAllExercises());
+    return normalizeResponse(await this.contentService.getAllExercises());
   }
 }
+

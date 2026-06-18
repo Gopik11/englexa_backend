@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { Public } from '../../../auth/decorators/public.decorator';
-import { successResponse } from '../../../common/dto/api-response.dto';
+import { normalizeResponse } from '../../../common/utils/response-normalizer.util';
 import { GrammarProgressService } from '../services/grammar-progress.service';
 
 @Controller('grammar')
@@ -10,7 +10,7 @@ export class GrammarProgressController {
   @Public()
   @Get('progress')
   getProgress() {
-    return successResponse(this.progressService.getProgress('stub-user'));
+    return normalizeResponse(this.progressService.getProgress('stub-user'));
   }
 
   @Public()
@@ -24,3 +24,4 @@ export class GrammarProgressController {
     };
   }
 }
+

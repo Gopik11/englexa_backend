@@ -22,20 +22,37 @@ export const configuration = () => ({
     enabled: process.env.JOBS_ENABLED !== 'false',
   },
   ai: {
+    devMode: process.env.AI_DEV_MODE === 'true',
     openaiApiKey: process.env.OPENAI_API_KEY ?? process.env.SPEECH_API_KEY,
     speechApiKey: process.env.SPEECH_API_KEY ?? process.env.OPENAI_API_KEY,
     openaiModel: process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
-    freeTutorDailyLimit: parseInt(process.env.AI_FREE_TUTOR_DAILY_LIMIT ?? '5', 10),
+    freeTutorDailyLimit: parseInt(process.env.AI_FREE_TUTOR_DAILY_LIMIT ?? '999', 10),
     premiumTutorDailyLimit: parseInt(
-      process.env.AI_PREMIUM_TUTOR_DAILY_LIMIT ?? '20',
+      process.env.AI_PREMIUM_TUTOR_DAILY_LIMIT ?? '999',
       10,
     ),
     freePronunciationDailyLimit: parseInt(
-      process.env.AI_FREE_PRONUNCIATION_DAILY_LIMIT ?? '3',
+      process.env.AI_FREE_PRONUNCIATION_DAILY_LIMIT ?? '999',
       10,
     ),
     premiumPronunciationDailyLimit: parseInt(
-      process.env.AI_PREMIUM_PRONUNCIATION_DAILY_LIMIT ?? '10',
+      process.env.AI_PREMIUM_PRONUNCIATION_DAILY_LIMIT ?? '999',
+      10,
+    ),
+    freeSpeakingDailyLimit: parseInt(
+      process.env.AI_FREE_SPEAKING_DAILY_LIMIT ?? '999',
+      10,
+    ),
+    premiumSpeakingDailyLimit: parseInt(
+      process.env.AI_PREMIUM_SPEAKING_DAILY_LIMIT ?? '999',
+      10,
+    ),
+    freeWritingDailyLimit: parseInt(
+      process.env.AI_FREE_WRITING_DAILY_LIMIT ?? '999',
+      10,
+    ),
+    premiumWritingDailyLimit: parseInt(
+      process.env.AI_PREMIUM_WRITING_DAILY_LIMIT ?? '999',
       10,
     ),
   },
